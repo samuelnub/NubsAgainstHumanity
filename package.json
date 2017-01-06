@@ -1,0 +1,23 @@
+{
+  "name": "nubsagainsthumanity",
+  "version": "0.1.0",
+  "description": "Cards against humanity, but worse",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.4.13",
+    "peerjs": "^0.3.14",
+    "peer": "^0.2.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "electron main.js"
+  },
+  "keywords": [
+    "CAH",
+    "Cards",
+    "against",
+    "humanity"
+  ],
+  "author": "Sam Nub",
+  "license": "Creative Commons BY-NC-SA 2.0 license"
+}

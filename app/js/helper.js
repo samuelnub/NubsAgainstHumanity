@@ -2,6 +2,14 @@ const fs = require("fs");
 
 // TODO: make file read/write async, and give callbacks, but this isn't a "large concurrent userbase server", so this should be okay for now.
 
+exports.consts = {
+    resRootPath: "./app/resource/",
+    resDecksPath: "./app/resource/decks/",
+    resProfilesPath: "./app/resource/profiles/",
+
+    settingsFileName: "settings.json"
+};
+
 exports.fileToJSON = function(filePath) {
     try {
         const fileContents = fs.readFileSync(getCorrectPath(filePath));
@@ -34,6 +42,10 @@ exports.createUUID = function() {
         return v.toString(16);
     });
 };
+
+exports.sanitizeString = function(message) {
+    return (typeof message == "string" ? message.split(/<script>|<\/script>/g).join("") : "You numbnut.");
+}
 
 // Helpers for these helper functions. nice lol
 function getCorrectPath(filePath) {

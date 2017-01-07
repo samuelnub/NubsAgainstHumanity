@@ -10,7 +10,7 @@ let mainWindow;
 
 function createWindow() {
     global.nah = {}; // our little namespace object thing. Just don't wanna pollute the global object
-    global.nah.settings = helper.fileToJSON("./app/resource/settings.json");
+    global.nah.settings = helper.fileToJSON(helper.consts.resRootPath + helper.consts.settingsFileName);
 
     mainWindow = new BrowserWindow({
         titleBarStyle: "hidden",

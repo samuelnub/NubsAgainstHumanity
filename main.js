@@ -9,8 +9,6 @@ const helper = require("./app/js/helper");
 let mainWindow;
 
 function createWindow() {
-    console.log(process.execPath);
-    console.log(process.resourcesPath);
     global.nah = {}; // our little namespace object thing. Just don't wanna pollute the global object
     global.nah.settings = helper.fileToJSON("./app/resource/settings.json");
 

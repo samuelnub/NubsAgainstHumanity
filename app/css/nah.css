@@ -8,12 +8,15 @@
 :root {
     --cah-black: #232323;
     --cah-white: #ffffff;
+    --cah-grey: rgb(229,229,229);
+    --cah-shadow: rgba(0,0,0,0.4);
 }
 
 body {
-    background-color: var(--cah-black);
+    background-color: var(--cah-grey);
 
     font-family: Coolvetica, Helvetica, sans-serif;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--cah-white);
+    font-weight: 500;
 }

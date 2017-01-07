@@ -27,6 +27,5 @@ exports.JSONToFile = function(filePath, json) {
 
 // Helpers for these helper functions. nice lol
 function getCorrectPath(filePath) {
-    // Just don't rename your eventual packaged application "electron.<os-dependant executable>" lol
-    return (process.execPath.search("electron.") !== -1 ? filePath : process.resourcesPath + "/app/" + filePath.split("./").join(""));
+    return (process.execPath.search("\\\\node_modules\\\\electron\\\\dist\\\\electron") !== -1 ? filePath : process.resourcesPath + "/app/" + filePath.split("./").join(""));
 }

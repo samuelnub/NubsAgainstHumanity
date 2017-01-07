@@ -4,17 +4,21 @@ const BrowserWindow = electron.BrowserWindow;
 
 const path = require("path");
 const url = require("url");
-
-const constants = require("./app/js/constants");
+const helper = require("./app/js/helper");
 
 let mainWindow;
 
 function createWindow() {
+    console.log(process.execPath);
+    console.log(process.resourcesPath);
+    global.nah = {}; // our little namespace object thing. Just don't wanna pollute the global object
+    global.nah.settings = helper.fileToJSON("./app/resource/settings.json");
+
     mainWindow = new BrowserWindow({
         titleBarStyle: "hidden",
         autoHideMenuBar: true,
-        width: 800,
-        height: 600
+        width: global.nah.settings.width,
+        height: global.nah.settings.height
     });
 
     mainWindow.loadURL(url.format({
@@ -23,7 +27,7 @@ function createWindow() {
         slashes: true
     }));
 
-    if(constants.debug) {
+    if(global.nah.settings.debug) {
         mainWindow.webContents.openDevTools();
     }
 

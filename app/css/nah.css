@@ -1,0 +1,19 @@
+/* Pretty much just overrides the main bootstrap stuff lol */
+
+@font-face {
+    font-family: Coolvetica;
+    src: url("../resource/fonts/coolvetica.ttf");
+}
+
+:root {
+    --cah-black: #232323;
+    --cah-white: #ffffff;
+}
+
+body {
+    background-color: var(--cah-black);
+
+    font-family: Coolvetica, Helvetica, sans-serif;
+    font-weight: 900;
+    color: var(--cah-white);
+}

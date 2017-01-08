@@ -19,52 +19,57 @@
 
         createWelcomeScreen();
     })();
-
-    const PeerServer = require("peer").PeerServer;
     
     function createWelcomeScreen() {
         document.body.innerHTML = "";
 
         const container = document.createElement("div");
-        container.className = "container-fluid";
+        container.className = "container-fluid text-center";
         container.innerHTML = "<div class=\"row\"></div>";
         document.body.appendChild(container);
         
-        for(let i = 0; i < 12; i++) {
-            placeElementInContainer(container, createCardElement("black", "Hello ____!", "The idiot pack"), 0, 2);
-        }
+        (function addCards(leftToDo) {
+            if(typeof leftToDo == "undefined") {
+                leftToDo = 12;
+            }
+            setTimeout(() => {
+                if(leftToDo > 0) {
+                    const cardColour = (leftToDo % 2 === 0 ? "white" : "black");
+                    helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInRightBig", createCardElement(cardColour, "Hello ____! How <i>you</i> doin?", "The idiot pack, Fifth edition, with no expansions, thanks.", 3)), 0, 12);
+                    addCards(leftToDo-1);
+                }
+            }, 100);
+        })();
+
+        helper.httpGetJSON("jsonplaceholder.typicode.com/posts/1", function(json) {
+            console.log(JSON.stringify(json));
+        }, function(err) {
+            console.error(err);
+        });
     }
 
-    function createCardElement(colour, text, packName) {
+    function createCardElement(colour, text, packName, pickAmount) {
         const card = document.createElement("div");
         card.classList.add("card", (colour === "white" || colour === "black" ? colour : "black"));
-        
+
         const textDiv = document.createElement("div");
         textDiv.classList.add("text");
         textDiv.innerHTML = helper.sanitizeString(text);
+        card.appendChild(textDiv);
 
         const packNameDiv = document.createElement("div");
         packNameDiv.classList.add("pack-name");
         packNameDiv.innerHTML = helper.sanitizeString(packName);
-
-        card.appendChild(textDiv);
         card.appendChild(packNameDiv);
 
-        return card;
-    }
-
-    function placeElementInContainer(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, row, col) {
-        parentContainer = (typeof parentContainer == "string" ? document.getElementById(parentContainer) : parentContainer);
-        
-        const rows = parentContainer.getElementsByClassName("row");
-        if(rows.length === 0) {
-            console.log("You tried putting an element into a container with no rows! You idiot!");
-            return false;
+        if(colour === "black" && typeof pickAmount != "undefined") {
+            const pickAmountDiv = document.createElement("div");
+            pickAmountDiv.classList.add("pick-amount");
+            pickAmountDiv.innerHTML = "PICK " + pickAmount;
+            card.appendChild(pickAmountDiv);
         }
-        row = (rows.length > row ? row : (rows.length - 1 >= 0 ? rows.length - 1 : 0));
-        yourElement.classList.add("col-sm-" + col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
-        rows[row].appendChild(yourElement);
-        return true;
+
+        return card;
     }
 
 })();

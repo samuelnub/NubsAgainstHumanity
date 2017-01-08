@@ -10,10 +10,12 @@
             window.jQuery = window.$ = require("./js/external/jquery.js");
         </script>
         <script src="./js/external/bootstrap.js"></script>
+        <script>
+            window.onload = () => {
+                require("./js/index.js");
+            };
+        </script>
     </head>
-    <body class="text-center">
+    <body>
     </body>
-    <script>
-        require("./js/index.js");
-    </script>
 </html>

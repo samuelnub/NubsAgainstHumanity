@@ -30,22 +30,26 @@
 
 body {
     background-color: var(--cah-grey);
-
+    
     font-family: Coolvetica, Helvetica, sans-serif;
     font-weight: 800;
     color: var(--cah-black);
+
+    box-shadow: inset 0px 0px 2in var(--cah-shadow);
 
     overflow-x: hidden; 
     overflow-y: auto;
 }
 
 .card {
-    padding-bottom: 3.2in; /* It's around 2.5 inches wide, 4 inches high */
+    /*padding-bottom: 3.2in; /* It's around 2.5 inches wide, 3.5 inches high */
+    height: 3.2in;
     max-width: 2in;
     max-height: 3.2in;
     border-radius: 0.1in;
     box-shadow: 0px 0px 0.15in var(--cah-shadow);
     margin: 0.2in;
+    overflow: hidden;
 
     transition: all 0.1s ease-in-out;
 }
@@ -69,21 +73,31 @@ body {
     text-align: left;
     top: 5%; 
     bottom: 5%; 
-    left: 10%; 
-    right: 5%;
-    font-size: 1.6em;
-    overflow: hidden;
-    font-weight: 500;
+    left: 8%; 
+    right: 8%;
+    font-size: 1.5em;
+    font-weight: 400;
 }
 
 .card > .pack-name {
     position: absolute;
     text-align: left;
-    top: 90%;
+    /* Hell yea, if you don't specify the top property, newlines will be pushed up */
     bottom: 5%;
-    left: 10%;
+    left: 5%;
+    right: 30%;
+    font-size: 0.8em;
+    font-weight: 200;
+    line-height: 90%
+}
+
+.card > .pick-amount {
+    position: absolute;
+    text-align: right;
+    bottom: 5%;
+    left: 60%;
     right: 5%;
-    font-size: 0.9em;
-    overflow: hidden;
+    font-size: 1.2em;
     font-weight: 300;
+    text-transform: uppercase;
 }

@@ -10,27 +10,33 @@ let mainWindow;
 
 function createWindow() {
     global.nah = {}; // our little namespace object thing. Just don't wanna pollute the global object
-    global.nah.settings = helper.fileToJSON(helper.consts.resRootPath + helper.consts.settingsFileName);
 
-    mainWindow = new BrowserWindow({
-        titleBarStyle: "hidden",
-        autoHideMenuBar: true,
-        width: global.nah.settings.width,
-        height: global.nah.settings.height
-    });
+    helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.settingsFileName, function(settingsJson) {
+        global.nah.settings = settingsJson;
 
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, "app/index.html"),
-        protocol: "file:",
-        slashes: true
-    }));
+        mainWindow = new BrowserWindow({
+            titleBarStyle: "hidden",
+            autoHideMenuBar: true,
+            width: global.nah.settings.width,
+            height: global.nah.settings.height
+        });
 
-    if(global.nah.settings.debug) {
-        mainWindow.webContents.openDevTools();
-    }
+        mainWindow.loadURL(url.format({
+            pathname: path.join(__dirname, "app/index.html"),
+            protocol: "file:",
+            slashes: true
+        }));
 
-    mainWindow.on("closed", function() {
-        mainWindow = null;
+        if(global.nah.settings.debug) {
+            mainWindow.webContents.openDevTools();
+        }
+
+        mainWindow.on("closed", function () {
+            mainWindow = null;
+        });
+    }, function(err) {
+        console.error("Encountered an error when trying to read settings.json file");
+        console.error(err);
     });
 }
 

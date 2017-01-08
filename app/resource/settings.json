@@ -1,6 +1,5 @@
 {
     "debug": "true",
-    "width": 1280,
-    "height": 720,
-    "defaultProfile": null
+    "width": 1024,
+    "height": 800
 }

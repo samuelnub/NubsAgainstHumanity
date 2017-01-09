@@ -118,17 +118,35 @@ exports.sanitizeString = function(message) {
     return (typeof message == "string" ? message.split(/<script>|<\/script>/g).join("") : "You numbnut.");
 };
 
-exports.placeElementInContainer = function(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, row, col) {
+exports.placeElementInContainer = function(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, params /* row, col (width), insertBeforeCol (x axis-ordering), centred (bool) */) {
+        const ourParams = {
+            row: (params.hasOwnProperty("row") ? params.row : 0),
+            col: (params.hasOwnProperty("col") ? params.col : 12),
+            insertBeforeCol: (params.hasOwnProperty("insertBeforeCol") ? params.insertBeforeCol : -1),
+            centred: (params.hasOwnProperty("centred") ? params.centred : false)
+        };
+        
         parentContainer = (typeof parentContainer == "string" ? document.getElementById(parentContainer) : parentContainer);
         
+        if(ourParams.centred) {
+            yourElement.classList.add("span", "centred");
+        }
+
         const rows = parentContainer.getElementsByClassName("row");
         if(rows.length === 0) {
-            console.log("You tried putting an element into a container with no rows! You idiot!");
+            console.error("You tried putting an element into a container with no rows! You idiot!");
             return false;
         }
-        row = (rows.length > row ? row : (rows.length - 1 >= 0 ? rows.length - 1 : 0));
-        yourElement.classList.add("col-sm-" + col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
-        rows[row].appendChild(yourElement);
+
+        ourParams.row = (ourParams.row < rows.length && ourParams.row >= 0 ? ourParams.row : 0);
+        yourElement.classList.add("col-sm-" + ourParams.col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
+        
+        if(ourParams.insertBeforeCol < rows[ourParams.row].childNodes.length && ourParams.insertBeforeCol >= 0) {
+            rows[ourParams.row].insertBefore(yourElement, rows[ourParams.row].childNodes[ourParams.insertBeforeCol]);
+        }
+        else {
+            rows[ourParams.row].appendChild(yourElement);
+        }
         return true;
 };
 

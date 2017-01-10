@@ -115,6 +115,11 @@ body {
     right: 5%;
     font-size: 1.5em;
     font-weight: 400;
+    border: none;
+}
+
+.card > textarea[class="blank-input"]:focus {
+    outline: none !important;
 }
 
 .centred {

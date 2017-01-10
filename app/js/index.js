@@ -77,6 +77,7 @@
         else {
             const blankInputDiv = document.createElement("textarea");
             blankInputDiv.classList.add("blank-input");
+            blankInputDiv.setAttribute("placeholder", "________");
             card.appendChild(blankInputDiv);
         }
 

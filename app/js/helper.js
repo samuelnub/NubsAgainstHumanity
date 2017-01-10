@@ -115,7 +115,7 @@ exports.createUUID = function() {
 };
 
 exports.sanitizeString = function(message) {
-    return (typeof message == "string" ? message.split(/<script>|<\/script>/g).join("") : "You numbnut.");
+    return (typeof message == "string" ? message.split(/<script|<\/script/g).join("") : "You numbnut.");
 };
 
 exports.placeElementInContainer = function(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, params /* row, col (width), insertBeforeCol (x axis-ordering), centred (bool) */) {
@@ -150,7 +150,7 @@ exports.placeElementInContainer = function(parentContainer /* Pass an HTML eleme
         return true;
 };
 
-exports.addAnimationToElement = function(animName, element, infinite) {
+exports.addAnimationToElement = function(animName, element, infinite, callback /* 1 argument with the element you gave it - not sure if it'll be needed, but eh lol */) {
     element.classList.add("animated", animName);
     if(infinite) {
         element.classList.add("infinite");
@@ -159,13 +159,16 @@ exports.addAnimationToElement = function(animName, element, infinite) {
         element.addEventListener("animationend", function removeAnimation() {
             element.classList.remove("animated", animName);
             element.removeEventListener("animationend", removeAnimation);
+            if(typeof callback == "function") {
+                callback(element);
+            }
         });
     }
     return element;
 };
 
 exports.getElementByClassAndUUID = function(className, UUID) {
-    return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.hasOwnProperty(className) ? document.getElementById(uuid) : undefined);
+    return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.contains(className) ? document.getElementById(uuid) : undefined);
 }
 
 // Helpers for these helper functions. nice lol

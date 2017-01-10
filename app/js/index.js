@@ -38,10 +38,13 @@
                     const cardColour = (leftToDo % 2 === 0 ? "white" : "black");
                     helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInRightBig", createCardElement({
                         colour: cardColour,
-                        text: "Hello ______! How <i>you</i> doin?",
+                        text: "Hello ______! How <i>you</i> doin? I'm doin' good, baby! Nice to see that someone else is also as big of a cuck as I am. Niiiiiiiiiice. Eggnog.",
                         packName: "You cuck.",
                         pickAmount: 3,
-                        blank: true
+                        blank: true,
+                        submitCallback: function() {
+                            console.log("hi!");
+                        }
                     })), {
                         row: (leftToDo % 2 === 0 ? 0 : 1),
                         col: 12,
@@ -59,41 +62,94 @@
             text: (params.hasOwnProperty("text") ? params.text : "You nutsack. There was no text content given."),
             packName: (params.hasOwnProperty("packName") ? params.packName : "The idiot pack, by Sam"),
             pickAmount: (params.hasOwnProperty("pickAmount") ? params.pickAmount : 0),
-            blank: (params.hasOwnProperty("blank") ? params.blankCallback : false),
+            blank: (params.hasOwnProperty("blank") ? params.blank : false),
             submitCallback: (params.hasOwnProperty("submitCallback") ? params.submitCallback : undefined),
             existingUUID: (params.hasOwnProperty("existingUUID") ? params.existingUUID : undefined)
         };
         
-        const card = document.createElement("div");
-        card.classList.add("card", (ourParams.colour === "white" || ourParams.colour === "black" ? ourParams.colour : "black"));
-        card.id = (typeof ourParams.existingUUID == "undefined" ? helper.createUUID() : ourParams.existingUUID);
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card", (ourParams.colour === "white" || ourParams.colour === "black" ? ourParams.colour : "black"));
+        cardDiv.id = (typeof ourParams.existingUUID == "undefined" ? helper.createUUID() : ourParams.existingUUID);
 
-        if(ourParams.blank === false) {
-            const textDiv = document.createElement("div");
-            textDiv.classList.add("text");
-            textDiv.innerHTML = helper.sanitizeString(ourParams.text);
-            card.appendChild(textDiv);
-        }
-        else {
-            const blankInputDiv = document.createElement("textarea");
+        let blankInputDiv;
+        let textDiv;
+
+        if(ourParams.blank === true) {
+            blankInputDiv = document.createElement("textarea");
             blankInputDiv.classList.add("blank-input");
             blankInputDiv.setAttribute("placeholder", "________");
-            card.appendChild(blankInputDiv);
+            cardDiv.appendChild(blankInputDiv);
+        }
+        else {
+            textDiv = document.createElement("div");
+            textDiv.classList.add("text");
+            textDiv.innerHTML = helper.sanitizeString(ourParams.text);
+            cardDiv.appendChild(textDiv);
         }
 
         const packNameDiv = document.createElement("div");
         packNameDiv.classList.add("pack-name");
         packNameDiv.innerHTML = helper.sanitizeString(ourParams.packName);
-        card.appendChild(packNameDiv);
+        cardDiv.appendChild(packNameDiv);
+
+        let pickAmountDiv;
 
         if(ourParams.colour === "black" && typeof ourParams.pickAmount != "undefined" && ourParams.pickAmount > 0) {
-            const pickAmountDiv = document.createElement("div");
+            pickAmountDiv = document.createElement("div");
             pickAmountDiv.classList.add("pick-amount");
-            pickAmountDiv.innerHTML = "PICK " + ourParams.pickAmount;
-            card.appendChild(pickAmountDiv);
+            pickAmountDiv.innerHTML = ourParams.pickAmount;
+            cardDiv.appendChild(pickAmountDiv);
         }
 
-        return card;
+        if(typeof ourParams.submitCallback == "function") {
+            const overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("overlay");
+
+            const submitButton = document.createElement("button");
+            submitButton.classList.add("submit");
+            submitButton.innerHTML = "Submit";
+            submitButton.addEventListener("click", function (e) {
+                ourParams.submitCallback({
+                    colour: ourParams.colour,
+                    text: (ourParams.blank ? blankInputDiv.value : textDiv.innerHTML),
+                    packName: packNameDiv.innerHTML, // TODO: get user-set stuff for these 2
+                    pickAmount: (typeof pickAmountDiv != "undefined" ? pickAmountDiv.innerHTML : ourParams.pickAmount),
+                    blank: ourParams.blank,
+                    uuid: cardDiv.id,
+                    cardDiv: cardDiv
+                });
+            });
+            overlayDiv.appendChild(submitButton);
+            overlayDiv.addEventListener("click", function (e) {
+
+            });
+
+            overlayDiv.style.visibility = "hidden";
+            submitButton.style.visibility = "hidden";
+            cardDiv.appendChild(overlayDiv);
+
+            cardDiv.addEventListener("click", function (e) {
+                if(!cardDiv.classList.contains("selected")) {
+                    cardDiv.classList.add("selected");
+                    overlayDiv.style.visibility = "visible";
+                    submitButton.style.visibility = "visible";
+                    helper.addAnimationToElement("slideInUp", overlayDiv, false, function () {
+                    });
+                }
+                else {
+                    cardDiv.classList.remove("selected");
+                    // There'll be a visible "flash" of the button if i only animated the parent overlayDiv, so i gotta do it seperately for now
+                    helper.addAnimationToElement("slideOutUp", submitButton, false, function () {
+                        submitButton.style.visibility = "hidden";
+                    });
+                    helper.addAnimationToElement("slideOutDown", overlayDiv, false, function () {
+                        overlayDiv.style.visibility = "hidden";
+                    });
+                }
+            });
+        }
+
+        return cardDiv;
     }
 
 })();

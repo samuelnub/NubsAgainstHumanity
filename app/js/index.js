@@ -40,7 +40,8 @@
                         colour: cardColour,
                         text: "Hello ______! How <i>you</i> doin?",
                         packName: "You cuck.",
-                        pickAmount: 3
+                        pickAmount: 3,
+                        blank: true
                     })), {
                         row: (leftToDo % 2 === 0 ? 0 : 1),
                         col: 12,
@@ -67,12 +68,17 @@
         card.classList.add("card", (ourParams.colour === "white" || ourParams.colour === "black" ? ourParams.colour : "black"));
         card.id = (typeof ourParams.existingUUID == "undefined" ? helper.createUUID() : ourParams.existingUUID);
 
-        
-
-        const textDiv = document.createElement("div");
-        textDiv.classList.add("text");
-        textDiv.innerHTML = helper.sanitizeString(ourParams.text);
-        card.appendChild(textDiv);
+        if(ourParams.blank === false) {
+            const textDiv = document.createElement("div");
+            textDiv.classList.add("text");
+            textDiv.innerHTML = helper.sanitizeString(ourParams.text);
+            card.appendChild(textDiv);
+        }
+        else {
+            const blankInputDiv = document.createElement("textarea");
+            blankInputDiv.classList.add("blank-input");
+            card.appendChild(blankInputDiv);
+        }
 
         const packNameDiv = document.createElement("div");
         packNameDiv.classList.add("pack-name");

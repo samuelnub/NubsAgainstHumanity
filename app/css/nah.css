@@ -42,6 +42,7 @@ body {
 }
 
 .card {
+    text-align: center;
     /*padding-bottom: 3.2in; /* It's around 2.5 inches wide, 3.5 inches high */
     height: 3.2in;
     max-width: 2in;
@@ -100,6 +101,20 @@ body {
     font-size: 1.2em;
     font-weight: 300;
     text-transform: uppercase;
+}
+
+.card > textarea[class="blank-input"] {
+    width: 90%;
+    height: 70%;
+    resize: none;
+    position: absolute;
+    text-align: left;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    font-size: 1.5em;
+    font-weight: 400;
 }
 
 .centred {

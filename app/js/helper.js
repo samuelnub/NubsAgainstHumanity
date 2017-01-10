@@ -129,7 +129,7 @@ exports.placeElementInContainer = function(parentContainer /* Pass an HTML eleme
         parentContainer = (typeof parentContainer == "string" ? document.getElementById(parentContainer) : parentContainer);
         
         if(ourParams.centred) {
-            yourElement.classList.add("span", "centred");
+            yourElement.classList.add("centred");
         }
 
         const rows = parentContainer.getElementsByClassName("row");
@@ -163,6 +163,10 @@ exports.addAnimationToElement = function(animName, element, infinite) {
     }
     return element;
 };
+
+exports.getElementByClassAndUUID = function(className, UUID) {
+    return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.hasOwnProperty(className) ? document.getElementById(uuid) : undefined);
+}
 
 // Helpers for these helper functions. nice lol
 function getCorrectPath(filePath) {

@@ -1,3 +1,7 @@
 8 Jan 2017
     Apparently you need "span" and "centred" classes in your element (within each row)
     for the centering to work
+
+9 Jan 2017
+    What am I? some sort of idiot? (yea), well, I just needed a custom .centred class.
+    I'm sorry CSS gods, I guess I haven't sacrificed enough divs.

@@ -3,13 +3,14 @@ const http = require("http");
 
 exports.consts = {
     resRootPath: "./app/resource/",
-    resDecksPath: "./app/resource/decks/",
+    resCardsPath: "./app/resource/cards/",
     resProfilesPath: "./app/resource/profiles/",
 
     settingsFileName: "settings.json"
 };
 
-exports.fileToJSON = function(filePath) {
+exports.fileToJSON = fileToJSON;
+function fileToJSON(filePath) {
     try {
         const fileContents = fs.readFileSync(getCorrectPath(filePath));
         return JSON.parse(fileContents);
@@ -32,9 +33,10 @@ exports.JSONToFile = function(filePath, json) {
         console.error("Encountered an error when trying to write file");
         console.error(err);
     }
-};
+}
 
-exports.fileToJSONAsync = function(filePath, callback /* Should have 1 argument, the returned parsed JSON object */, failureCallback) {
+exports.fileToJSONAsync = fileToJSONAsync;
+function fileToJSONAsync(filePath, callback /* Should have 1 argument, the returned parsed JSON object */, failureCallback) {
     fs.readFile(getCorrectPath(filePath), function(err, data) {
         if(err) {
             console.error("Encountered an error when trying to read file asynchronously");
@@ -59,7 +61,8 @@ exports.fileToJSONAsync = function(filePath, callback /* Should have 1 argument,
     });
 };
 
-exports.JSONToFileAsync = function(filePath, json, callback, failureCallback) {
+exports.JSONToFileAsync = JSONToFileAsync;
+function JSONToFileAsync(filePath, json, callback, failureCallback) {
     fs.writeFile(getCorrectPath(filePath), JSON.stringify(json, null, 4), function(err) {
         if(err) {
             console.error("Encountered an error when trying to write file asynchronously");
@@ -74,7 +77,8 @@ exports.JSONToFileAsync = function(filePath, json, callback, failureCallback) {
     });
 };
 
-exports.httpGetJSON = function(url /* No http://, just example www.google.com/boots_and_cats */, callback /* Also should take 1 argument, with the parsed JSON */, failureCallback) {
+exports.httpGetJSON = httpGetJSON;
+function httpGetJSON(url /* No http://, just example www.google.com/boots_and_cats */, callback /* Also should take 1 argument, with the parsed JSON */, failureCallback) {
     http.get({
         host: splitStringAtIndex(url, url.search("/")).first,
         path: splitStringAtIndex(url, url.search("/")).second
@@ -106,7 +110,8 @@ exports.httpGetJSON = function(url /* No http://, just example www.google.com/bo
     });
 };
 
-exports.createUUID = function() {
+exports.createUUID = createUUID;
+function createUUID() {
     // http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -114,11 +119,63 @@ exports.createUUID = function() {
     });
 };
 
-exports.sanitizeString = function(message) {
+exports.sanitizeString = sanitizeString;
+function sanitizeString(message) {
     return (typeof message == "string" ? message.split(/<script|<\/script/g).join("") : "You numbnut.");
 };
 
-exports.placeElementInContainer = function(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, params /* row, col (width), insertBeforeCol (x axis-ordering), centred (bool) */) {
+exports.debugMessageRenderer = function(message) {
+    const stillThereAnimName = "shake";
+    if(!document.getElementById("debug-banner") || (document.getElementById("debug-banner") && document.getElementById("debug-banner").classList.contains("animated") && !document.getElementById("debug-banner").classList.contains(stillThereAnimName))) {
+        if(document.getElementById("debug-banner")) {
+            document.body.removeChild(document.getElementById("debug-banner"));
+        }
+        const debugDiv = document.createElement("div");
+        debugDiv.id = "debug-banner";
+
+        const debugText = document.createElement("p");
+        debugText.id = "debug-text";
+        debugText.innerHTML = sanitizeString(message);
+        debugDiv.appendChild(debugText);
+
+        const closeButton = document.createElement("button");
+        const buttonTexts = [
+            "Who cares.",
+            "Go away.",
+            "Shoo.",
+            "Please leave.",
+            "Why.",
+            "Alright.",
+            "Ok.",
+            "Sure, man.",
+            "No.",
+            "Accept",
+            "Oh no.",
+            "What a curse.",
+            "Damn.",
+            "Heck.",
+            "That sucks.",
+            "No way José",
+            "\uD83D\uDE04\uD83D\uDD2B"
+        ];
+        closeButton.innerHTML = buttonTexts[Math.floor(Math.random() * buttonTexts.length)];
+        closeButton.addEventListener("click", function(e) {
+            addAnimationToElement("slideOutUp", debugDiv, false, function() {
+                document.body.removeChild(debugDiv);
+            });
+        });
+        debugDiv.appendChild(closeButton);
+
+        document.body.appendChild(addAnimationToElement("bounceInDown", debugDiv, false));
+    }
+    else {
+        document.getElementById("debug-text").innerHTML = sanitizeString(message);
+        addAnimationToElement(stillThereAnimName, document.getElementById("debug-banner"), false);
+    }
+};
+
+exports.placeElementInContainer = placeElementInContainer;
+function placeElementInContainer(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, params /* row, col (width), insertBeforeCol (x axis-ordering), centred (bool) */) {
         const ourParams = {
             row: (params.hasOwnProperty("row") ? params.row : 0),
             col: (params.hasOwnProperty("col") ? params.col : 12),
@@ -150,7 +207,8 @@ exports.placeElementInContainer = function(parentContainer /* Pass an HTML eleme
         return true;
 };
 
-exports.addAnimationToElement = function(animName, element, infinite, callback /* 1 argument with the element you gave it - not sure if it'll be needed, but eh lol */) {
+exports.addAnimationToElement = addAnimationToElement;
+function addAnimationToElement(animName, element, infinite, callback /* 1 argument with the element you gave it - not sure if it'll be needed, but eh lol */) {
     element.classList.add("animated", animName);
     if(infinite) {
         element.classList.add("infinite");
@@ -167,7 +225,8 @@ exports.addAnimationToElement = function(animName, element, infinite, callback /
     return element;
 };
 
-exports.textMoveCursorToEnd = function(e) {
+exports.textMoveCursorToEnd = textMoveCursorToEnd;
+function textMoveCursorToEnd(e) {
     // use this as your "click" event listener function
     e.target.focus();
     const value = e.target.value;
@@ -175,16 +234,116 @@ exports.textMoveCursorToEnd = function(e) {
     e.target.value = value;
 };
 
-exports.getElementByClassAndUUID = function(className, UUID) {
+exports.getElementByClassAndUUID = getElementByClassAndUUID;
+function getElementByClassAndUUID(className, UUID) {
     return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.contains(className) ? document.getElementById(uuid) : undefined);
+};
+
+exports.createCardElement = createCardElement;
+function createCardElement(params /* colour: "black" or "white" | text: yep. | packName: pack name, doesnt have to be unique | pickAmount: number, will not show if its white | blank: bool, will overwrite any text | submitCallback: what function to fire when the user submits this stupid card. takes 1 argument, with cardInfo. | existingUUID: string */) {
+    const ourParams = {
+        colour: (params.hasOwnProperty("colour") ? params.colour : "black"),
+        text: (params.hasOwnProperty("text") ? params.text : "You nutsack. There was no text content given."),
+        packName: (params.hasOwnProperty("packName") ? params.packName : "The idiot pack, by Sam"),
+        pickAmount: (params.hasOwnProperty("pickAmount") ? params.pickAmount : 0),
+        blank: (params.hasOwnProperty("blank") ? params.blank : false),
+        submitCallback: (params.hasOwnProperty("submitCallback") ? params.submitCallback : undefined),
+        existingUUID: (params.hasOwnProperty("existingUUID") ? params.existingUUID : undefined)
+    };
+
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card", (ourParams.colour === "white" || ourParams.colour === "black" ? ourParams.colour : "black"));
+    cardDiv.id = (typeof ourParams.existingUUID == "undefined" ? createUUID() : ourParams.existingUUID);
+
+    let blankInputDiv;
+    let textDiv;
+
+    if (ourParams.blank === true) {
+        blankInputDiv = document.createElement("textarea");
+        blankInputDiv.classList.add("blank-input");
+        blankInputDiv.setAttribute("placeholder", "________");
+        blankInputDiv.addEventListener("click", textMoveCursorToEnd);
+        cardDiv.appendChild(blankInputDiv);
+    }
+    else {
+        textDiv = document.createElement("div");
+        textDiv.classList.add("text");
+        textDiv.innerHTML = sanitizeString(ourParams.text);
+        cardDiv.appendChild(textDiv);
+    }
+
+    const packNameDiv = document.createElement("div");
+    packNameDiv.classList.add("pack-name");
+    packNameDiv.innerHTML = sanitizeString(ourParams.packName);
+    cardDiv.appendChild(packNameDiv);
+
+    let pickAmountDiv;
+
+    if (ourParams.colour === "black" && typeof ourParams.pickAmount != "undefined" && ourParams.pickAmount > 0) {
+        pickAmountDiv = document.createElement("div");
+        pickAmountDiv.classList.add("pick-amount");
+        pickAmountDiv.innerHTML = ourParams.pickAmount;
+        cardDiv.appendChild(pickAmountDiv);
+    }
+
+    if (typeof ourParams.submitCallback == "function") {
+        const submitDiv = document.createElement("div");
+        submitDiv.classList.add("submit");
+        submitDiv.innerHTML = "Submit";
+        submitDiv.addEventListener("click", function (e) {
+            ourParams.submitCallback({
+                colour: ourParams.colour,
+                text: (ourParams.blank ? sanitizeString(blankInputDiv.value) : sanitizeString(textDiv.innerHTML)),
+                packName: sanitizeString(packNameDiv.innerHTML), // TODO: get user-set stuff for these 2
+                pickAmount: (typeof pickAmountDiv != "undefined" ? pickAmountDiv.innerHTML : ourParams.pickAmount),
+                blank: ourParams.blank,
+                uuid: cardDiv.id,
+                cardDiv: cardDiv
+            });
+        });
+        submitDiv.style.visibility = "hidden";
+        cardDiv.appendChild(submitDiv);
+
+        const cancelDiv = document.createElement("div");
+        cancelDiv.classList.add("cancel");
+        cancelDiv.innerHTML = "Cancel";
+        cancelDiv.addEventListener("click", function (e) {
+            cardDiv.classList.remove("selected");
+            addAnimationToElement("slideOutUp", submitDiv, false, function () {
+                submitDiv.style.visibility = "hidden";
+            });
+            addAnimationToElement("slideOutDown", cancelDiv, false, function () {
+                cancelDiv.style.visibility = "hidden";
+            });
+        });
+        cancelDiv.style.visibility = "hidden";
+        cardDiv.appendChild(cancelDiv);
+
+        const clickableDiv = document.createElement("div");
+        clickableDiv.classList.add("clickable");
+        clickableDiv.addEventListener("click", function (e) {
+            if (!cardDiv.classList.contains("selected") && submitDiv.style.visibility !== "visible" && cancelDiv.style.visibility !== "visible") {
+                cardDiv.classList.add("selected");
+                submitDiv.style.visibility = "visible";
+                cancelDiv.style.visibility = "visible";
+                addAnimationToElement("slideInDown", submitDiv, false); // You could add a callback
+                addAnimationToElement("slideInUp", cancelDiv, false);
+            }
+        });
+        cardDiv.appendChild(clickableDiv);
+    }
+
+    return cardDiv;
 }
 
 // Helpers for these helper functions. nice lol
+exports.getCorrectPath = getCorrectPath;
 function getCorrectPath(filePath) {
     // A crappy hack, will utterly fail if the user decides to put their executable somewhere deep down where this string can be found in its filepath
     return (process.execPath.search("\\\\node_modules\\\\electron\\\\dist\\\\electron") !== -1 ? filePath : process.resourcesPath + "/app/" + filePath.split("./").join(""));
 }
 
+exports.splitStringAtIndex = splitStringAtIndex;
 function splitStringAtIndex(message, index) {
     return {
         first: message.substring(0, index),

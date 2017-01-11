@@ -1,0 +1,1369 @@
+{
+    "packName": "[C] Northernlion",
+    "alias": "c-northernlion",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Best game of 2013? _, of course.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "How do you get your dog to stop humping your leg?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ sounds like a great alternative rock band.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. Everything else is uncivilized.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_? It's a DLC item.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Oh god, I can't believe we ate _ at PAX.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Only in Korea can you see _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The Holy Trinity: _, _, and _!",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "When I was a kid, all we had in Lunchables were three _ and _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "On its last dying breath, _ sent out a cry for help. A bunch of _ heard the cry.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_ caused Northernlion to take stupid damage.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ Is the best item in The Binding of Isaac.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Everything's coming up _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Even _ is/are better at video games than Northernlion.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "But that _ has sailed.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Get in my _ zone.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Fuck the haters, this is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Finding something like _ would turn this run around.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_: The Northernlion Story.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is/are Northernlion's worst nightmare.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is the worst item in The Binding of Isaac.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "As always, I will _ you next time!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "\"Hey everybody and welcome to Let's Look At _!\"",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_? Well, I won't look a gift horse in the mouth on that one.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "More like the Duke of _, right?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "No one man should have all that _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Let's Look At: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's latest novelty Twitter account is @_.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's refusal to Let's Play _ was probably a good call.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Of all the things that Ryan and Josh have in common, they bond together through their mutual love of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Northernlion has been facing ridicule for calling _ a rogue-like.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Northernlion always forgets the name of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm in the permanent _ state.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "If sloth _ are wrong I don't want to be right.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I can do _ and die immediately afterward.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I don't even see _ anymore; all I see are blondes, brunettes, redheads...",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "JSmithOTI: Total _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Legend has it, the Thug of Porn was arrested for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Invaded the world of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's _, ya dangus!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Whenever I _, take a drink.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "We're rolling in _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ was full of leeches.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What do you give to the CEO of Youtube as a gift?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Dang it, _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Today's trivia topic is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My apologies to the _ estate.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The Youtube chat proved ineffective, so instead we had to communicate via _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Pimp your _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The stream was going well until _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Travel by _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This new game is an interesting _-like-like.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What interrupted the #NLSS?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Say that to my face one more time and I'll start _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Roguelike? How about _-like.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The stream broke when Ryuka stepped on the _ key.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Recently, Northernlion has felt woefully insecure due to _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Krazy Mike lost to _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The hero of the stream was _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Oh my god, he's using _ magic!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Sometimes, a man's just gotta _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ has invaded!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "One thing Northernlion was right about was _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What would you do if Ohm really did just die?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "JSmithOTI is referred to as a Scumlord, but his friends call him _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Praise the _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "We're having technical difficulties due to _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I beat Blue Baby with only _ and _!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Northernlion has alienated fans of _ by calling them _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Northernlion was fired from his teaching job and had to flee South Korea after an incident involving _ and _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's doctor diagnosed him today with _, an unfortunate condition that would lead to _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_ was indicted on account of _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_: The _ Story.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "And now we're going to be fighting _ on _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Hello everybody, welcome to a new episode of _ plays _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I'd sacrifice _ at the Altar.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Fox would still be here if not for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I wasn't even that drunk! I just had some _, _, and _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "The only way NL is ever going to make it to Hell in Spelunky is by using _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Welcome back to The Binding of Isaac. Today's challenge run will be based on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Well there's nothing wrong with _ by any stretch of the imagination.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This time on _ vs. _, we're playing _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "After winning yet another race, Josh made _ tweet about _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Today on Crusader Kings 2, NL plays King _ the _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "That's the way _ did it, that's the way _ does it, and it''s worked out pretty well so far.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "After Mars, _ is the next furthest planet from the sun.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What would Ohm do?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Ohmwrecker is known for his MLG online play. What people don't know is that he's also MLG at _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Follow MichaelALFox on Twitter and you can see pictures of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Green loves the new Paranautical Activity item _, but keeps comparing it to the crossbow.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is really essential to completing the game.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The next movie reading will be of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "How did Northernlion unite Scotland?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What gave Ohmwrecker his gaming powers?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Hello anybody, I am _Patrol.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My channel is youtube.com/_.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's cat Ryuka is known for _ while he records.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My name is _ and today we'll be checking out _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "It's true that Green9090 is _, but we must all admit that Ohm is better at _",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I have _, can you _ me?",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_! Get off the _!",
+            "pickAmount": 2,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Reddit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Novelty Twitter accounts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Olmec.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Type-C Tetris music.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "YouTube.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "South Korea.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A big wet pink laser sword.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A brief moment of aptitude.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "John Madden.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Maple syrup.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A mile-long penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lara Croft.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A delicious baby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A butt egg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A street cleaning simulator.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "DOTA 2.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "#Krazymike.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Bane impression.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Steven Docking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/r/Letsplay.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/r/sloths.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting wood.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting corner fucked.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Harry Potter and the Chamber of a Salty Surprise.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Greed.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Infomercials.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hookers, blow, and JSmithOTI.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "JSmithOTI.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eyeless ooze guys.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ohm, our god.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Excuse me?",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "RedPandaGamer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fat Robert Downey Jr.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "#MikeBithell.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Falling down the stairs with a bag full of glass.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Green9090.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fuck tables.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Zen.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Feline eugenics.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "AlpacaPatrol.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Garglebutts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Travelling by bones.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fucking during a Diphtheria epidemic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Childlike bukakke.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Losing to Quelaag 12 times in 72 minutes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A water supply full of leeches.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "JSmith's laundry.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Michael Caine's spider collection.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mount Your Friends: Docking Edition.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Michaelalfox.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ryuka.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Michaelalfox's love of cheese.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The blue candle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Michaelalfox's muscles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ohmsdrawings.tumblr.com.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Soul level 1 invasions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Milking the poop for red hearts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "youtube.com/Ohmwrecker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kate's Mario Party skills.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drinkable fire.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Krazy Mike doing a backflip, throwing a talking nut, and chanting \"Hello!\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "This cat, I swear to god.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Using the tears of an abused toddler to conquer my foes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Krazy Mike.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ohmwrecker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Up in the air like a George Clooney movie.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Like you, but not rogue-like you.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A lemon mishap.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Losing to Monstro after 300 hours of experience.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Josh's washing machine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The backroom casting couch.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dang it, Bobby!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The fuck zone.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bejeweed.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being terrible at games.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Beating it on camera.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anything from http://www.thenorthernlionstory.com/.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BOOYAH!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Blue Baby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Blondes, brunettes, and redheads.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Big Hat Logan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A butt pooping upwards an egg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bunch of jabronies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An old man carrying a box of glass down stairs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A little bit of added defense.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A docking sleeve.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dark holes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Detroit Dock City.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crazy Mike.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cross-dimensional fucking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dung pies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dying in a hang gliding accident. ",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Docking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "DockLeeSmile.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Butt meat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Checking the wiki.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bow to your sensei!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Brimstone.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Coming on Milhouse.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Corner fucking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cheeseysaurus Rex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Classic Northernlion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "#ShotsFired.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "JSmith's salty nuts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Butterjail.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Banana bread.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A DraculaFetus animation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A profile pic that looks like a dick and balls.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Spy Party racism.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The ghost of Ohmwrecker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shooting the black guy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ohm's mindgames.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Magic: The Gathering.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A failed challenge run.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A beef swarm.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Setting the world on fire.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pot magic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rogue-like likes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "RockLeeSmile.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ronald McDonald.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Roll Fizzlebeef.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shit happens.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Solaire of Astora.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shooting the poop.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pretending youtube let's playing is a real job.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poutine-induced diabetes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Putting your balls in her butt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Projectile annoyance.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Quelaag's Furysword.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Puzzle platformers with rogue-like elements.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Residue.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's coffee maker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's hair.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's pooping album.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Not Satan, I promise.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Permanent Polaroid invincibility.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poison Mushroom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mom's knife.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mom's pad.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Monty.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A motherfucker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Motherfucking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nipple hair.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Northernlion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Northernlion's cancelled Assassin's Creed II let's play.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Striking fear into the hearts of your enemies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A total scumbag.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Ozymandias head.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Talking nuts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That damned HDPVR.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Thug of Porn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The World Docking Champion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Four Horsemen of The Apocolypse.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Well, what is it?",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Patrick Dempsey thrusting violently into my midsection.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The NLSS: drawing unwanted attention from the actual docking community.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The USS Buttfucker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vaginal silk worms.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Thornforg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "When you fuck a dog in the ass and it shits all over your dick.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The saga of Krazy Mike.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A urination break.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Anor Londo Archers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stupid damage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A tactical backflip.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stream lag.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The notorious Grey's Anatomy let's play.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Binding of Isaac wiki.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Northernlion Story.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whispering sweet nothings into your rear.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

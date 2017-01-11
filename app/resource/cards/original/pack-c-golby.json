@@ -1,0 +1,604 @@
+{
+    "packName": "[C] Golby Fan Club",
+    "alias": "c-golby",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "_ is camping my lane.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Hey guys, check out my _ montage!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "BENCH ALL THE _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's DJ Manny in the hizouse, playing _ all night long!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Tom is good, but he's not _ good.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Jorgi the Corgi most definitely enjoys _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Connie the Condor often doesn't talk on skype because of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Every weekend, Golby enjoys drinking _ before getting into a fight with _ and having sex with _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "Every weekend, Golby likes to _ then _ before finally _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "What strange Korean delicacy will Mark enjoy today?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I got a new tattoo, it looks a bit like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When Barta isn't talking he's _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Cindi suddenly turned into Steven after _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You're so _ I'll have to delete you.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "On a night out, Golby will traditionally get into a fight with a _ then have sex with a _ before complaining about a hangover from too much _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "_ + _ = Golby.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "The OGN was fun, but there was far too much _ cosplay.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "\"What are you thinking?\" \"You know, _ and stuff.\"",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Jumanji.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wards.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "K-Pop.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doing Gangnam Style at a funeral.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "125% Reccomended Daily Allowance of cock.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "PEEEEEEEEEEEEEEEENIIIISSSSSSSS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "STEAL ALL THE FARM.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A 3am phone call.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ezreal's hot sugary ass.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Build an Aegis!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wildturtle's vast range of emotions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "joseph gordon-Levitt wearing nothing but a kitten.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Barta not being sarcastic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Golby's itchy testicles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Surgery to move the male g-spot to the naval.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Kirk vs Spock fight scene music.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Golby not jungling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Feeling a fart pushing against your prostate.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "I'm Batman. WHERE ARE THEY?!?",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Band Camp.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Superman tattoo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "smoochy moochy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Blanda Upp!.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gary Glitter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A nice guy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hestkuk.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "bronze scrub.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My 6.3 KDA ratio.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fucking tryhard.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Get on my level.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An undetermined but significant quantity of penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Those moments when you're bored and pucker your anus to a good beat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Shawk.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Confounding jerry at every turn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "They're taking the hobbits to Isengard!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Taking the second and third blue buff.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Invisible stabwounds.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Barta's glorious hair.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BENCH ALL THE MOTHERS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Merchant Navy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Extensive research by Trygve.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lulu's double E.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A blurry picture.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Manny's epic laugh.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Clearly jealous.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Trygvipedia.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chak looking like Ross Kemp on a good day.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Teabagging a siamese midget while benchpressing a cybernetically enhanced bear.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "From Primark.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A very tight vest from Primark.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fisting a nun.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mother's debit card.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Benchpressing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Golbies: like the jitters but with a concern towards stabbings.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That Kevin Golby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kevin Golby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Golby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drilling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grandiosa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Norwegian Oil.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Chuckle Brothers at their mother's funeral.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Handicapped people on Takeshi's Castle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A cardboard cutout of Jennifer Lawrence.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An arsehole like a wellington top.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Wanksock.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BORK.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Emma Watson dressed as a crab dancing to K-Pop.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gotfried's voice.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Robert Pattinson with Freddy Mercury's moustache and Gilbert.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Frozen Heart Ashe.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Yorick Ult on Anivia Egg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chak making a sandwich.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jealous.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "50 Shades of Gay.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Maple Bourbon Bacon Jam.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dryhumping.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gilbert Gotfried.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "PENTAFAIL!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "I Can't Believe It's Not Butter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Phreak staring at you and never blinking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tons of Damage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Questioning my sexuality.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Deman making a racist pun.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "David.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A healthy dose of Vitamin Cock and Vitamin Dick.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jamiroquai.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "When Aunt Erma visits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "THE HAWK!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chak's bald spot.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A corgi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "a corgi dressed as a viking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A corgi wearing a sailor moon outfit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A corgi wearing a hat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "CACAW!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Meowing Ride of the Valkyries during intercourse.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Because Froggen did it.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "XPEKE!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "MY HORSE IS AMAZING.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "LOOK AT MY HORSE.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Black people's nostrils.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BAWNJOURNO.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

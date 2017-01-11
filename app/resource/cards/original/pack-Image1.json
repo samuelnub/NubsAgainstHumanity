@@ -1,0 +1,259 @@
+{
+    "packName": "[C] Joey Image 1",
+    "alias": "Image1",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "I just met you and this is crazy, but here's _, so _ maybe",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "It's only _ if you get caught!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_: The Next Generation",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Terminator 4: _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Disney presents _ on ice!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. The other white meat.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "A _ a day keeps the _ away.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I'm sweating like a _ at a _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I love the smell of _ in the morning.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You're not gonna believe this, but _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. All the cool kids are doing it.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "So I was _ in my cubicle at work, and suddenly _!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Baskin Robbins just added a 32nd flavor: _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I can drive and _ at the same time.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ ain't nothin' to fuck wit'!",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A freshly-filled diaper",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Glue",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An unusually-attractive transvestite",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hand-me-down adult diapers",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A stillborn fetus",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A disgraced pelican",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Three buckets of urine, free for 2 nights, with no late fee",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My testicles",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A black woman's vagina",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My asshole",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A whale's blowhole",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "2 Girls 1 Cup",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Big Bang Theory (TV)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Teen pregnancy",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ass hair",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vaginal warts",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ellen Degeneres",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jews Against Humanity",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Indy wrestling",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cunt",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Beating a crowd of delightful parents to death with a steel dildo",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Beating a crowd of delightful parents to death with a steel dildo while dressed as Ru Paul's brother, Ron.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A roll in the hay",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "\"Get 'em, Steve-Dave!\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "God Hates You",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Manboobs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Daniel Benoit",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vomiting in the shower",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An intellectually superior overlord",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dwight Schrute",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Casey Anthony",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Clubbin seals",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stunt cock",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anal lice",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lightsaber Dildos",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

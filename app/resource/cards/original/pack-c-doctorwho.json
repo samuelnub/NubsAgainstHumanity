@@ -1,0 +1,494 @@
+{
+    "packName": "[C] Doctor Who",
+    "alias": "c-doctorwho",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "FUN FACT: The Daleks were originally shaped to look like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "At this new Doctor Who themed restaurant, you can get a free _ if you can eat a plate of bangers and mash in under 3 minutes.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "There's a new dance on Gallifrey. It's called the _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "They announced a new LEGO Doctor Who game! Rumor has it that _ is an unlockable character.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I think the BBC is losing it. They just released a Doctor Who themed _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's a little known fact that if you send a _ to the BBC, they will send you a picture of The Doctor.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "According to the Daleks, _ is better at _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Who is going to be The Doctor's next companion?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In all of space and time you decide that _ is a good choice?!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Originally, the 50th special was going to have _ appear, but the BBC decided against it in the end.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Adipose were thought to be made of fat, but are really made of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "After we watch an episode, I've got some _-flavored Jelly Babies to hand out.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I was ok with all the BAD WOLF graffiti, until someone wrote it on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Who should be the 13th Doctor?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Jack Harkness, I can't leave you alone for a minute! I turn around and you're trying to seduce _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The Chameleon circuit is working again...somewhat. Instead of a phone booth, the TARDIS is now a _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Bowties are _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Old and busted: EXTERMINATE! New hotness: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I hear the next thing that will cause The Doctor to regenerate is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Wibbly-wobbly, timey-wimey _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's going to be The Doctor's new catchphrase?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "They found some more last episodes! They were found in _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The next Doctor Who spin-off is going to be called _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'd give up _ to travel with The Doctor.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ was sent to save _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "The Doctor did it! He saved the world again! This time using a _.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Fish fingering your custard.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The hideousness that is Raxacoricofallapatorious.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An Ood getting a starring role in a hentai.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Christopher Eccleston.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Matt Smith.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A kid in a gas mask asking if you are his mummy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Siltheen farts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The big banana in your pocket.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Taking a Doctor Poo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "David Tennant.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Opening the door of the TARDIS and leaving a deuce in the time-space continuum.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Low-budget special effects.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "River Song.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dalek porn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eggs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Finding Autons oddly attractive.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "THE END OF TIME ITSELF!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Glenn Beck convulsively puking as a brood of Daleks swarm in on him.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The fuck machine dungeon of the Cybermen.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fifty years of fanfic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Just now realizing Torchwood is an anagram of Doctor Who",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Doctor going back in time to solve a REAL problem: Twilight.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wanting to punch that teeny-bopper Whovian that's butthurt the new Doctor isn't in his twenties.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Silence",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Doctor Who body pillow.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Rusty Cyberman",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drunkenly drawing tally marks on your face.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Doctor having a chance encounter with a couple of 80s metalheads.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A shitty Doctor Who knock-knock joke.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Master, baiting the Doctor into a trap",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Davros getting up on the wrong side of the bed.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wishing you could regenerate.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Vashta Nerada that just wants a hug.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The poor costume decisions that were the 1970s.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kidnapping a barely-legal woman to time travel with.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tom Baker, in nothing but a scarf",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Walking in on Jack Harkness doing your mom. And your dad.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The buzzing noise the Sonic Screwdriver makes",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sharing a public restroom with a Weeping Angel",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bigger, bluer TARDIS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "K-9 humping your leg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Master singing Bad Case of Loving You.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rose Tyler's teeth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A GUITARDIS",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A fez caked with semen.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Robot Anne Robinson.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Steven Moffatt taking a big old dump in your Cheerios.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fapping to Billie Piper portraying a callgirl.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Your dyslexic friend that wants you to come watch a marathon of Doctor How.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Captain Jack Harkness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Celestial Toymaker's plaything.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A global simulcast that forces Whovians to see the sunlight for the first time in ages.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Costco-sized bag of Jelly Babies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being used as a plot device by Steven Moffat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A furry writing BAD WOLF everywhere.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Quitting this panel after one round because you are afraid of getting typecast.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Mary Jane Adventures.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sixteen feet of scarf bondage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting so much plastic surgery you have to be framed and moisturized.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Smoking 1,000 cigarettes, just so you can sound like a Dalek when you talk.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Slipping her the ol' plastic Mickey.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fondling a Dalek's slippery bits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Air from my lungs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Sonic Screwdriver stuck on the vibrate setting.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pouting in a rain storm and having to take a wicked piss.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Companion Porn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An acid rain shower on Skaro.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Plot holes so wide you could drive a truck through them.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A blinged out TARDIS blasting dubstep when it is traveling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The poor decision that is having a staring contest with a weeping angel.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sorry, this answer is only available in the fanfic version of Cards against Con.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

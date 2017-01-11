@@ -1,0 +1,159 @@
+{
+    "packName": "World Wide Web Pack",
+    "alias": "www",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Don't worry, Penny! Go Go Gadget _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I need you like _ needs _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I'm just gonna stay in tonight. You know, Netflix and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Nothing says \"I love you\" like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Such _. Very _. Wow.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "This app is basically Tinder, but for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "TRIGGER WARNING: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What did I nickname my genitals?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You guys, you can buy _ on the dark web.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A complete inability to understand anyone else's perspective.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A fun, sexy time at the nude beach.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A man from Craigslist.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A night of Taco Bell and anal sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A respectful discussion of race and gender on the Internet.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cat massage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Destroying Dick Cheney's last horcrux.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "<i>Game of Thrones</i> spoilers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting teabagged by a fifth grader in Call of Duty.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Goats screaming like people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Googling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Internet porn analysis paralysis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Matching with Mom on Tinder.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My browser history.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My privileged white penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pretending to be black.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Smash Mouth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Taking a shit while running at full speed.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That thing on the Internet everyone's talking about.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Three years of semen in a shoebox.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "YouTube comments.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

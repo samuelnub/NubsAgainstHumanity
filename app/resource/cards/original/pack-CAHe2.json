@@ -1,0 +1,509 @@
+{
+    "packName": "The Second Expansion",
+    "alias": "CAHe2",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "_ would be woefully incomplete without _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "During his midlife crisis, my dad got really into _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Before I run for president, I must destroy all evidence of my involvement with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My new favorite porn star is Joey \"_\" McGee.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In his newest and most difficult stunt, David Blaine must escape from _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This is your captain speaking. Fasten your seatbelts and prepare for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My mom freaked out when she looked at my browser history and found _.com/_.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "The Five Stages of Grief: denial, anger, bargaining, _, acceptance.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Members of New York's social elite are paying thousands of dollars just to experience _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I went from _ to _, all thanks to _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "Little Miss Muffet Sat on a tuffet, Eating her curds and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This month's Cosmo: \"Spice up your sex life by bringing _ into the bedroom.\"",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "If God didn't want us to enjoy _, he wouldn't have given us _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "My country, 'tis of thee, sweet land of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "After months of debate, the Occupy Wall Street General Assembly could only agree on \"More _!\"",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I spent my whole life working toward _, only to have it ruined by _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Next time on Dr. Phil: How to talk to your child about _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Only two things in life are certain: death and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Everyone down on the ground! We don't want to hurt anyone. We're just here for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The healing process began when I joined a support group for victims of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The votes are in, and the new high school mascot is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Charades was ruined for me forever when my mom had to act out _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Before _, all we had was _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Tonight on 20/20: What you don't know about _ could kill you.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You haven't truly lived until you've experienced _ and _ at the same time.",
+            "pickAmount": 2,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Being awesome at sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Spring break!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Another shot of morphine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dining with cardboard cutouts of the cast of \"Friends.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A soulful rendition of \"Ol' Man River.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Making a friend.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sweaty, panting leather daddy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Intimacy problems.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The new Radiohead album.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pretty Pretty Princess Dress-Up Board Game&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A man in yoga pants with a ponytail and feather earrings.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An army of skeletons.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A squadron of moles wearing aviator goggles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Beefin' over turf.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Google.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bullshit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sweet spaceship.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A 55-gallon drum of lube.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Special musical guest, Cher.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The human body.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mild autism.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nunchuck moves.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whipping a disobedient slave.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An ether-soaked rag.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Oncoming traffic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A dollop of sour cream.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A slightly shittier parallel universe.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My first kill.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Boris the Soviet Love Hammer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The grey nutrient broth that sustains Mitt Romney.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tiny nipples.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Power.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Death by Steven Seagal.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Burmese tiger pit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Basic human decency.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grandpa's ashes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "One Ring to rule them all.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The day the birds attacked.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fetal alcohol syndrome.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Graphic violence, adult language, and some sexual content.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bigger, blacker dick.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The mere concept of Applebee's&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sad fat dragon with no friends.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A pi&ntilde;ata full of scorpions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Existing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hillary Clinton's death stare.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Catastrophic urethral trauma.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Double penetration.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Daddy's belt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Swiftly achieving orgasm.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mooing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rising from the grave.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Subduing a grizzly bear and making her your wife.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Some really fucked-up shit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Weapons-grade plutonium.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "All of this blood.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Scrotal frostbite.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Taking a man's eyes and balls out and putting his eyes where his balls go and then his balls in the eye holes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The mixing of the races.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pumping out a baby every nine months.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tongue.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Loki, the trickster god.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whining like a little bitch.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wearing an octopus for a hat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An unhinged ferris wheel rolling toward the sea.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Finding Waldo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Upgrading homeless people to mobile hotspots.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A magic hippie love cloud.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fuck Mountain.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Living in a trashcan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The corporations.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting hilariously gang-banged by the Blue Man Group.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jeff Goldblum.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Survivor's guilt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Me.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

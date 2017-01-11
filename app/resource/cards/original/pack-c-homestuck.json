@@ -1,0 +1,2044 @@
+{
+    "packName": "[C] Cards Against Homestuck",
+    "alias": "c-homestuck",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Calliborn wants you to draw pornography of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Whenever I see _ on MSPARP, I disconnect immediately.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ totally makes me question my sexuality.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When Dave received _ from his Bro for his 9th birthday, be felt a little warm inside.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When a bucket is unavailable, trolls with use _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's in the box, Jack?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What makes your kokoro go \"doki doki\"?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. On the roof. Now.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Your name is JOHN EGBERT and boy do you love _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "where doing it man. where MAKING _ HAPEN!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The hole in Kanaya's stomach is so large, she can fit _ in it.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Turns out, pre-entry prototyping with _ was not the best idea.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Vriska killed Spidermom with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Vriska roleplays _ with Terezi as _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Vriska's greatest regret is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Wear _. Be _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "What did Jake get Dirk for his birthday?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What is the worst thing that Terezi ever licked?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What is your OT3?",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "The only way to beat Vriska in an eating contest is to put _ on the table.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Porrim made Kankri a sweater to cover his _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Problem Sleuth had a hard time investigating _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The real reason Terezi stabbed Vriska was to punish her for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Rose was rather disgusted when she started reading about _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The secret way to achieve God Tier is to die on top of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Terezi can top anyone except _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The thing that made Kankri break his vow of celibacy was _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Little did they know, the key to defeating Lord English was actually _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Latula and Porrin have decided to teach Kankri about the wonders of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Nanna baked a cake for John to commemorate _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Little known fact: Kurloz's stitching is actually made out of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Nepeta's secret OTP is _ with _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Nepeta only likes Karkat for his _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Nobody was surprised to find _ under Jade's skirt. The surprise was she used it for/on _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "The next thing Hussie will turn into a sex joke will be _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In the final battle, John distracts Lord English by showing him _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I warned you about _, bro! I told you, dog!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "John is a good boy. And he loves _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's hard, being _. It's hard and no one understands.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Kanaya reached into her dead lusus's stomach and retrieved _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "John may not be a homosexual, but he has a serious thing for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Karkat gave our universe _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Kanaya tells Karkat about _ to cheer him up.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I finally became Tumblr famous when I released a gifset of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I just found _ in my closet it is like fucking christmas up in here.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Hussie unintentionally revealed that Homestuck will end with _ and _ consummating their relationship at last.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I am _. It's me.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "How do I live without _?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Hussie died on his quest bed and rose as the fully realized _ of _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Gamzee not only likes using his clubs for juggling and strifing, he also uses them for_.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Getting a friend to read Homestuck is like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "For his birthday, Dave gave John _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Fuckin' _. How do they work?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Feferi secretly hates _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "For Betty Crocker's latest ad campaign/brainwashing scheme, she is using _ as inspiration.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Equius beats up Eridan for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Everybody out of the god damn way. You've got a heart full of _, a soul full of _, and a body full of _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "Believe it or not, Kankri's biggest trigger is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Dave Strider likes _, but only ironically.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Alternia's political system was based upon _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "All _. All of it!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "AG: Who needs luck when you have _?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "After throwing _ at Karkat's head, Dave made the intriguing discover that troll horns are very sensitive.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "\"Sacred leggings\" was a mistranslation. The Sufferer actually died in Sacred _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. It keeps happening!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ stays awake at night, crying over _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_ makes the Homestuck fandom uncomfortable.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A Strider sandwich.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stealing Tavros's wheelchair.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Sufferer/The Signless.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stridercest.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Species-swap fanfics.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Soul portraits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Staying up to three AM, cleaning the grey off every surface of your hotel room in a desperate bid to not get fined.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Spidermom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tavros Nitram.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "TAB.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Telling Sollux what happens to male bees after sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tavros's wheelchair.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Summoner.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sugoi Yuri.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "sweet bro and hell jeff.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The sweat-drenched, rippling muscles of several truly majestically endowed hoofbeasts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Skipping to Act 5.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The slammer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A slaughtered sperm whale.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sleeping ten people to a room at conventions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shitty swords.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shopping with Terezi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sick fires.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The significant purposes, biologically speaking, of troll nipples.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sollux Captor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Alternian fine art.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sollux's bifurcated bone bulge.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Alternian rainbow-drinker romance novels.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sopor pies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Accidentally touching Gamze's enormous codpiece.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "SORD.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An acrobatic fucking pirouette.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sloppy inter-species makeouts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "\"Apple Juice.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A smuppet in Dirk's pants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The 7th Gate.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Smuppets.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "... . .-. . -. .. - -.-- (Serenity)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sobbing uncontrollably while reading fanfiction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rails with pails.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vodka Mutini.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Viceroy Bubbles von Salamancer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "UPS delivery woman Nepeta.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "UPD8!!!!!!!!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Unreal air.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tumblr.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tumblr user Pizza.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tumblr user Egberts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "When your favorite character dies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "What pumpkin?",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Warhammer of Zillyhoo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A VrisKan waffle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vriska's SEXY sex tips for having SEXY SEX!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vriska Serket.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vriska dying after being stabbed by Terezi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vodka.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That wonderful feeling when you take off your binder.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The \"special attachments\" we ALL know that Equius gave to AradiaBot.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That human vacation with the giant red chimney-ass-hole.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That shitty apple.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Terezi Pyrope.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That dead crow with the sword through it.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tentabulges.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tentative thank-you stabs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Trolls misunderstanding what \"Bucket List\" means.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tumblr spoilers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Troll horns.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Troll Will Smith.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Triggers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Troll blood.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Toilet displacement.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Topping from the bottom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "where MAKING THIS HAPEN",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Willingly filling buckets with Eridan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "World building!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Wrinklefucker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Your 300 pound matronly freight-train.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Your lusus giving you \"The Talk.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Your Mary Sue fantroll.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Your privilege.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Your significant other coming home and finding you in full grey cosplay.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Beating the shit out of Terezi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jake English standing there like a fucking idiot.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Falling into a pool of lava.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rufio.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rufioh Nitram.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sacred leggings.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "SBAHJ hentai doujinshi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rose Lalonde.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rose telling John she's a lesbian and they will never be together.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rose's review of \"My Immortal.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Roxy Lalonde.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shipping it.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Shipping Olympics.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shipping the fuck out of something.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ships ending in -cest.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Schr&ouml;dinger's Nepeta.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "SCIENCE WAND!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Seadweller dick fins.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shippers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Plush rump.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Plush Rump Magazine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Porrim's condom stash.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Porrim Maryam.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Paradox slime.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "PantsKat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "PipeFan413.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Petstuck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Recuperacoon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A rapist cuttlefish.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rose and Kanaya snuggling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The ridiculous fact that some people communicate without luminous rear ends.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Post-apocalyptic shroudwear.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Porrim's motherly affections.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Psiionic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Problem Sleuth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Never being able to look at apple juice, milk, buckets, or knitting needles without feeling a little bit uncormfortable.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Never dating a Serket.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nepeta's heat cycle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nepeta's shipping chart.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Neophyte Redglare.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nepeta Leijon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My Little Hoofbeast: Moirailigence Is Magic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nektan Whelan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Overtaking entire conventions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A painting of a horse attacking a football player.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Only cosplaying male characters when you get pregnant.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Orphaner Dualscar.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Noping the fuck out of there.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Not shipping it.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nic Cage saying \"boner.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Nicolas Cage body pillow.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mierfa Durgas' troll-horn nunchakus.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mierfa Durgas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Midnight Crew.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Meulin Leijon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The mere concept of the Olive Garden.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Meenah Piexes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Mayor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Maxing out your credit cards to buy Homestuck merchandise.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Muscle beasts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Murdering angels.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "MS Paint Adventures.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mituna Captor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mister Dude, Sir Brah, Dood Dude, Vitamin D, Dude Esquire.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mind honey.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A mighty wwizard of wwhite science.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Liberty. Reason. Justice. Civility. Edification. Perfection. MAIL.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lil' Cal's dead eyes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lil' Cal.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lil' Cal's raging boner.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lil' Hal.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lil' Seb.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Little children who poop hard in their baby ass diapers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The little red arm-swingy-dealy thing or whatever it is called.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lord English.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lord English's peg leg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lucky Charms.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Maid Equius.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Maple Hoof.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "March Eridan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Marquise Spinneret Mindfang.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Masturbating while thinking of your OTP.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kanaya's chainsaw.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kanaya's ashen promiscuity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat actually topping, for once.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kankri Vantas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat dying of a burst blood vessel mid-rant.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat and Jade's adorable little of mpreg puppies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat Tantrum Bingo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat going through puberty before every other troll and being, like, nine feet tall.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat's ragegasm.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Karkat Vantas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kurloz Makara.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kawaii Yaoi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Latula Pyrope.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lame bucket jokes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Leprechaun m-preg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Laying back and thinking of Alternia.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Insane Clown Posse.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jade Harley.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hussie constantly breaking copyright.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hussie jacking it to our tears of anguish.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jake English.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jake English's assless chaps.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jade's dog penis and knot.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jailbreak.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jane Crocker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "John Egbert.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jake English's choice ass.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jake English's manhood.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kanaya destroying Cantown.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kanaya Maryam.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "John's Prankster's Gambit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Just KNOWING that Slick is going to stab Ms. Paint.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Her Imperious Condescenscion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hemostuck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The hemospectrum.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hellmurder Island.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Homestuck drinking game (do a shot every time someone dies!)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Homesmut Voices.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Hilarocaust.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Her Imperious Condescension's royal butt-plug collection.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "HONK HONK, MOTHER FUCKER.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Homosuck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Homestuck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Homestuck stealing all the fans from Hetalia and then subsequently watching all its fans leave for OFF and Danganronpa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hussie constantly breaking copyright and then telling his fans to not break his copyright.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hunk Rump Magazine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Horuss Zahhak.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Horsearoni.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Handmaid.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The guy who fingered an Ampora.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Having STRONG surprise buttsex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hateclown on the side.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grimbark Jade.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The green sun.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gross misinterpretations of your favorite character.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Groincobblers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Grand Highblood.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Going to the bark side.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Great Hiatus of 2013.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grandpa Harley/Grandma English.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Geromy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "gAmZeE'S pOtIoNs: 420 bOoNbUcKs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The glory that is BroJohn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gl'bgolyb. AKA Feferi's fucking lusus.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Flipping the fuck out.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Game Bro Magazine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gamzee Makara.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gamzee's clown horns.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Filling all of your quadrants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Finding grey paint on your bathroom door three weeks after the last meetup.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A five minute video of Cronus giving Kankri a blowjob.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Flighty broads.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Feferi Peixes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Felt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fiduspawn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fifty fucking Nepetas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan's upper half.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Exiles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fat Vriska.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Faygo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan's lowwer half.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan's empty quadrants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan's cape.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan stripping to make rent.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan crying after pailing Vriska for the first time.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eridan Ampora.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Equius's used towel pile.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Equius's towel.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Equius's copy of \"Fifty Shades of Neigh.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Equius's choice ass.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Equius Zahhak.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Elf tears.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The E%ecutor/Expatri8 Darkleer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drawing pornography for Caliborn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A dominant Kankri.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Dolorosa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Discovering Sollux is red-blue colorblind.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doc Scratch.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dirk's self-insert MLP fan character.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Disciple.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Dildo of Oglogoth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dirk Strider.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Destroying clocks.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Developing a deep fear of the sound of clown horns after becoming a Homestuck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dave's throbbing beef truncheon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A dead Ms. Paint.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dating exclusively within the fandom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dave Strider.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Damara Megido's existence.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dante Basco.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Damara Megido wearing white at her wedding.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Damara Megido.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cosplayers who don't seal their paint.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cosplayers who do photo shoots in bondage (God bless them).",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Creative uses for Aradia's whip.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crabdad.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dad Egbert/Dad Crocker.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cronus Ampora.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dad's fedora.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dad's pipe.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cod Palace.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cliched JohnKat fanfiction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Communism!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cod Tier Gamzee.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Condesce's selfies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Condesce's crotch.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cosplay sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Constantly breaking Hussie's copyright.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Carlos Maraka.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Casey.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Centaur milk.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Charging down halls, shouting profanities and being silly.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cherub m-preg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cherub mating rituals.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chest of WHIMSY.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A chip in your heart that forces you to love.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Butler Island.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "C4NDY R3D BLOOD &gt;:]",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Caledscratch.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Caliborn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Caliginous speed dating.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Calliope.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Can Town.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cards Against Alternia.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bro.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bro and Dave banging while Rose watches.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Blackrom orgies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BL1ND JUST1C3.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bull penis cane.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BUCKETS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bro's death.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bro's rapping ventriloquism act.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being in a relationship with a non-Homestuck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being fuck deep in meowcats.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Becoming Tumblr famous.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bec Noir.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Binge reading every fanfiction for a pairing and then hating yourself a little bit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BETTY FUCKING CROCKER.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being the other guy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being locked in a Prospitian prison.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Arguing over troll sexuality.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "ARquiusprite's muscles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Aranea Serket.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Aranea's exposition stand.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Baby Dave.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bard Quest.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Arthour the lusus.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "AVATAR.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The animes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anonymous Soporifics Support.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Andrew Hussie.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Andrew Hussie's lips.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Aradia Megido.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Aradia's charred, rotting corpse.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Apple Juice.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Aradia Bot.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "packName": "PAX Prime 2013",
+    "alias": "PAXP2013",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "The most controversial game at PAX this year is an 8-bit indie platformer about _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What made Spock cry?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In the new DLC for Mass Effect, Shepard must save the galaxy from _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "No Enforcer wants to manage the panel on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_: Achievement unlocked.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "There was a riot at the Gearbox panel when they gave the attendees _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's the latest bullshit that's troubling this quaint fantasy town?",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Full HD.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The gravity gun.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Reading the comments.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "70,000 gamers sweating and farting inside an airtight steel dome.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Cock Ring of Alacrity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Yoshi's huge egg-laying cloaca.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A homemade, cum-stained Star Trek uniform.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Offering sexual favors for an ore and a sheep.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mario Kart rage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bowser's aching heart.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An angry stone head that stomps on the floor every three seconds.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nude-modding Super Mario World.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Temporary invincibility.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being an attractive elf trapped in an unattractive human's body.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Filling every pouch of a UtiliKilt&trade; with pizza.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Sarlacc.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Achieving the manual dexterity and tactical brilliance of a 12-year-old Korean boy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Allowing nacho cheese to curdle in your beard while you creep in League of Legends.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The collective wail of every Magic player suddenly realizing that they've spent hundreds of dollars on pieces of cardboard.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rolling a D20 to save a failing marriage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Legendary Creature &ndash; Robert Khoo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Winning the approval of Cooking Mama that you never got from actual mama.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Never watching, discussing, or thinking about My Little Pony.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Turn-of-the-century sky racists.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Unlocking a new sex position.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The boner hatch in the Iron Man suit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Buying virtual clothes for a Sim family instead of real clothes for a real family.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Google Glass + e-cigarette: Ultimate Combo!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The decade of legal inquests following a single hour of Grand Theft Auto.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A fully-dressed female videogame character.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting into a situation with an owlbear.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Charles Barkley Shut Up and Jam!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tapping Sara Angel.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eating a pizza that's lying on the street to gain health.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "SNES cartridge cleaning fluid.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A madman who lives in a policebox and kidnaps women.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grand Theft Auto: Fort Lauderdale.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

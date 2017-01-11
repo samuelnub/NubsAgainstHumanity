@@ -1,0 +1,664 @@
+{
+    "packName": "[C] Not Safe For Humanity",
+    "alias": "NSFH",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Between love and madness lies _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Instead of chess, the Grim Reaper now gambles for your soul with a game of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My father gave his life fighting to protect _ from _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Why is my throat sore?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ sparked a city-wide riot that only ended with _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I'm very sorry Mrs. Smith, but Little Billy has tested positive for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Instead of beating them, Chris Brown now does _ to women.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Instead of cutting, trendy young emo girls now engage in _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The definition of rock bottom is gambling away _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The Mayan prophecies really heralded the coming of _ in 2012.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The next US election will be fought on the key issues of _ against _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "When I was 10 I wrote to Santa wishing for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Where or How I met my last signifigant other: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_, Never leave home without it.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. This is my fetish.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "David Icke's newest conspiracy theory states that _ caused _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I did _ so you don't have to!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I need your clothes, your bike, and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In a new Cold War retro movie, the red menace tries to conquer the world through the cunning use of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In college, our lecturer made us write a report comparing _ to _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "In The Hangover part 3, those four guys have to deal with _, _, and _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "My zombie survival kit includes food, water, and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The way to a man's heart is through _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What was the theme of my second wedding?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's the newest Japanese craze to head West?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Everybody loves _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I can only express myself through _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My new porn DVD was completely ruined by the inclusion of _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My three wishes will be for _, _, and _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "The latest horrifying school shooting was inspired by _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I got fired because of my not-so-secret obsession over _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My new favourite sexual position is _",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A breath of fresh air.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A great big floppy donkey dick.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A pyramid scheme.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A school bus surrounded by cop cars.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A short walk in the desert with shovels.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "All the boys staring at your chest.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An amorous stallion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being so wet it just slides out of you.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being tarred and feathered.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Catching 'em all.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chained to the bed and whipped to orgasmic bliss by a leather-clad woman.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Child-bearing hips.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Defenestration.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dungeons and/or dragons.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ecco the Dolphin.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "George Washington riding on a giant eagle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting abducted and probed by aliens.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Going viral on YouTube.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gushing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Making the baby Jesus cry.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "More than you can chew.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Napalm.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pancake bitches.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Playing God with the power of lightning.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Playing tonsil-hockey.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Racing cheese wheels downhill.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Riding the bomb.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Settling arguments with dance-offs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sheer spite.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sinister laughter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "SS Girls.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stealing your sister's underwear.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stroking a cat the wrong way.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sucking and blowing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The bullet with your name on it.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The entire rest of eternity, spent in fucking Bruges.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The oceans rising to reclaim the land.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A cocained-fuelled sex orgy heart attack.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A cocktail umbrella ",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A murder/suicide pact.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A squirming mass of kittens.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An angry mob with torches and pitchforks.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Biting my girlfriend like a vampire during sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dropping your pants and saluting.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Frankenstein's Monster",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting a blowjob in a theater.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Going full retard.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Going slob-slob-slob all over that knob.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Leaking implants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Low-flying planes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Monkies flinging their own shit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My robot duplicate.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Other people's children.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "People who can't take a joke. Seriously.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Popping a boner during Sex Ed class.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Projectile vomiting.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pulling down panties with your teeth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Saying ",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shedding skin like a snake.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shooting Valley Girls for like, saying like all the time. Really.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Slow seductive tentacle rape.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Talking like a pirate, y'arr!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tenderly kissing a unicorn's horn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That bastard Jesus!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The last shreads of dignity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The power of friendship.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "This card intentionally left blank.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Throwing water on a braless woman in a white t-shirt",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Upskirts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wasting all your money on hookers and booze.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Winning.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A foot fetish.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A powerful gag reflex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A tight, Asian pussy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Explosive decompression.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Extraordinary Rendition.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Forgetting the safety word.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Greeting Christmas carollers naked.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Handcuffs, without the key.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Having a drill for a penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hot Jailbait Ass.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Liposuction gone horrible wrong.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My harem of scantily clad women.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nazi Zombie Robot Ninjas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Redneck gypsies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Scissoring.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A guy and two robots who won't shut up.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A shotgun wedding.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anne Frank's diary",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Autoerotic asphyxiation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Blow Up Bianca the Latex Lovedoll.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Endlessly tumbling down an up escalator.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fun with nuns.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting it all over the walls.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Holiday Dinner by Jack Daniels.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nailgun fights.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Teaching the bitch a lesson.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nazi super science.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Making a human centipede.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

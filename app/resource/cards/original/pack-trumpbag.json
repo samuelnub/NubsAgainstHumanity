@@ -1,0 +1,134 @@
+{
+    "packName": "Trump Survival Pack",
+    "alias": "trumpbag",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Donald Trump has nominated _ for his VP.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In 2019, Donald Trump eliminated our national parks to make room for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Donald Trump's first act as president was to outlaw _.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A legitimate reason to commit suicide.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A back-alley abortion from a Mexican cyborg doctor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whipping lower-class white men into a xenophobic frenzy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Trying to remember what music was.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Roaming through a wasteland of windblown trash and deserted highways.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bringing millions of dangerous low-paying manufacturing jobs back to America.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A gnawing sense of dread.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drinking urine to survive.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nuclear winter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "President Donald Trump.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Casual dismissiveness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Extra rations for my little girl.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "World Wars 3 through 5.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Finding out that democracy might not be such a great idea.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mild amusement.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Burying my only son.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The purging of the disloyal.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Trying to wake up from this nightmare.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A father and son fighting each other over the last scrap of bread.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Making Islam illegal.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Desperately hurling insults at Donald Trump as he absorbs them into his rapidly expanding body.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

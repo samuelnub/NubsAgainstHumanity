@@ -1,0 +1,139 @@
+{
+    "packName": "Canadian",
+    "alias": "Canadian",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Air Canada guidelines now prohibit _ on airplanes.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "O Canada, we stand on guard for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "CTV presents _, the story of _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "In an attempt to reach a wider audience, the Royal Ontario Museum has opened an interactive exhibit on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's the Canadian government using to inspire rural students to succeed?",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Poutine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Newfies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Official Languages Act. La Loi sur les langues officielles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Terry Fox's prosthetic leg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The FLQ.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Canada: America's Hat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Don Cherry's wardrobe.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Burning down the White House.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Heritage minutes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Homo milk.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Naked News.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mr. Dressup.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Syrupy sex with a maple tree.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being Canadian.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Snotsicles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Famous Five.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Schmirler the Curler.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stephen Harper.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Molson muscle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Royal Canadian Mounted Police.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An icy handjob from an Edmonton hooker.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

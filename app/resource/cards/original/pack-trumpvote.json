@@ -1,0 +1,84 @@
+{
+    "packName": "Vote for Trump Pack",
+    "alias": "trumpvote",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Trump's great!  Trump's got _.  I love that.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "According to Arizona's stand-your-ground law, you're allowed to shoot someone if they're _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's 3AM.  The red phone rings.  It's _.  Who do you want answering?",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Actually voting for Donald Trump to be President of the actual United States.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A liberal bias.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hating Hillary Clinton.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Growing up and becoming a Republican.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Courageously going ahead with that racist comment.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dispelling this fiction that Barack Obama doesn't know what he's doing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jeb!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The good, hardworking people of Dubuque, Iowa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Conservative talking points.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shouting the loudest",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sound of fiscal policy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Full-on socialism.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

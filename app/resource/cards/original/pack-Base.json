@@ -1,0 +1,2759 @@
+{
+    "packName": "Base Set",
+    "alias": "Base",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Why can't I sleep at night?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I got 99 problems but _ ain't one.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's a girl's best friend?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's that smell?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This is the way the world ends / This is the way the world ends / Not with a bang but with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What is Batman's guilty pleasure?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "TSA guidelines now prohibit _ on airplanes.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What ended my last relationship?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "MTV's new reality show features eight washed-up celebrities living with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I drink to forget _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm sorry, Professor, but I couldn't complete my homework because of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Alternative medicine is now embracing the curative powers of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's that sound?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's the next Happy Meal&reg; toy?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's a pity that kids these days are all getting involved with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In the new Disney Channel Original Movie, Hannah Montana struggles with _ for the first time.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. That's how I want to die.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What does Dick Cheney prefer?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's the most emo?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Instead of coal, Santa now gives the bad children _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Next from J.K. Rowling: Harry Potter and the Chamber of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "A romantic, candlelit dinner would be incomplete without _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "White people like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. Betcha can't have just one!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "War!<br><br>What is it good for?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "BILLY MAYS HERE FOR _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. High five, bro.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "During sex, I like to think about _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What did I bring back from Mexico?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What are my parents hiding from me?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What will always get you laid?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What would grandma find disturbing, yet oddly charming?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What did the U.S. airdrop to the children of Afghanistan?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What helps Obama unwind?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's there a ton of in heaven?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Major League Baseball has banned _ for giving players an unfair advantage.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When I am a billionaire, I shall erect a 50-foot statue to commemorate _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's the new fad diet?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When I am the President of the United States, I will create the Department of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. It's a trap!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "How am I maintaining my relationship status?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What will I bring back in time to convince people that I am a powerful wizard?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "While the United States raced the Soviet Union to the moon, the Mexican government funneled millions of pesos into research on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Coming to Broadway this season, _: The Musical.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's my secret power?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What gives me uncontrollable gas?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "But before I kill you, Mr. Bond, I must show you _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What never fails to liven up the party?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What am I giving up for Lent?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What do old people smell like? ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The class field trip was completely ruined by _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When Pharaoh remained unmoved, Moses called down a plague of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I do not know with which weapons World War III will be fought, but World War IV will be fought with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's Teach for America using to inspire inner city students to succeed?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In Michael Jackson's final moments, he thought about _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Why do I hurt all over?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Studies show that lab rats navigate mazes 50% faster after being exposed to _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Why am I sticky?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's my anti-drug?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "And the Academy Award for _ goes to _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "For my next trick, I will pull _ out of _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_: Good to the last drop.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What did Vin Diesel eat for dinner?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_: kid-tested, mother-approved.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What gets better with age?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I never truly understood _ until I encountered _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Rumor has it that Vladimir Putin's favorite delicacy is _ stuffed with _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Lifetime&reg; presents _, the story of _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Make a haiku.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "In M. Night Shyamalan's new movie, Bruce Willis discovers that _ had really been _ all along.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_ is a slippery slope that leads to _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "In a world ravaged by _, our only solace is _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "That's right, I killed _. How, you ask? _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "When I was tripping on acid, _ turned into _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_ + _ = _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "What's the next superhero/sidekick duo?",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Dear Abby,<br><br>I'm having some trouble with _ and would like your advice.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "After the earthquake, Sean Penn brought _ to the people of Haiti.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In L.A. County Jail, word is you can trade 200 cigarettes for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Maybe she's born with it. Maybe it's _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Life for American Indians was forever changed when the White Man introduced them to _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Next on ESPN2, the World Series of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Step 1: _. Step 2: _. Step 3: Profit.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Here is the church<br>Here is the steeple<br>Open the doors<br>And there is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "How did I lose my virginity?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "During his childhood, Salvador Dal&iacute; produced hundreds of paintings of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In 1,000 years, when paper money is a distant memory, how will we pay for goods and services?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What don't you want to find in your Kung Pao chicken?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The Smithsonian Museum of Natural History has just opened an exhibit on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Daddy, why is Mommy crying?",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Coat hanger abortions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Man meat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Autocannibalism.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vigorous jazz hands.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Flightless birds.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pictures of boobs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doing the right thing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The violation of our most basic human rights.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Viagra&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Self-loathing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Spectacular abs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A balanced breakfast.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Roofies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Concealing a boner.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Amputees.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Big Bang.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Former President George W. Bush.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Rev. Dr. Martin Luther King, Jr.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Smegma.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being marginalized.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cuddling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Laying an egg.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Pope.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Aaron Burr.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Genital piercings.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fingering.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bleached asshole.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Horse meat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fear itself.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Science.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Elderly Japanese men.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stranger danger.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The terrorists.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Praying the gay away.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Same-sex ice dancing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ethnic cleansing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cheating in the Special Olympics.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "German dungeon porn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bingeing and purging.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Making a pouty face.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "William Shatner.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Heteronormativity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nickelback.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tom Cruise.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The profoundly handicapped.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The placenta.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chainsaws for hands.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Arnold Schwarzenegger.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An icepick lobotomy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Goblins.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Object permanence.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dying.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Foreskin.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A falcon with a cap on its head.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hormone injections.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dying of dysentery.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sexy pillow fights.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The invisible hand.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A really cool hat.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sean Penn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Heartwarming orphans.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The clitoris.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Three-Fifths compromise.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sad handjob.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Men.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Historically black colleges.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A micropenis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Raptor attacks.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Agriculture.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vikings.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pretending to care.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Underground Railroad.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My humps.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being a dick to children.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Geese.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sniffing glue.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The South.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An Oedipus complex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eating all of the cookies before the AIDS bake-sale.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sexting.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "YOU MUST CONSTRUCT ADDITIONAL PYLONS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mutually-assured destruction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sunshine and rainbows.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Count Chocula.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sharing needles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being rich.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Skeletor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sausage festival.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Michael Jackson.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Emotions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Farting and walking away.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Chinese gymnastics team.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Necrophilia.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Spontaneous human combustion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Yeast.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Leaving an awkward voicemail.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dick Cheney.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "White people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Penis envy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Teaching a robot to love.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sperm whales.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Scrubbing under the folds.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Panda sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whipping it out.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Catapults.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Masturbation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Natural selection.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Opposable thumbs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sassy black woman.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "AIDS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The KKK.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Figgy pudding.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Seppuku.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gandhi.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Preteens.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Toni Morrison's vagina.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Five-Dollar Footlongs&trade;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Land mines.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sea of troubles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A zesty breakfast burrito.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Christopher Walken.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Friction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Balls.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dental dams.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A can of whoop-ass.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A tiny horse.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Waiting 'til marriage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Authentic Mexican cuisine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Genghis Khan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Old-people smell.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Feeding Rosie O'Donnell.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pixelated bukkake.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Friends with benefits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The token minority.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Tempur-Pedic&reg; Swedish Sleep System&trade;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A thermonuclear detonation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Take-backsies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Rapture.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A cooler full of organs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sweet, sweet vengeance.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "RoboCop.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Keanu Reeves.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drinking alone.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Giving 110%.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Flesh-eating bacteria.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The American Dream.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Taking off your shirt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Me time.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A murder most foul.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The inevitable heat death of the universe.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The folly of man.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That thing that electrocutes your abs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cards Against Humanity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fiery poops.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poor people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Edible underpants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Britney Spears at 55.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "All-you-can-eat shrimp for $4.99.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pooping back and forth. Forever.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fancy Feast&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jewish fraternities.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being a motherfucking sorcerer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pulling out.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Picking up girls at the abortion clinic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The homosexual agenda.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Holy Bible.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Passive-agression.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ronald Reagan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vehicular manslaughter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nipple blades.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Assless chaps.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Full frontal nudity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hulk Hogan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Daddy issues.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The hardworking Mexican.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Natalie Portman.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Waking up half-naked in a Denny's parking lot.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "God.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sean Connery.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Saxophone solos.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gloryholes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The World of Warcraft.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Homeless people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Scalping.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Darth Vader.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eating the last known bison.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Guys who don't call.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hot Pockets&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A time travel paradox.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The milk man.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Testicular torsion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dropping a chandelier on your enemies and riding the rope up.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "World peace.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A salty surprise.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poorly-timed Holocaust jokes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Smallpox blankets.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Licking things to claim them as your own.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The heart of a child.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Robert Downey, Jr.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lockjaw.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eugenics.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A good sniff.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Friendly fire.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The taint; the grundle; the fleshy fun-bridge.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wearing underwear inside-out to avoid doing laundry.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hurricane Katrina.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Free samples.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jerking off into a pool of children's tears.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A foul mouth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The glass ceiling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Republicans.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Explosions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Michelle Obama's arms.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting really high.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Attitude.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sarah Palin.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The &Uuml;bermensch.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Altar boys.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My soul.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My sex life.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pedophiles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "72 virgins.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pabst Blue Ribbon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Domino's&trade; Oreo&trade; Dessert Pizza.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A snapping turtle biting the tip of your penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Blood of Christ.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Half-assed foreplay.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My collection of high-tech sex toys.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A middle-aged man on roller skates.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bitches.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bill Nye the Science Guy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Italians.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A windmill full of corpses.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Adderall&trade;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crippling debt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A stray pube.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Prancing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Passing a kidney stone.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A brain tumor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Leprosy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Puppies!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bees?",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Frolicking.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Repression.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Road head.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bag of magic beans.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An asymmetric boob job.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dead parents.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Public ridicule.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A mating display.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A mime having a stroke.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stephen Hawking talking dirty.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "African children.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mouth herpes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Overcompensation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Riding off into the sunset.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being on fire.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tangled Slinkys.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Civilian casualties.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Auschwitz.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My genitals.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Not reciprocating oral sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lactation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being fabulous.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shaquille O'Neal's acting career.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My relationship status.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Asians who aren't good at math.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Alcoholism.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Incest.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grave robbing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hope.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "8 oz. of sweet Mexican black-tar heroin.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kids with ass cancer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Winking at old people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Jews.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Justin Bieber.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doin' it in the butt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A lifetime of sadness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Hamburglar.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Swooping.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Classist undertones.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "New Age music.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Not giving a shit about the Third World.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Kool-Aid Man.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A hot mess.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tentacle porn.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lumberjack fantasies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The gays.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Scientology.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Estrogen.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "GoGurt&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Judge Judy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dick fingers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Racism.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Surprise sex!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Police brutality.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Passable transvestites.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Virginia Tech Massacre.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "When you fart and a little bit comes out.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Oompa-Loompas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A fetus.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Obesity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tasteful sideboob.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hot people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BATMAN!!!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Black people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A gassy antelope.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sexual tension.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Third base.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Racially-biased SAT questions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Porn stars.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Super Soaker&trade; full of cat pee.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Muhammed (Praise Be Unto Him).",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Puberty.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A disappointing birthday party.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An erection that lasts longer than four hours.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "White privilege.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting so angry that you pop a boner.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wifely duties.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Two midgets shitting into a bucket.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Queefing.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wiping her butt.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Golden showers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Barack Obama.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nazis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A robust mongoloid.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An M. Night Shyamalan plot twist.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting drunk on mouthwash.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lunchables&trade;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Women in yogurt commercials.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "John Wilkes Booth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Powerful thighs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mr. Clean, right behind you.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Multiple stab wounds.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cybernetic enhancements.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Serfdom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kanye West.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Women's suffrage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Children on leashes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Harry Potter erotica.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Dance of the Sugar Plum Fairy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lance Armstrong's missing testicle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Parting the Red Sea.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Amish.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dead babies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Child beauty pageants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "AXE Body Spray.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Centaurs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Copping a feel.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grandma.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Famine.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Trail of Tears.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The miracle of childbirth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Finger painting.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A monkey smoking a cigar.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Make-A-Wish&reg; Foundation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anal beads.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Force.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kamikaze pilots.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dry heaving.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Active listening.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ghosts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Hustle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Peeing a little bit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Another goddamn vampire movie.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shapeshifters.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Care Bear Stare.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hot cheese.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A mopey zoo lion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A defective condom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Teenage pregnancy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Bop It&trade;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Expecting a burp and vomiting on the floor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Horrifying laser hair removal accidents.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Boogers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Unfathomable stupidity.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Breaking out into song and dance.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Soup that is too hot.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Morgan Freeman's voice.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting naked and watching Nickelodeon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "MechaHitler.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Flying sex snakes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The true meaning of Christmas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My inner demons.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pac-Man uncontrollably guzzling cum.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My vagina.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A homoerotic volleyball montage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Actually taking candy from a baby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crystal meth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Exactly what you'd expect.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Natural male enhancement.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Passive-aggressive Post-it notes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Inappropriate yodeling.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lady Gaga.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Little Engine That Could.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Vigilante justice.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A death ray.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poor life choices.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A gentle caress of the inner thigh.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Embryonic stem cells.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nicolas Cage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Firing a rifle into the air while balls deep in a squealing hog.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Switching to Geico&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The chronic.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Erectile dysfunction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Home video of Oprah sobbing into a Lean Cuisine&reg;.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bucket of fish heads.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "50,000 volts straight to the nipples.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being fat and stupid.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hospice care.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A pyramid of severed heads.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting married, having a few kids, buying some stuff, retiring to Florida, and dying.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A subscription to Men's Fitness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crucifixion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A micropig wearing a tiny raincoat and booties.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Some god-damn peace and quiet.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Used panties.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A tribe of warrior women.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The penny whistle solo from \"My Heart Will Go On.\"",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An oversized lollipop.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Helplessly giggling at the mention of Hutus and Tutsis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Not wearing pants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Consensual sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Her Majesty, Queen Elizabeth II.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Funky fresh rhymes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The art of seduction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Devil himself.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Advice from a wise, old black man.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Destroying the evidence.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The light of a billion suns.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wet dreams.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Synergistic management solutions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Growing a pair.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Silence.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An M16 assault rifle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poopy diapers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A live studio audience.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Great Depression.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A spastic nerd.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rush Limbaugh's soft, shitty body.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tickling Sean Hannity, even after he tells you to stop.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stalin.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Brown people.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rehab.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Capturing Newt Gingrich and forcing him to dance in a monkey suit.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Battlefield amputations.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An uppercut.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shiny objects.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An ugly face.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Menstrual rage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bitch slap.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "One trillion dollars.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Chunks of dead prostitute.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The entire Mormon Tabernacle Choir.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The female orgasm.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Extremely tight pants.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Boy Scouts of America.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stormtroopers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Throwing a virgin into a volcano.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

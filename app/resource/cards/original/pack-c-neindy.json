@@ -1,0 +1,239 @@
+{
+    "packName": "[C] NEIndy",
+    "alias": "c-neindy",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "We got the third rope, now where's the fourth?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Tonights main event, _ vs. _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Tackle, Dropdown, _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Christopher Daniels is late on his _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Instead of booking _, they should have booked _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Genius is 10% inspiration, 90% _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "They found _ in the dumpster behind _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "The best thing I ever got for Christmas was _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "There's no crying in _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Mastodon! Pterodactyl! Triceratops! Sabretooth Tiger! _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Don't eat the _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "He did _ with the _!?!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "SOOOOO hot, want to touch the _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Stop looking at me _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm cuckoo for _ puffs.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Silly rabbit, _ are for kids.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Bumpses.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Vin Gerard H8 X 10.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Harry Acropolis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Under the ring.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Afa The Wild Samoan.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Peanut Butter and Baby sandwiches.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Yard Tards.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Two girls, one cup.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ugly Mexican Hookers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Duct tape.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sodaj.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Steve The Teacher.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jefferee.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Autoerotic Asphyxiation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sonic The Hedgehog.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lotto Money.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jailbait.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Prison rape.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Two And A Half Men.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anne Frank.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Black Santa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jesus Christ (our lord and saviour).",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Farting with your armpits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Poopsicles.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Slaughtering innocent children.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sex with vegetables.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My gay ex-husband.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Accidentally sexting your mom.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tabasco in your pee-hole.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pee Wee Herman.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

@@ -1,0 +1,509 @@
+{
+    "packName": "The Fourth Expansion",
+    "alias": "CAHe4",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "Man, this is bullshit. Fuck _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Dear Leader Kim Jong-un,<br>our village praises your infinite wisdom with a humble offering of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ may pass, but _ will last forever.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "She's up all night for good fun.<br>I'm up all night for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Alright, bros. Our frat house is condemned, and all the hot slampieces are over at Gamma Phi. The time has come to commence Operation _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The Japanese have developed a smaller, more efficient version of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In return for my soul, the Devil promised me _, but all I got was _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "You guys, I saw this crazy movie last night. It opens on _, and then there's some stuff about _, and then it ends with _.",
+            "pickAmount": 3,
+            "blank": false
+        },
+        {
+            "text": "_ will never be the same after _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Wes Anderson's new film tells the story of a precocious child coming to terms with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In the beginning, there was _.<br>And the Lord said, \"Let there be _.\"",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "What's fun until it gets weird?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "We never did find _, but along the way we sure learned a lot about _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "You've seen the bearded lady!<br>You've seen the ring of fire!<br>Now, ladies and gentlemen, feast your eyes upon _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "How am I compensating for my tiny penis?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm sorry, sir, but we don't allow _ at the country club.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "2 AM in the city that never sleeps. The door swings open and <i>she</i> walks in, legs up to here. Something in her eyes tells me she's looking for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "As king, how will I keep the peasants in line?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Oprah's book of the month is \"_ For _: A Story of Hope.\"",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Do <i>not</i> fuck with me! I am literally _ right now.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Adventure.<br>Romance.<br>_.<br><br>From Paramount Pictures, \"_.\"",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "I am become _, destroyer of _!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "It lurks in the night. It hungers for flesh. This summer, no one is safe from _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "If you can't handle _, you'd better stay away from _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "This is the prime of my life. I'm young, hot, and full of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm pretty sure I'm high right now, because I'm absolutely mesmerized by _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This year's hottest album is \"_\" by _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Every step towards _ gets me a little closer to _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Forget everything you know about _, because now we've supercharged it with _!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Honey, I have a new role-play I want to try tonight! You can be _, and I'll be _.",
+            "pickAmount": 2,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Crazy opium eyes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "10 Incredible Facts About the Anus.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An interracial handshake.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Moderate-to-severe joint pain.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Finally finishing off the Indians.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sugar madness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Actual mutants with medical conditions and no superpowers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The secret formula for ultimate female satisfaction.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The complex geopolitical quagmire that is the Middle East.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fucking a corpse back to life.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Neil Diamond's Greatest Hits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Calculating every mannerism so as not to suggest homosexuality.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whatever a McRib&reg; is made of.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "No clothes on, penis in vagina.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "All the single ladies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whispering all sexy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "How awesome I am.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ass to mouth.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Smoking crack, for instance.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Falling into the toilet.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A dance move that's just sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The size of my penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Some sort of Asian.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A hopeless amount of spiders.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Party Mexicans.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Drinking responsibly.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The safe word.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Angelheaded hipsters burning for the ancient heavenly connection to the starry dynamo in the machinery of night.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bouncing up and down.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jizz.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ambiguous sarcasm.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A shiny rock that proves I love you.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dem titties.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My worthless son.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Exploding pigeons.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Ugandan warlord.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My sex dungeon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A kiss on the lips.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Child Protective Services.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Native American who solves crimes by going into the spirit world.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doo-doo.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The peaceful and nonthreatening rise of China.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sports.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A fart.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Unquestioning obedience.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Three consecutive seconds of happiness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grammar nazis who are also regular Nazis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Snorting coke off a clown's boner.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Africa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Depression.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A horse with no legs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The euphoric rush of strangling a drifter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Khakis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Interspecies marriage.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A gender identity that can only be conveyed through slam poetry.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Almost giving money to a homeless person.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Stuff a child's face with Fun Dip&reg; until he starts having fun.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "What Jesus would do.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A for-real lizard that spits blood from its eyes.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Blackula.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The tiniest shred of evidence that God is real.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My dad's dumb fucking face.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Prince Ali,<br>fabulous he,<br>Ali Ababwa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A manhole.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sex goblin with a carnival penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bunch of idiots playing a card game instead of interacting like normal humans.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A sex comet from Neptune that plunges the Earth into eternal sexiness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sharks with legs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Injecting speed into one arm and horse tranquilizer into the other.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lots and lots of abortions.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

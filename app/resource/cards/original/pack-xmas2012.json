@@ -1,0 +1,159 @@
+{
+    "packName": "2012 Holiday Pack",
+    "alias": "xmas2012",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "After blacking out during New Year's Eve, I was awoken by _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This holiday season, Tim Allen must overcome his fear of _ to save Christmas.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Jesus is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Every Christmas, my uncle gets drunk and tells the story about _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What keeps me warm during the cold, cold winter?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "On the third day of Christmas, my true love gave to me: three French hens, two turtle doves, and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Wake up, America. Christmas is under attack by secular liberals and their _.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Santa's heavy sack.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Clearing a bloody path through Walmart with a scimitar.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Another shitty year.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whatever Kwanzaa is supposed to be about.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Christmas stocking full of coleslaw.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Elf cum.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The tiny, calloused hands of the Chinese children that made this card.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Taking down Santa with a surface-to-air missle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Several intertwining love stories featuring Hugh Grant.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mall Santa.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My hot cousin.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Star Wars Holiday Special.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Krampus, the Austrian Christmas monster.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pretending to be happy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Socks. ",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eating an entire snowman.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A toxic family environment.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A visually arresting turtleneck.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fucking up \"Silent Night\" in front of 300 parents.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Immaculate conception.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Space Jam on VHS.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gift-wrapping a live hamster.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Hungry-Man&trade; Frozen Christmas Dinner for One.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

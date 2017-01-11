@@ -1,0 +1,1619 @@
+{
+    "packName": "[C] Vidya",
+    "alias": "c-vidya",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "All your _ are belong to us",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Sorry Mario, but _ is in another castle.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is a lie.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "In Kingdom Hearts, Donald Duck will be replaced with _ .",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "we must embrace _ and burn it as fuel for out journey.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Because of the lastest school shooting, _ is being blamed for making kids too violent.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "&gt;walk into gamestop<br>&gt;see _<br>&gt;walk out",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "WHAT THE FUCK DID YOU SAY ABOUT ME YOU _?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "HEY, GOLLEN PALACE? HOW U SAY _ IN CHINESE?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "appealing to a larger audience",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This will be the 6th time we've posted _; we've become increasingly efficient at it.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I have the bigger _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The princess is in another _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When you see it... you don't see _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ TEAM RULES!!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Rev up those _, because I am sure hungry for one- HELP! HELP!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "wooooooow, it took all 3 of you to _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Only casuals like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is 2deep and edgy for you.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's like _with _!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Check your privilege, you _ _.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Jill, here's a _. It might come in handy if you, the master of _, take it with you. ",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "_ is a pretty cool guy, eh _ and doesn't afraid of anything.",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Ironic _ is still _.<br><br>(same in both blanks)",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What is the new mustard paste?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "&gt;_<br>&gt;_<br>&gt;2011<br>&gt;ISHYGDDT",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "All you had to do was _ the damn _!",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "The new ititeration in the Call of Duty franchise has players fighting off _ deep in the jungles of _ ",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "Here lies _: peperony and chease",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Throwaway round: Get rid of those shit cards you don't want. Thanks for all the suggestions, /v/",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The president has been kidnapped by _. Are you a bad enough dude to rescue the president?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "We _ now.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "That's the second biggest _ I've ever seen!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You were almost a _ sandwich!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's dangerous to go alone! Take this:",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I've covered _, you know.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The newest trope against women in video games: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You have been banned. Reason: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ has changed. ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_. _ never changes.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Objective: _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "But you can call me _ the _. Has a nice ring to it dontcha think?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ has changed.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Is a man not entitiled to _?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm here to _ and chew bubble gum, and I'm all out of gum.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ sappin' my sentry. ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is waiting for your challenge!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "EA Sports! It's _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What's in the box, /v/?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Why is the _ fandom the worst?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is a pretty cool guy",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Ah! Your rival! What was his name again?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "brb guys, _ break",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "OH MY GOD JC, A _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Achievement Unlocked: _ !",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm _ under the table right now!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Viral marketers are trying to push the new _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I wouldn't call it a Battlestation, more like a _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Fans started a kickstarter for a new _ game. ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Huh? What was that noise?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I love the _, it's so bad",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Valve is going to make _ 2 before they release HL3.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_: Gotta go fast!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The best final fantasy game was _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "WHAT IS A MAN?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Liquid! How can you still be alive?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "&gt;implying you aren't _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "All you had to do was follow the damn _, CJ!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": " Microsoft revealed that the Xbox One's demos had actually been running on _ ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "WE WILL DRAG THIS _ INTO THE 21ST CENTURY.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What can change the nature of a man?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What is a _ but a _?",
+            "pickAmount": 2,
+            "blank": false
+        },
+        {
+            "text": "What did I preorder at gamestop?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "What if _ was a girl?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Wake up, Mr. Freeman. Wake up and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Based _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Pop Quiz: Beatles Song- _ terday.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ confirmed for Super Smash Bros!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm in ur base, _",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ only, no items, Final Destination. ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The newest IP from Nintendo, Super _ Bros. ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The future of gaming lies with the _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The newest feature of the Xbox One is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Enjoy _ while you play your Xbox one!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Why are you making chocolate pudding at 4 in the morning?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ has no games.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The new TF2 promo items are based on _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The best way to be comfy when playing video games is with _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "PS3: It only does _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The new Nintendo _ is a big gimmick. ",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "&gt;tfw when _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "PC gamers have made a petition to get _ on their platform.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "If Gordon Freeman spoke, what would he talk about?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Kotaku addresses sexism in _ in their latest article.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Get double XP for Halo 3 with purchase of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "LoL stole their new character design off of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "_ is the cancer killing video games.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Suffer, like _ did.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's like _ with guns!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": " _ would like to play.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "A mod of doom was made that was based off of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I really didn't like what they did with the _ Movie adaption.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "\"HEY, GOLLEN PALACE? HOW U SAY _ IN CHINESE?\"",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Pumpkin doesn't want this.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "NEXT TIME ON GAME GRUMPS: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I used to be an adventurer like you, until _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Yeah, well, my dad works for _.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "Mountain Dew",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Duck Hunt",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "George Costanza",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the PS4",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Wii U",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the SNES",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the NES",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the SEGA Genesis",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the PSX",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the duck hunt dog",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/v/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Last of Us",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "NSA",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Video Games",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shizune (from Katawa Shuojo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hanako (from Katawa Shuojo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kenji (from Katawa Shuojo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Misha (from Katawa Shuojo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Emi (from Katawa Shoujo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The /v/idya gaem awards",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Lilly (from Katawa Shuojo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rin (from Katawa Shuojo)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "iJustine",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Yahtzee",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "rebbit",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jack Thompson",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "anything but video games",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tom Preston",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Andrew Dobson",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "nogames",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the delay time of Duke Nukem Forever",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Duke Nukem",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "WoW",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Worth the Weight",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/vg/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/vr/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/vp/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "p2w",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Christopher Robin",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Master Race",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/mlp/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bronies",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "RAGE",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eight Point Eight",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "599 US Dollars ",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "2spooky",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Civillization IV",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sanic Adventure 2",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "DoTA 2",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "League of Legends",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "asking br? when joining a server",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "HoN",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Halo",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Geralt",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Following the damn train",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Creating a LttP vs Majora's Mask",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "checking your privledge",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kotaku",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Call of Cthulhu",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "having fun",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sanic",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Corruption of Champions",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sonyggers",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hitscan",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "xX420blazeitXx",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sakurai",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "blowing into a catridge",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dragon Dildos",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nintendo",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sony",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doomguy",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Regginator",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "tfw no qt gf",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Atelier",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Asura",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Obsidrones",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nintenyearolds",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Xbots",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "on disk DLC",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the Pyro (who takes skill)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the Demoman (who takes skill)",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "New Super Luigi Bros",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Minecraft",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "playing counterstrike too seriously",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ass Creed",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "sports games the come out year after year",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Game Freak",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Konami",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sega",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Microsoft",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "pirating games because you hate the government",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wololololololololo",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cave Story",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fez",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "not completing all the side quests",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "artificial difficulty",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the best Final Fantasy game",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Grayson Hunt",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Matt and Pat",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hamberger Helper",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "padding",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "artificial fun",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "OFF by Mortis Ghost",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "an indie dev that no one knows about",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Notch",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Buzzwords",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "grumpy dumpies",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Spaghetti",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the Secret of Monkey Island",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "watching let's plays on youtube",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Princess Peach",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ronnie",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wreck-It Ralph",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Destroy-It Dan",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Doritoes",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dante, but you an call him Dante the demon killer",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "FUCK YOU",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "E.T. for Atari",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Dark Souls",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Devil May Cry",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wubs",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rape-It Randy",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bayonetta",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Fifa 2014",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Superman 64",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pikmen",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cory in the House",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Egoraptor",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "making an email to gabe newell one post at a time",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "a custom built PC",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Earthbound",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Warioware",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Traps",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/a/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "knowing that feel",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Capitan Falcon",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Donte",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Katawa Shoujio",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/pol/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "/sp/",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tropes vs Women in Video Games",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Anita",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "JonTron",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Two Best Friends",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "playing vidya",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "being a casual fuck",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "my sides",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "wagglan",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kirby",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Waluigi",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Solid Snake's Ass",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Big Boss",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Japan Time",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the orignal Xbox controller",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wiimote",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Xbox Hueg",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sam & Max",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Alexey Pajinov",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shigesato Itoi",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mother 3",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shigeru Miyamoto",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "GLaDOS",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ridley",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Geno",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Nanomachines, son",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wii Fit Trainer",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "using your PC as a heater in the winter",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "thowing bottles of holy water in the original Castlevania",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the orange gem from Bejeweled&trade;",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pheonix Wright",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hank Hill",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Banjo-Kazooie",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the 8 million jews.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Honk! Honk!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Alright",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Hideo Kojima",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "BROTHER!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "LIQUID!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kirby's Air Ride",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gaben",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "HL3 confirmed!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Yume Nikki",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Tim Buckley",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "That feel",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Star Wars: Battlefront",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bum Tickley",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Silent Hill",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Harry Mason",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kramer",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "no games",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "James Sunderland",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the plot of MGS4",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Mods",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Furfags",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Words, Words, Words",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Le /v/ culture",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jews",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "HERESY!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "My waifu",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cowadooty Franchise",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Call of Duty 4",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "L.A. Noire",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Max Payne",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The red ring of death",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kamiya",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Samus Aran",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Master Chef",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Valve",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Klonies",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "the mustard race",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Toady",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "FUCKING GAMESTOP",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "brown and bloom",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Wii-tier graphics",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "source engine",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

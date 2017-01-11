@@ -5,8 +5,8 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^1.4.13",
-    "peerjs": "^0.3.14",
-    "peer": "^0.2.8"
+    "peer": "^0.2.8",
+    "peerjs": "^0.3.14"
   },
   "devDependencies": {},
   "scripts": {

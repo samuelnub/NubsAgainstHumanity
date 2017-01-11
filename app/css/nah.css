@@ -12,9 +12,9 @@
     --cah-shadow: rgba(0,0,0,0.4);
     --cah-transparent: rgba(0,0,0,0);
     --cah-green: limegreen;
-    --cah-green-transparent: rgba(0, 240, 40, 0.75);
+    --cah-green-transparent: rgba(0, 240, 40, 0.8);
     --cah-red: red;
-    --cah-red-transparent: rgba(240, 0, 40, 0.75);
+    --cah-red-transparent: rgba(240, 0, 40, 0.8);
     --cah-border-radius: 0.1in;
 }
 
@@ -38,10 +38,8 @@ body {
     background-color: var(--cah-grey);
     
     font-family: Coolvetica, Helvetica, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--cah-black);
-
-    box-shadow: inset 0px 0px 2in var(--cah-shadow);
 
     overflow-x: hidden; 
     overflow-y: auto;
@@ -54,9 +52,9 @@ body {
 }
 
 button {
-    background: var(--cah-green);
-    padding: 0.1in;
-    font-size: 1.6em;
+    background: none;
+    padding: 0.05in;
+    font-size: 1.5em;
     border: 0.05in solid;
     border-radius: var(--cah-border-radius);
     text-shadow: 0px 0px 0.1in var(--cah-shadow);
@@ -74,6 +72,45 @@ button:focus {
 
 button:active {
     transform: scale(0.95);
+}
+
+#debug-banner {
+    width: 100%;
+    height: 0.6in;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background-color: var(--cah-red-transparent);
+    overflow: hidden;
+    padding-top: 0.18in;
+    padding-left: 1%;
+    color: var(--cah-white);
+
+    box-shadow: 0px 0px 0.1in var(--cah-shadow);
+    z-index: 1000;
+
+    animation-duration: 0.5s;
+}
+
+#debug-banner > #debug-text {
+    font-size: 1.3em;
+    width: 80%;
+    top: 40%;
+    left: 2%;
+    right: 20%;
+    font-weight: 300;
+}
+
+#debug-banner > #debug-text::before {
+    content: "Debug: ";
+    color: var(--cah-shadow);
+}
+
+#debug-banner > button {
+    position: absolute;
+    text-align: right;
+    right: 1%;
+    top: 10%;
 }
 
 .card {
@@ -193,6 +230,9 @@ button:active {
     font-size: 1.6em;
     z-index: 2;
     border-radius: 0.1in;
+
+    animation-duration: 0.5s;
+    transition: all 0.2s ease-in-out;
 }
 
 .card > .submit {

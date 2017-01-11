@@ -1,0 +1,159 @@
+{
+    "packName": "Food Pack",
+    "alias": "food",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "I'm Bobby Flay, and if you can't stand _, get out of the kitchen!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "It's not delivery. It's _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Aw babe, your burps smell like _!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Don't miss Rachel Ray's hit new show, <i>Cooking with _</i>.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Excuse me, waiter. Could take this back? This soup tastes like _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Now on Netflix: <i>Jiro Dreams of _</i>.",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A sobering quantity of chili cheese fries.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Going vegetarian and feeling so great all the time.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kale farts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Licking the cake batter off of grandma's fingers.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Real cheese flavor.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Swishing the wine around and sniffing it like a big fancy man.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Dial-A-Slice Apple Divider from Williams-Sonoma.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "What to do with all of this chocolate on my penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A belly full of hard-boiled eggs.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A joyless vegan patty.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A table for one at The Cheesecake Factory.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being emotionally and physically dominated by Gordon Ramsay.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kevin Bacon Bits.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Not knowing what to believe anymore about butter.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Soup that's better than pussy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sucking down thousands of pounds of krill every day.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A Mexican child trapped inside of a burrito.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Clamping down on a gazelle's jugular and tasting its warm life waters.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Committing suicide at the Old Country Buffet.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Father's forbidden chocolates.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Jizz Twinkies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The Hellman's Mayonnaise Corporation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The hot dog I put in my vagina ten days ago.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The inaudible screams of carrots.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

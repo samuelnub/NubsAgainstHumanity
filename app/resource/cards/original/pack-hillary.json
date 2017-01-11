@@ -1,0 +1,79 @@
+{
+    "packName": "Vote for Hillary Pack",
+    "alias": "hillary",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "When you go to the polls on Tuesday, remember:  a vote for me is a vote for _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "As reparations for slavery, all African Americans will receive _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Senator, I trust you enjoyed _ last night.  Now, can I count on your vote?",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "The Bernie Sanders revolution.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Letting Bernie Sanders rest his world-weary head on your lap.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A beautiful, ever-expanding circle of inclusivity that will never include Republicans.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Black lives mattering.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Donald Trump holding his nose while he eats pussy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The fact that Hillary Clinton is a woman.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kicking the middle class in the balls with a regressive tax code.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Keeping the government out of my vagina.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The systematic disenfranchisement of black voters.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Increasing economic and political polarization",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eating the president's pussy.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

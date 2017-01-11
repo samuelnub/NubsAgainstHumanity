@@ -1,0 +1,509 @@
+{
+    "packName": "The Sixth Expansion",
+    "alias": "CAHe6",
+    "author": null,
+    "blackCards": [
+        {
+            "text": "I work my ass off all day for this family, and this is what I come home to? _!?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I have a strict policy. First date, dinner. Second date, kiss. Third date, _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "When I was a kid, we used to play Cowboys and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "This is America. If you don't work hard, you don't succeed. I don't care if you're black, white, purple, or _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You Won't Believe These 15 Hilarious _ Bloopers!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "James is a lonely boy. But when he discovers a secret door in his attic, he meets a magical new friend: _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Don't worry kid. It gets better. I've been living with _ for 20 years.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "My grandfather worked his way up from nothing. When he came to this country, all he had was the shoes on his feet and _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Behind every powerful man is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "You are not alone. Millions of Americans struggle with _ every day.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Come to Dubai, where you can relax in our world famous spas, experience the nightlife, or simply enjoy _ by the poolside.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "\"This is madness.\" \"No, THIS IS _!\"",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Listen Gary, I like you. But if you want that corner office, you're going to have to show me _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I went to the desert and ate of the peyote cactus. Turns out my spirit animal is _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "And would you like those buffalo wings mild, hot, or _?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "The six things I could never do without: oxygen, Facebook, chocolate, Netflix, friends, and _ LOL!",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Why won't you make love to me anymore? Is it _?",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Puberty is a time of change. You might notice hair growing in new places. You might develop an interest in _. This is normal.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm sorry, Mrs. Chen, but there was nothing we could do. At 4:15 this morning, your son succumbed to _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "I'm Miss Tennessee, and if I could make the world better by changing one thing, I would get rid of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Tonight we will have sex. And afterwards, If you'd like, a little bit of _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Everybody join hands and close your eyes. Do you sense that? That's the presence of _ in this room.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "To become a true Yanomamo warrior, you must prove that you can withstand _ without crying out.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "Y'all ready to get this thing started? I'm Nick Cannon, and this is America's Got _.",
+            "pickAmount": 1,
+            "blank": false
+        },
+        {
+            "text": "If you had to describe the Card Czar, using only one of the cards in your hand, which one would it be?",
+            "pickAmount": 1,
+            "blank": false
+        }
+    ],
+    "whiteCards": [
+        {
+            "text": "A bass drop so huge it tears the starry vault asunder to reveal the face of God.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Growing up chained to a radiator in perpetual darkness.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shitting all over the floor like a bad, bad girl.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A buttload of candy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sucking all the milk out of a yak.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bullets.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A man who is so cool that he rides on a motorcycle.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Sudden penis loss.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting all offended.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crying and shitting and eating spaghetti.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "One unforgettable night of passion.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being popular and good at sports.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Filling a man's anus with concrete.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Two whales fucking the shit out of eachother.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cool, relateable cancer teens.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The amount of gay I am.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A possible Muslim.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Unsheathing my massive horse cock.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A bowl of gourds.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The male gaze.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The power of the Dark Side.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ripping a dog in half.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A constant need for validation.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Meaningless sex.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Such a big boy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Throwing stones at a man until he dies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cancer.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Like a million alligators.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Eating together like a god damn family for once.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Cute boys.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Pussy.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being a terrible mother.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Never having sex again.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A pizza guy who fucked up.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A whole lotta woman.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The all-new Nissan Pathfinder with 0.9% APR financing!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A peyote-fueled vision quest.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Kale.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Breastfeeding a ten year old.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Crippling social anxiety.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Immortality cream.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Texas.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Teaching a girl how to handjob the penis.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A turd.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Shapes and colors.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Whatever you wish, mother.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The haunting stare of an Iraqi child.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Robots who just want to party.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "A self-microwaving burrito.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Forgetting grandma's first name.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Our new Buffalo Chicken Dippers&reg;!",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Treasures beyond your wildest dreams.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Getting shot out of a cannon.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The sweet song of sword against and the braying of mighty war beasts.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Walking into a glass door.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The color \"puce\".",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Every ounce of charisma left in Mick Jagger's tired body.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The eighth graders.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Setting my balls on fire and cartwheeling to Ohio.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "The dentist.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Gwyneth Paltrow's opinions.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Turning the rivers red with the blood of infidels.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Rabies.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Important news about Taylor Swift.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Ejaculating inside another man's wife.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Owls, the perfect predator.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Being John Malkovich.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Bathing in moonsblood and dancing around the ancient oak.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An oppressed people with a vibrant culture.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "An overwhelming variety of cheeses.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Reading the entire End-User License Agreement.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Morpheus.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Peeing into a girl's butt to make a baby.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "Generally having no idea of what's going on.",
+            "pickAmount": null,
+            "blank": false
+        },
+        {
+            "text": "No longer finding any Cards Against Humanity card funny.",
+            "pickAmount": null,
+            "blank": false
+        }
+    ]
+}

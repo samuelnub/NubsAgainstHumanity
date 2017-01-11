@@ -48,7 +48,7 @@
                     })), {
                         row: (leftToDo % 2 === 0 ? 0 : 1),
                         col: 12,
-                        centred: true
+                        centred: false
                     });
                     addCards(leftToDo-1);
                 }
@@ -78,6 +78,7 @@
             blankInputDiv = document.createElement("textarea");
             blankInputDiv.classList.add("blank-input");
             blankInputDiv.setAttribute("placeholder", "________");
+            blankInputDiv.addEventListener("click", helper.textMoveCursorToEnd);
             cardDiv.appendChild(blankInputDiv);
         }
         else {
@@ -134,12 +135,9 @@
             cancelDiv.style.visibility = "hidden";
             cardDiv.appendChild(cancelDiv);
 
-            cardDiv.addEventListener("click", function (e) {
-                const rect = e.target.getBoundingClientRect();
-                const offsetX = e.clientX - rect.left;
-                const offsetY = e.clientY - rect.top;
-                console.log(offsetX + ", " + offsetY);
-
+            const clickableDiv = document.createElement("div");
+            clickableDiv.classList.add("clickable");
+            clickableDiv.addEventListener("click", function (e) {
                 if(!cardDiv.classList.contains("selected") && submitDiv.style.visibility !== "visible" && cancelDiv.style.visibility !== "visible") {
                     cardDiv.classList.add("selected");
                     submitDiv.style.visibility = "visible";
@@ -149,17 +147,8 @@
                     helper.addAnimationToElement("slideInUp", cancelDiv, false, function () {
                     });
                 }
-                else {
-                    cardDiv.classList.remove("selected");
-                    // There'll be a visible "flash" of the button if i only animated the parent overlayDiv, so i gotta do it seperately for now
-                    helper.addAnimationToElement("slideOutUp", submitDiv, false, function () {
-                        submitDiv.style.visibility = "hidden";
-                    });
-                    helper.addAnimationToElement("slideOutDown", cancelDiv, false, function () {
-                        cancelDiv.style.visibility = "hidden";
-                    });
-                }
             });
+            cardDiv.appendChild(clickableDiv);
         }
 
         return cardDiv;

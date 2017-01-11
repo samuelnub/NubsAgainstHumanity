@@ -167,6 +167,14 @@ exports.addAnimationToElement = function(animName, element, infinite, callback /
     return element;
 };
 
+exports.textMoveCursorToEnd = function(e) {
+    // use this as your "click" event listener function
+    e.target.focus();
+    const value = e.target.value;
+    e.target.value = "";
+    e.target.value = value;
+};
+
 exports.getElementByClassAndUUID = function(className, UUID) {
     return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.contains(className) ? document.getElementById(uuid) : undefined);
 }

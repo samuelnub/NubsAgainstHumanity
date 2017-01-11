@@ -9,3 +9,11 @@
 10 Jan 2017
     Fancy menu thing that slides up and asks you if you want to confirm your poor choice.
     Bit buggy, if it stops working, just spam click it a bit. 
+
+11 Jan 2017
+    const rect = e.target.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    console.log(offsetX + ", " + offsetY);
+    If you ever want to get the element-relative coords of your click event.
+    

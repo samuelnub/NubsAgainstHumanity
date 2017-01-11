@@ -102,13 +102,10 @@
         }
 
         if(typeof ourParams.submitCallback == "function") {
-            const overlayDiv = document.createElement("div");
-            overlayDiv.classList.add("overlay");
-
-            const submitButton = document.createElement("button");
-            submitButton.classList.add("submit");
-            submitButton.innerHTML = "Submit";
-            submitButton.addEventListener("click", function (e) {
+            const submitDiv = document.createElement("div");
+            submitDiv.classList.add("submit");
+            submitDiv.innerHTML = "Submit";
+            submitDiv.addEventListener("click", function(e) {
                 ourParams.submitCallback({
                     colour: ourParams.colour,
                     text: (ourParams.blank ? blankInputDiv.value : textDiv.innerHTML),
@@ -119,31 +116,47 @@
                     cardDiv: cardDiv
                 });
             });
-            overlayDiv.appendChild(submitButton);
-            overlayDiv.addEventListener("click", function (e) {
+            submitDiv.style.visibility = "hidden";
+            cardDiv.appendChild(submitDiv);
 
+            const cancelDiv = document.createElement("div");
+            cancelDiv.classList.add("cancel");
+            cancelDiv.innerHTML = "Cancel";
+            cancelDiv.addEventListener("click", function(e) {
+                cardDiv.classList.remove("selected");
+                helper.addAnimationToElement("slideOutUp", submitDiv, false, function () {
+                    submitDiv.style.visibility = "hidden";
+                });
+                helper.addAnimationToElement("slideOutDown", cancelDiv, false, function () {
+                    cancelDiv.style.visibility = "hidden";
+                });
             });
-
-            overlayDiv.style.visibility = "hidden";
-            submitButton.style.visibility = "hidden";
-            cardDiv.appendChild(overlayDiv);
+            cancelDiv.style.visibility = "hidden";
+            cardDiv.appendChild(cancelDiv);
 
             cardDiv.addEventListener("click", function (e) {
-                if(!cardDiv.classList.contains("selected")) {
+                const rect = e.target.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const offsetY = e.clientY - rect.top;
+                console.log(offsetX + ", " + offsetY);
+
+                if(!cardDiv.classList.contains("selected") && submitDiv.style.visibility !== "visible" && cancelDiv.style.visibility !== "visible") {
                     cardDiv.classList.add("selected");
-                    overlayDiv.style.visibility = "visible";
-                    submitButton.style.visibility = "visible";
-                    helper.addAnimationToElement("slideInUp", overlayDiv, false, function () {
+                    submitDiv.style.visibility = "visible";
+                    cancelDiv.style.visibility = "visible";
+                    helper.addAnimationToElement("slideInDown", submitDiv, false, function () {
+                    });
+                    helper.addAnimationToElement("slideInUp", cancelDiv, false, function () {
                     });
                 }
                 else {
                     cardDiv.classList.remove("selected");
                     // There'll be a visible "flash" of the button if i only animated the parent overlayDiv, so i gotta do it seperately for now
-                    helper.addAnimationToElement("slideOutUp", submitButton, false, function () {
-                        submitButton.style.visibility = "hidden";
+                    helper.addAnimationToElement("slideOutUp", submitDiv, false, function () {
+                        submitDiv.style.visibility = "hidden";
                     });
-                    helper.addAnimationToElement("slideOutDown", overlayDiv, false, function () {
-                        overlayDiv.style.visibility = "hidden";
+                    helper.addAnimationToElement("slideOutDown", cancelDiv, false, function () {
+                        cancelDiv.style.visibility = "hidden";
                     });
                 }
             });

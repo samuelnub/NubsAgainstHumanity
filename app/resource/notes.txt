@@ -5,3 +5,7 @@
 9 Jan 2017
     What am I? some sort of idiot? (yea), well, I just needed a custom .centred class.
     I'm sorry CSS gods, I guess I haven't sacrificed enough divs.
+
+10 Jan 2017
+    Fancy menu thing that slides up and asks you if you want to confirm your poor choice.
+    Bit buggy, if it stops working, just spam click it a bit. 

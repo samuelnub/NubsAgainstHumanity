@@ -113,6 +113,10 @@ button:active {
     top: 10%;
 }
 
+.row {
+    background-colour: var(--cah-white);
+}
+
 .card {
     text-align: center;
     /*padding-bottom: 3.2in; /* It's around 2.5 inches wide, 3.5 inches high */
@@ -174,7 +178,7 @@ button:active {
     text-align: right;
     bottom: 5%;
     left: 60%;
-    right: 5%;
+    right: 8%;
     font-size: var(--card-font-size);
     font-weight: var(--card-font-weight);
     text-transform: uppercase;

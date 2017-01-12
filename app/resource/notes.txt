@@ -16,4 +16,8 @@
     const offsetY = e.clientY - rect.top;
     console.log(offsetX + ", " + offsetY);
     If you ever want to get the element-relative coords of your click event.
+    There's now a debug logger to the renderer screen, in case you want to let your
+    people know that you're a terrible "programmer"
     
+12 Jan 2017
+    trying to make the intro screen. Also trying to fix up the "sanitize string" function.

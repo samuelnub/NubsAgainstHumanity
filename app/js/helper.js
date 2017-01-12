@@ -1,13 +1,25 @@
 const fs = require("fs");
 const http = require("http");
 
-exports.consts = {
+const consts = {
     resRootPath: "./app/resource/",
     resCardsPath: "./app/resource/cards/",
-    resProfilesPath: "./app/resource/profiles/",
 
-    settingsFileName: "settings.json"
+    profileFileName: "profile.json",
+    settingsFileName: "settings.json",
+
+    underline: "________",
+    insults: [
+        "mentally handicapped individual",
+        "sickle cell",
+        "mistake",
+        "failed abortion",
+        "nutwhacker",
+        "doofus",
+        "dinglebat"
+    ]
 };
+exports.consts = consts;
 
 exports.fileToJSON = fileToJSON;
 function fileToJSON(filePath) {
@@ -121,7 +133,10 @@ function createUUID() {
 
 exports.sanitizeString = sanitizeString;
 function sanitizeString(message) {
-    return (typeof message == "string" ? message.split(/<script|<\/script/g).join("") : "You numbnut.");
+    if(typeof message != "string") {
+        return "You numbnut, what the hell are you trying to sanitize? Your balls?";
+    }
+    return message.replace(/&(?!amp;|lt;|gt;)/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
 exports.debugMessageRenderer = function(message) {
@@ -261,7 +276,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
     if (ourParams.blank === true) {
         blankInputDiv = document.createElement("textarea");
         blankInputDiv.classList.add("blank-input");
-        blankInputDiv.setAttribute("placeholder", "________");
+        blankInputDiv.setAttribute("placeholder", consts.underline);
         blankInputDiv.addEventListener("click", textMoveCursorToEnd);
         cardDiv.appendChild(blankInputDiv);
     }
@@ -334,6 +349,11 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
     }
 
     return cardDiv;
+}
+
+exports.getInsult = getInsult;
+function getInsult() {
+    return consts.insults[Math.floor(Math.random() * consts.insults.length)];
 }
 
 // Helpers for these helper functions. nice lol

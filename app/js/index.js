@@ -3,17 +3,59 @@
     const helper = require("./helper");
 
     (function init() {
-        createWelcomeScreen();
+        helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, createWelcomeScreen, (err) => {
+            helper.debugMessageRenderer("Unable to read prfile!" + err);
+        });
     })();
     
-    function createWelcomeScreen() {
+    function createWelcomeScreen(loadedProfile) {
         document.body.innerHTML = "";
 
         const container = document.createElement("div");
-        container.className = "container-fluid";
-        container.innerHTML = "<div class=\"row\"></div><div class=\"row\"></div>";
+        container.classList.add("container");
         container.id = "welcome-screen-container";
+
+        for(let i = 0; i < 3; i++) {
+            const rowDiv = document.createElement("div");
+            rowDiv.classList.add("row");
+            container.appendChild(rowDiv);
+        }
         document.body.appendChild(container);
+
+        const blackCard = helper.createCardElement({
+            colour: "black",
+            text: (loadedProfile.nickname === null || loadedProfile.uuid === null ? "I'm a " + helper.getInsult() + ", and my name's " + helper.consts.underline + "." : "Hey there, " + loadedProfile.nickname),
+            packName: "Nubs Against Humanity",
+            pickAmount: 1,
+            blank: false
+        });
+
+        const whiteCard = helper.createCardElement({
+           colour: "white",
+           text: (loadedProfile.nickname !== null && loadedProfile.uuid !== null ? loadedProfile.nickname : "I'm the nameless creature"),
+           packName: "Nubs Against Humanity",
+           pickAmount: 0,
+           blank: (loadedProfile.nickname !== null && loadedProfile.uuid !== null ? false : true),
+           submitCallback: (cardInfo) => {
+               helper.debugMessageRenderer(cardInfo.text);
+           }
+        });
+
+        
+
+        helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInRightBig", blackCard, false), {
+            row: 1,
+            col: 12,
+            centred: true
+        });
+
+        helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInLeftBig", whiteCard, false), {
+            row: 2,
+            col: 12,
+            centred: true
+        });
+        
+
 
         function addCards(leftToDo) {
             if(typeof leftToDo == "undefined") {
@@ -41,11 +83,6 @@
             }, 100);
         }
 
-        
-    }
-
-    function loadAllCardsFromFile() {
 
     }
-
 })();

@@ -42,7 +42,7 @@ body {
     color: var(--cah-black);
 
     overflow-x: hidden; 
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .centred {
@@ -217,8 +217,9 @@ button:active {
     left: 0%;
     background-color: var(--cah-transparent);
     z-index: 1;
+    padding: 10%;
 
-    transition: all 0.1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     transition-delay: 0.1s;
 }
 
@@ -234,7 +235,7 @@ button:active {
     font-size: 1.6em;
     z-index: 2;
     border-radius: 0.1in;
-
+    user-select: none;
     animation-duration: 0.5s;
     transition: all 0.2s ease-in-out;
 }
@@ -249,4 +250,23 @@ button:active {
     background-color: var(--cah-red-transparent);
     top: 52%;
     padding-top: 25%;
+}
+
+#welcome-header {
+    text-align: center;
+}
+
+/* Game screen-related stuff */
+.game-play-area, .game-chat-area {
+    position: absolute;
+    height: 100%;
+}
+
+.game-play-area {
+    background-color: var(--cah-shadow);
+}
+
+.game-chat-area {
+    background-color: var(--cah-green-transparent);
+    right: 0%;
 }

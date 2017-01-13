@@ -3,28 +3,26 @@
     const helper = require("./helper");
 
     (function init() {
-        helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, createWelcomeScreen, (err) => {
+        helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfile) => {
+            if(myProfile.nickname === null || myProfile.uuid === null) {
+                createScreenWelcome(myProfile);
+            }
+            else {
+                createScreenGame(myProfile);
+            }
+        }, (err) => {
             helper.debugMessageRenderer("Unable to read prfile!" + err);
         });
     })();
     
-    function createWelcomeScreen(loadedProfile) {
+    function createScreenWelcome(myProfile) {
         document.body.innerHTML = "";
 
-        const container = document.createElement("div");
-        container.classList.add("container");
-        container.id = "welcome-screen-container";
-
-        for(let i = 0; i < 3; i++) {
-            const rowDiv = document.createElement("div");
-            rowDiv.classList.add("row");
-            container.appendChild(rowDiv);
-        }
-        document.body.appendChild(container);
+        const container = helper.createContainerElement(false, 3);
 
         const blackCard = helper.createCardElement({
             colour: "black",
-            text: (loadedProfile.nickname === null || loadedProfile.uuid === null ? "I'm a " + helper.getInsult() + ", and my name's " + helper.consts.underline + "." : "Hey there, " + loadedProfile.nickname),
+            text: (myProfile.nickname === null || myProfile.uuid === null ? "I'm a " + helper.getInsult() + ", and they call me " + helper.consts.underline + "." : "Hey there, " + myProfile.nickname),
             packName: "Nubs Against Humanity",
             pickAmount: 1,
             blank: false
@@ -32,16 +30,36 @@
 
         const whiteCard = helper.createCardElement({
            colour: "white",
-           text: (loadedProfile.nickname !== null && loadedProfile.uuid !== null ? loadedProfile.nickname : "I'm the nameless creature"),
+           text: (myProfile.nickname !== null && myProfile.uuid !== null ? "Let me in, you " + helper.getInsult() + "!" : "I'm the nameless creature"),
            packName: "Nubs Against Humanity",
            pickAmount: 0,
-           blank: (loadedProfile.nickname !== null && loadedProfile.uuid !== null ? false : true),
+           blank: (myProfile.nickname !== null && myProfile.uuid !== null ? false : true),
            submitCallback: (cardInfo) => {
-               helper.debugMessageRenderer(cardInfo.text);
+               if(cardInfo.blank) {
+                   myProfile.nickname = cardInfo.text;
+                   myProfile.uuid = helper.createUUID();
+                   helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.profileFileName, myProfile, () => {
+                       helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
+                           createScreenGame(myProfile);
+                       });
+                   }, () => {
+                       helper.debugMessageRenderer("Unable to write to profile.json file");
+                   });
+               }
+               helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
+                   createScreenGame(myProfile);
+               });
            }
         });
 
-        
+        const welcomeHeader = document.createElement("h1");
+        welcomeHeader.id = "welcome-header";
+        welcomeHeader.innerHTML = (myProfile.nickname === null || myProfile.uuid === null ? "Welcome to Hell." : "Welcome back.");
+        helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInDown", welcomeHeader, false), {
+            row: 0,
+            col: 12,
+            centred: true
+        });
 
         helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInRightBig", blackCard, false), {
             row: 1,
@@ -49,40 +67,56 @@
             centred: true
         });
 
-        helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInLeftBig", whiteCard, false), {
+        helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInLeftBig", whiteCard, false, () => {
+            if(myProfile.nickname !== null && myProfile.uuid !== null) {
+                return;
+            }
+            setTimeout(() => {
+                const clickableDiv = whiteCard.getElementsByClassName("clickable")[0];
+                if(typeof clickableDiv == "undefined") {
+                    return;
+                }
+                clickableDiv.innerHTML = "Press here to confirm. Press the top/bottom parts to input whatever hogwash you want (if it's available, of course).";
+                clickableDiv.style = "background-color: var(--cah-shadow);";
+                clickableDiv.addEventListener("click", function clickRemoveStyling(e) {
+                    clickableDiv.innerHTML = "";
+                    clickableDiv.removeAttribute("style");
+                    clickableDiv.removeEventListener("click", clickRemoveStyling);
+                });
+            }, 1000);
+        }), {
             row: 2,
             col: 12,
             centred: true
         });
+
+        document.body.appendChild(container);
+    }
+
+    function createScreenGame(myProfile) {
+        document.body.innerHTML = "";
         
+        const container = helper.createContainerElement(true, 1);
 
+        const playAreaColWidth = 9;
+        const chatAreaColWidth = 12 - playAreaColWidth;
 
-        function addCards(leftToDo) {
-            if(typeof leftToDo == "undefined") {
-                leftToDo = 12;
-            }
-            setTimeout(() => {
-                if(leftToDo > 0) {
-                    const cardColour = (leftToDo % 2 === 0 ? "white" : "black");
-                    helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInRightBig", helper.createCardElement({
-                        colour: cardColour,
-                        text: "Hello ______! How <i>you</i> doin? I'm doin' good, baby! Nice to see that someone else is also as big of a cuck as I am. Niiiiiiiiiice. Eggnog.",
-                        packName: "You cuck.",
-                        pickAmount: 3,
-                        blank: (leftToDo % 2 === 0 ? true : false),
-                        submitCallback: function(cardInfo) {
-                            helper.debugMessageRenderer("Hey! " + leftToDo + ", from card: " + cardInfo.text);
-                        }
-                    })), {
-                        row: (leftToDo % 2 === 0 ? 0 : 1),
-                        col: 12,
-                        centred: false
-                    });
-                    addCards(leftToDo-1);
-                }
-            }, 100);
-        }
+        const playAreaContainer = helper.createContainerElement(true, 2);
+        playAreaContainer.classList.add("game-play-area");
+        helper.placeElementInContainer(container, playAreaContainer, {
+            row: 0,
+            col: playAreaColWidth,
+            centred: false
+        });
 
+        const chatAreaContainer = document.createElement("div");
+        chatAreaContainer.classList.add("game-chat-area");
+        helper.placeElementInContainer(container, chatAreaContainer, {
+            row: 0,
+            col: chatAreaColWidth,
+            centred: false
+        });
 
+        document.body.appendChild(container);
     }
 })();

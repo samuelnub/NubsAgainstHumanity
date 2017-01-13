@@ -21,3 +21,7 @@
     
 12 Jan 2017
     trying to make the intro screen. Also trying to fix up the "sanitize string" function.
+    I'm liking these animations. it hides the fact that I'm a bad "programmer"
+    Use media queries for the main screen's styling. 
+    http://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+    

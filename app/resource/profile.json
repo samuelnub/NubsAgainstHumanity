@@ -1,11 +1,9 @@
 {
-    "uuid": null,
-    "nickname": null,
+    "uuid": "bdcc1d58-185f-4362-9fc9-308f726a8ddc",
+    "nickname": "Samuel Nub",
     "stats": {
         "totalPoints": 0,
         "totalRounds": 0
     },
-    "leaderboard": [
-        
-    ]
+    "leaderboard": []
 }

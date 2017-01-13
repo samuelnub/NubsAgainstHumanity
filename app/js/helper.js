@@ -10,13 +10,29 @@ const consts = {
 
     underline: "________",
     insults: [
-        "mentally handicapped individual",
         "sickle cell",
         "mistake",
         "failed abortion",
         "nutwhacker",
+        "nutsack",
         "doofus",
-        "dinglebat"
+        "dinglebat",
+        "bastard",
+        "donkey",
+        "dweeb",
+        "git",
+        "geezer",
+        "hick",
+        "louse",
+        "nut",
+        "wimp",
+        "yahoo",
+        "wing-dingly fingle-bob",
+        "skadouche-bag",
+        "sub-human scum",
+        "dried up remnant within an unsanitized toilet bowl",
+        "sick pterodactyl",
+        "mentally handicapped individual"
     ]
 };
 exports.consts = consts;
@@ -136,7 +152,7 @@ function sanitizeString(message) {
     if(typeof message != "string") {
         return "You numbnut, what the hell are you trying to sanitize? Your balls?";
     }
-    return message.replace(/&(?!amp;|lt;|gt;)/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
 };
 
 exports.debugMessageRenderer = function(message) {
@@ -189,13 +205,26 @@ exports.debugMessageRenderer = function(message) {
     }
 };
 
+exports.createContainerElement = createContainerElement;
+function createContainerElement(fluid, rows) {
+    const container = document.createElement("div");
+    container.classList.add((fluid ? "container-fluid" : "container"));
+    for (let i = 0; i < rows; i++) {
+        const rowDiv = document.createElement("div");
+        rowDiv.classList.add("row");
+        container.appendChild(rowDiv);
+    }
+    return container;
+}
+
 exports.placeElementInContainer = placeElementInContainer;
 function placeElementInContainer(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, params /* row, col (width), insertBeforeCol (x axis-ordering), centred (bool) */) {
         const ourParams = {
             row: (params.hasOwnProperty("row") ? params.row : 0),
             col: (params.hasOwnProperty("col") ? params.col : 12),
             insertBeforeCol: (params.hasOwnProperty("insertBeforeCol") ? params.insertBeforeCol : -1),
-            centred: (params.hasOwnProperty("centred") ? params.centred : false)
+            centred: (params.hasOwnProperty("centred") ? params.centred : false),
+            deviceSize: (params.hasOwnProperty("deviceSize") ? params.deviceSize : "xs")
         };
         
         parentContainer = (typeof parentContainer == "string" ? document.getElementById(parentContainer) : parentContainer);
@@ -211,7 +240,7 @@ function placeElementInContainer(parentContainer /* Pass an HTML element, or pas
         }
 
         ourParams.row = (ourParams.row < rows.length && ourParams.row >= 0 ? ourParams.row : 0);
-        yourElement.classList.add("col-sm-" + ourParams.col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
+        yourElement.classList.add("col-" + ourParams.deviceSize + "-" + ourParams.col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
         
         if(ourParams.insertBeforeCol < rows[ourParams.row].childNodes.length && ourParams.insertBeforeCol >= 0) {
             rows[ourParams.row].insertBefore(yourElement, rows[ourParams.row].childNodes[ourParams.insertBeforeCol]);
@@ -294,7 +323,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
 
     let pickAmountDiv;
 
-    if (ourParams.colour === "black" && typeof ourParams.pickAmount != "undefined" && ourParams.pickAmount > 0) {
+    if (ourParams.colour === "black" && typeof ourParams.pickAmount != "undefined" && ourParams.pickAmount > 1) {
         pickAmountDiv = document.createElement("div");
         pickAmountDiv.classList.add("pick-amount");
         pickAmountDiv.innerHTML = ourParams.pickAmount;

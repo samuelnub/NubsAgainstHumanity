@@ -113,10 +113,6 @@ button:active {
     top: 10%;
 }
 
-.row {
-    background-colour: var(--cah-white);
-}
-
 .card {
     text-align: center;
     /*padding-bottom: 3.2in; /* It's around 2.5 inches wide, 3.5 inches high */
@@ -263,10 +259,11 @@ button:active {
 }
 
 .game-play-area {
-    background-color: var(--cah-shadow);
+    text-align: center;
 }
 
 .game-chat-area {
-    background-color: var(--cah-green-transparent);
+    text-align: left;
     right: 0%;
+    border-left: 0.05in solid var(--cah-shadow);
 }

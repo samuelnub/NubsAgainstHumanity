@@ -389,7 +389,7 @@ function getInsult() {
 exports.getCorrectPath = getCorrectPath;
 function getCorrectPath(filePath) {
     // A crappy hack, will utterly fail if the user decides to put their executable somewhere deep down where this string can be found in its filepath
-    return (process.execPath.search("\\\\node_modules\\\\electron\\\\dist\\\\electron") !== -1 ? filePath : process.resourcesPath + "/app/" + filePath.split("./").join(""));
+    return (process.execPath.search(/(?=.*node_modules)(?=.*electron)(?=.*dist)(?=.*electron)/g) !== -1 ? filePath : process.resourcesPath + "/app/" + filePath.split("./").join(""));
 }
 
 exports.splitStringAtIndex = splitStringAtIndex;

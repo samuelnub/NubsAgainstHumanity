@@ -25,3 +25,8 @@
     Use media queries for the main screen's styling. 
     http://www.w3schools.com/cssref/css3_pr_mediaquery.asp
     
+13 Jan 2017
+    n..nothing
+
+14 Jan 2017
+    mucking around with peerjs and its server counterpart

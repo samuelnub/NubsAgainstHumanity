@@ -1,5 +1,8 @@
 {
     "debug": "true",
     "width": 1280,
-    "height": 1024
+    "height": 1024,
+    "defaultPort": 80,
+    "defaultPath": "/nah",
+    "proxied": true
 }

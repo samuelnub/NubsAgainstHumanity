@@ -1,6 +1,12 @@
 (function nubsAgainstHumanity() {
     const remote = require("electron").remote;
     const helper = require("./helper");
+    const Peer = require("peerjs");
+    const PeerServer = require("peer").PeerServer;
+
+    const nahGlobal = remote.getGlobal("nah");
+
+    let server;
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfile) => {
@@ -116,9 +122,33 @@
             col: chatAreaColWidth,
             centred: false
         });
-
-        
-
         document.body.appendChild(container);
+
+        (function initServer() {
+            if(!server) { // TODO: maybe just overwrite it either way.
+                server = PeerServer({
+                    port: (typeof nahGlobal.settings.defaultPort != "undefined" ? nahGlobal.settings.defaultPort : 9000),
+                    path: (typeof nahGlobal.settings.defaultPath != "undefined" ? nahGlobal.settings.defaultPath : "/nah"),
+                    proxied: (typeof nahGlobal.settings.proxied != "undefined" ? nahGlobal.settings.proxied : false),
+                    debug: true
+                });
+            }
+        })();
+
+        server.on("connection", function(id) {
+            helper.debugMessageRenderer(id + " has connected lol");
+        });
+        server.on("disconnect", function(id) {
+            helper.debugMessageRenderer(id + " has disconnected :(");
+        });
+
+        const peer = new Peer("", {
+            host: "localhost",
+            port: nahGlobal.settings.defaultPort,
+            path: "/nah"
+        });
+        // oh hey. at this point it works lol
     }
+
+
 })();

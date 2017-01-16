@@ -6,22 +6,27 @@
 
     const nahGlobal = remote.getGlobal("nah");
 
-    let server;
+    let peerServer;
+
+    let myProfile;
+    let initialTotalRounds;
 
     (function init() {
-        helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfile) => {
-            if(myProfile.nickname === null || myProfile.uuid === null) {
-                createScreenWelcome(myProfile);
+        helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
+            myProfile = myProfileLoaded
+            initialTotalRounds = myProfile.stats.totalRounds;
+            if (myProfile.nickname === null || myProfile.uuid === null) {
+                createScreenWelcome();
             }
             else {
-                createScreenGame(myProfile);
+                createScreenGame();
             }
         }, (err) => {
             helper.debugMessageRenderer("Unable to read prfile!" + err);
         });
     })();
-    
-    function createScreenWelcome(myProfile) {
+
+    function createScreenWelcome() {
         document.body.innerHTML = "";
 
         const container = helper.createContainerElement(false, 3);
@@ -35,27 +40,27 @@
         });
 
         const whiteCard = helper.createCardElement({
-           colour: "white",
-           text: (myProfile.nickname !== null && myProfile.uuid !== null ? "Let me in, you " + helper.getInsult() + "!" : "I'm the nameless creature"),
-           packName: "Nubs Against Humanity",
-           pickAmount: 0,
-           blank: (myProfile.nickname !== null && myProfile.uuid !== null ? false : true),
-           submitCallback: (cardInfo) => {
-               if(cardInfo.blank) {
-                   myProfile.nickname = cardInfo.text;
-                   myProfile.uuid = helper.createUUID();
-                   helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.profileFileName, myProfile, () => {
-                       helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
-                           createScreenGame(myProfile);
-                       });
-                   }, () => {
-                       helper.debugMessageRenderer("Unable to write to profile.json file");
-                   });
-               }
-               helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
-                   createScreenGame(myProfile);
-               });
-           }
+            colour: "white",
+            text: (myProfile.nickname !== null && myProfile.uuid !== null ? "Let me in, you " + helper.getInsult() + "!" : "I'm the nameless creature"),
+            packName: "Nubs Against Humanity",
+            pickAmount: 0,
+            blank: (myProfile.nickname !== null && myProfile.uuid !== null ? false : true),
+            submitCallback: (cardInfo) => {
+                if (cardInfo.blank) {
+                    myProfile.nickname = cardInfo.text;
+                    myProfile.uuid = helper.createUUID();
+                    helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.profileFileName, myProfile, () => {
+                        helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
+                            createScreenGame();
+                        });
+                    }, () => {
+                        helper.debugMessageRenderer("Unable to write to profile.json file");
+                    });
+                }
+                helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
+                    createScreenGame();
+                });
+            }
         });
 
         const welcomeHeader = document.createElement("h1");
@@ -74,12 +79,12 @@
         });
 
         helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInLeftBig", whiteCard, false, () => {
-            if(myProfile.nickname !== null && myProfile.uuid !== null) {
+            if (myProfile.nickname !== null && myProfile.uuid !== null) {
                 return;
             }
             setTimeout(() => {
                 const clickableDiv = whiteCard.getElementsByClassName("clickable")[0];
-                if(typeof clickableDiv == "undefined") {
+                if (typeof clickableDiv == "undefined") {
                     return;
                 }
                 clickableDiv.innerHTML = "Press here to confirm. Press the top/bottom parts to input whatever hogwash you want (if it's available, of course).";
@@ -91,17 +96,17 @@
                 });
             }, 1000);
         }), {
-            row: 2,
-            col: 12,
-            centred: true
-        });
+                row: 2,
+                col: 12,
+                centred: true
+            });
 
         document.body.appendChild(container);
     }
 
-    function createScreenGame(myProfile) {
+    function createScreenGame() {
         document.body.innerHTML = "";
-        
+
         const container = helper.createContainerElement(true, 1);
 
         const playAreaColWidth = 9;
@@ -124,31 +129,72 @@
         });
         document.body.appendChild(container);
 
-        (function initServer() {
-            if(!server) { // TODO: maybe just overwrite it either way.
-                server = PeerServer({
+        promptNewRound();
+        /*
+        (function initPeerServer() {
+            if (!peerServer) { // TODO: maybe just overwrite it either way.
+                peerServer = PeerServer({
                     port: (typeof nahGlobal.settings.defaultPort != "undefined" ? nahGlobal.settings.defaultPort : 9000),
                     path: (typeof nahGlobal.settings.defaultPath != "undefined" ? nahGlobal.settings.defaultPath : "/nah"),
                     proxied: (typeof nahGlobal.settings.proxied != "undefined" ? nahGlobal.settings.proxied : false),
                     debug: true
                 });
             }
+
+            peerServer.on("connection", function (id) {
+                helper.debugMessageRenderer(id + " has connected lol");
+            });
+            peerServer.on("disconnect", function (id) {
+                helper.debugMessageRenderer(id + " has disconnected :(");
+            });
         })();
 
-        server.on("connection", function(id) {
-            helper.debugMessageRenderer(id + " has connected lol");
-        });
-        server.on("disconnect", function(id) {
-            helper.debugMessageRenderer(id + " has disconnected :(");
-        });
+
 
         const peer = new Peer("", {
-            host: "localhost",
+            host: "192.168.0.12",
             port: nahGlobal.settings.defaultPort,
-            path: "/nah"
+            path: "/nah",
+            debug: 3
         });
-        // oh hey. at this point it works lol
+        // oh hey. at this point it works lol*/
     }
 
+    function promptNewRound() {
+        const ourWhiteCards = [
+            helper.createCardElement({
+                colour: "white",
+                text: "Host a new match.",
+                submitCallback: (cardInfo) => {
+                    
+                }
+            }),
+            helper.createCardElement({
+                colour: "white",
+                text: "Join some other friend's match.",
+                submitCallback: (cardInfo) => {
 
+                }
+            })
+        ];
+
+        if(myProfile.stats.totalRounds - initialTotalRounds > 0) {
+            ourWhiteCards.push(helper.createCardElement({
+                colour: "white",
+                text: "Restart this match. I like these guys (or I was forced against my will to replay with them).",
+                submitCallback: (cardInfo) => {
+
+                }
+            }));
+        }
+
+        helper.showPromptRenderer({
+            parentElement: document.body,
+            blackCard: helper.createCardElement({
+                colour: "black",
+                text: "Alright, " + helper.getInsult() + ", what do you want to do now?"
+            }),
+            whiteCards: ourWhiteCards
+        });
+    }
 })();

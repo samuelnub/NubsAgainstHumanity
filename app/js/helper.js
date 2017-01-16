@@ -43,21 +43,21 @@ function fileToJSON(filePath) {
         const fileContents = fs.readFileSync(getCorrectPath(filePath));
         return JSON.parse(fileContents);
     }
-    catch(err) {
+    catch (err) {
         console.error("Encountered an error when trying to read file");
         console.error(err);
         return JSON.parse("{ \"lol\": \"you're not very good at this\" }");
     }
 };
 
-exports.JSONToFile = function(filePath, json) {
+exports.JSONToFile = function (filePath, json) {
     try {
-        if(typeof json == "undefined") {
+        if (typeof json == "undefined") {
             return;
         }
         fs.writeFileSync(getCorrectPath(filePath), JSON.stringify(json, null, 4));
     }
-    catch(err) {
+    catch (err) {
         console.error("Encountered an error when trying to write file");
         console.error(err);
     }
@@ -65,11 +65,11 @@ exports.JSONToFile = function(filePath, json) {
 
 exports.fileToJSONAsync = fileToJSONAsync;
 function fileToJSONAsync(filePath, callback /* Should have 1 argument, the returned parsed JSON object */, failureCallback) {
-    fs.readFile(getCorrectPath(filePath), function(err, data) {
-        if(err) {
+    fs.readFile(getCorrectPath(filePath), function (err, data) {
+        if (err) {
             console.error("Encountered an error when trying to read file asynchronously");
             console.error(err);
-            if(typeof failureCallback == "function") {
+            if (typeof failureCallback == "function") {
                 failureCallback(err);
             }
         }
@@ -91,11 +91,11 @@ function fileToJSONAsync(filePath, callback /* Should have 1 argument, the retur
 
 exports.JSONToFileAsync = JSONToFileAsync;
 function JSONToFileAsync(filePath, json, callback, failureCallback) {
-    fs.writeFile(getCorrectPath(filePath), JSON.stringify(json, null, 4), function(err) {
-        if(err) {
+    fs.writeFile(getCorrectPath(filePath), JSON.stringify(json, null, 4), function (err) {
+        if (err) {
             console.error("Encountered an error when trying to write file asynchronously");
             console.error(err);
-            if(typeof failureCallback == "function") {
+            if (typeof failureCallback == "function") {
                 failureCallback(err);
             }
         }
@@ -110,27 +110,27 @@ function httpGetJSON(url /* No http://, just example www.google.com/boots_and_ca
     http.get({
         host: splitStringAtIndex(url, url.search("/")).first,
         path: splitStringAtIndex(url, url.search("/")).second
-    }, function(res) {
+    }, function (res) {
         let resBody = "";
-        res.on("data", function(d) {
+        res.on("data", function (d) {
             resBody += d;
         });
-        res.on("error", function(err) {
+        res.on("error", function (err) {
             console.error("Encountered an error when trying to make a HTTP get");
             console.error(err);
-            if(typeof failureCallback == "function") {
+            if (typeof failureCallback == "function") {
                 failureCallback(err);
             }
         });
-        res.on("end", function() {
+        res.on("end", function () {
             try {
                 const parsed = JSON.parse(resBody);
                 callback(parsed);
             }
-            catch(err) {
+            catch (err) {
                 console.error("Encountered an error when trying to parse JSON");
                 console.error(err);
-                if(typeof failureCallback == "function") {
+                if (typeof failureCallback == "function") {
                     failureCallback(err);
                 }
             }
@@ -141,24 +141,24 @@ function httpGetJSON(url /* No http://, just example www.google.com/boots_and_ca
 exports.createUUID = createUUID;
 function createUUID() {
     // http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
 };
 
 exports.sanitizeString = sanitizeString;
 function sanitizeString(message) {
-    if(typeof message != "string") {
+    if (typeof message != "string") {
         return "You numbnut, what the hell are you trying to sanitize? Your balls?";
     }
     return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
 };
 
-exports.debugMessageRenderer = function(message) {
+exports.debugMessageRenderer = function (message) {
     const stillThereAnimName = "shake";
-    if(!document.getElementById("debug-banner") || (document.getElementById("debug-banner") && document.getElementById("debug-banner").classList.contains("animated") && !document.getElementById("debug-banner").classList.contains(stillThereAnimName))) {
-        if(document.getElementById("debug-banner")) {
+    if (!document.getElementById("debug-banner") || (document.getElementById("debug-banner") && document.getElementById("debug-banner").classList.contains("animated") && !document.getElementById("debug-banner").classList.contains(stillThereAnimName))) {
+        if (document.getElementById("debug-banner")) {
             document.body.removeChild(document.getElementById("debug-banner"));
         }
         const debugDiv = document.createElement("div");
@@ -190,8 +190,8 @@ exports.debugMessageRenderer = function(message) {
             "\uD83D\uDE04\uD83D\uDD2B"
         ];
         closeButton.innerHTML = buttonTexts[Math.floor(Math.random() * buttonTexts.length)];
-        closeButton.addEventListener("click", function(e) {
-            addAnimationToElement("slideOutUp", debugDiv, false, function() {
+        closeButton.addEventListener("click", function (e) {
+            addAnimationToElement("slideOutUp", debugDiv, false, function () {
                 document.body.removeChild(debugDiv);
             });
         });
@@ -219,49 +219,49 @@ function createContainerElement(fluid, rows) {
 
 exports.placeElementInContainer = placeElementInContainer;
 function placeElementInContainer(parentContainer /* Pass an HTML element, or pass a string of the container element ID*/, yourElement, params /* row, col (width), insertBeforeCol (x axis-ordering), centred (bool) */) {
-        const ourParams = {
-            row: (params.hasOwnProperty("row") ? params.row : 0),
-            col: (params.hasOwnProperty("col") ? params.col : 12),
-            insertBeforeCol: (params.hasOwnProperty("insertBeforeCol") ? params.insertBeforeCol : -1),
-            centred: (params.hasOwnProperty("centred") ? params.centred : false),
-            deviceSize: (params.hasOwnProperty("deviceSize") ? params.deviceSize : "xs")
-        };
-        
-        parentContainer = (typeof parentContainer == "string" ? document.getElementById(parentContainer) : parentContainer);
-        
-        if(ourParams.centred) {
-            yourElement.classList.add("centred");
-        }
+    const ourParams = {
+        row: (params.hasOwnProperty("row") ? params.row : 0),
+        col: (params.hasOwnProperty("col") ? params.col : 12),
+        insertBeforeCol: (params.hasOwnProperty("insertBeforeCol") ? params.insertBeforeCol : -1),
+        centred: (params.hasOwnProperty("centred") ? params.centred : false),
+        deviceSize: (params.hasOwnProperty("deviceSize") ? params.deviceSize : "xs")
+    };
 
-        const rows = parentContainer.getElementsByClassName("row");
-        if(rows.length === 0) {
-            console.error("You tried putting an element into a container with no rows! You idiot!");
-            return false;
-        }
+    parentContainer = (typeof parentContainer == "string" ? document.getElementById(parentContainer) : parentContainer);
 
-        ourParams.row = (ourParams.row < rows.length && ourParams.row >= 0 ? ourParams.row : 0);
-        yourElement.classList.add("col-" + ourParams.deviceSize + "-" + ourParams.col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
-        
-        if(ourParams.insertBeforeCol < rows[ourParams.row].childNodes.length && ourParams.insertBeforeCol >= 0) {
-            rows[ourParams.row].insertBefore(yourElement, rows[ourParams.row].childNodes[ourParams.insertBeforeCol]);
-        }
-        else {
-            rows[ourParams.row].appendChild(yourElement);
-        }
-        return true;
+    if (ourParams.centred) {
+        yourElement.classList.add("centred");
+    }
+
+    const rows = parentContainer.getElementsByClassName("row");
+    if (rows.length === 0) {
+        console.error("You tried putting an element into a container with no rows! You idiot!");
+        return false;
+    }
+
+    ourParams.row = (ourParams.row < rows.length && ourParams.row >= 0 ? ourParams.row : 0);
+    yourElement.classList.add("col-" + ourParams.deviceSize + "-" + ourParams.col, "center-block"); // sm seems to be the right size, or else there's either too much empty room, or they're too squeezed
+
+    if (ourParams.insertBeforeCol < rows[ourParams.row].childNodes.length && ourParams.insertBeforeCol >= 0) {
+        rows[ourParams.row].insertBefore(yourElement, rows[ourParams.row].childNodes[ourParams.insertBeforeCol]);
+    }
+    else {
+        rows[ourParams.row].appendChild(yourElement);
+    }
+    return true;
 };
 
 exports.addAnimationToElement = addAnimationToElement;
 function addAnimationToElement(animName, element, infinite, callback /* 1 argument with the element you gave it - not sure if it'll be needed, but eh lol */) {
     element.classList.add("animated", animName);
-    if(infinite) {
+    if (infinite) {
         element.classList.add("infinite");
     }
     else {
         element.addEventListener("animationend", function removeAnimation() {
             element.classList.remove("animated", animName);
             element.removeEventListener("animationend", removeAnimation);
-            if(typeof callback == "function") {
+            if (typeof callback == "function") {
                 callback(element);
             }
         });
@@ -288,7 +288,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
     const ourParams = {
         colour: (params.hasOwnProperty("colour") ? params.colour : "black"),
         text: (params.hasOwnProperty("text") ? params.text : "You nutsack. There was no text content given."),
-        packName: (params.hasOwnProperty("packName") ? params.packName : "The idiot pack, by Sam"),
+        packName: (params.hasOwnProperty("packName") ? params.packName : "Nubs Against Humanity"),
         pickAmount: (params.hasOwnProperty("pickAmount") ? params.pickAmount : 0),
         blank: (params.hasOwnProperty("blank") ? params.blank : false),
         submitCallback: (params.hasOwnProperty("submitCallback") ? params.submitCallback : undefined),
@@ -378,6 +378,61 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
     }
 
     return cardDiv;
+}
+
+exports.showPromptRenderer = showPromptRenderer;
+function showPromptRenderer(params) {
+    const ourParams = {
+        parentElement: (params.hasOwnProperty("parentElement") ? params.parentElement : document.body),
+        blackCard: (params.hasOwnProperty("blackCard") ? params.blackCard : createCardElement({
+            colour: "black",
+            text: "Hey. Tell the guy who made this that there's nothing here.",
+            packName: "The 'You forgot how to do this' Pack",
+            pickAmount: 1,
+            blank: false,
+            submitCallback: null
+        })),
+        whiteCards: (params.hasOwnProperty("whiteCards") ? params.whiteCards : [
+            createCardElement({
+                colour: "white",
+                text: "Hey. Tell the guy who made this that there's nothing here.",
+                packName: "The 'You forgot how to do this' Pack",
+                pickAmount: 1,
+                blank: true,
+                submitCallback: (cardInfo) => {
+                    debugMessageRenderer("Prompt. " + cardInfo.text);
+                }
+            })
+        ])
+    };
+
+    const overlayDiv = document.createElement("div");
+    overlayDiv.classList.add("overlay");
+
+    const overlayContainerDiv = createContainerElement(false, 2);
+
+    placeElementInContainer(overlayContainerDiv, ourParams.blackCard, {
+        row: 0,
+        col: 12,
+        centred: true
+    });
+
+    for (whiteCard of ourParams.whiteCards) {
+        whiteCard.getElementsByClassName("submit")[0].addEventListener("click", (e) => {
+            addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
+                ourParams.parentElement.removeChild(element);
+            });
+        });
+        placeElementInContainer(overlayContainerDiv, whiteCard, {
+            row: 1,
+            col: 12,
+            centred: true
+        });
+    }
+    overlayDiv.appendChild(overlayContainerDiv);
+
+    ourParams.parentElement.appendChild(overlayDiv);
+    addAnimationToElement("fadeInDownBig", overlayDiv, false);
 }
 
 exports.getInsult = getInsult;

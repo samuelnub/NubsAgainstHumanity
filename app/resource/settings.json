@@ -2,7 +2,7 @@
     "debug": "true",
     "width": 1280,
     "height": 1024,
-    "defaultPort": 80,
+    "defaultPort": 9000,
     "defaultPath": "/nah",
     "proxied": true
 }

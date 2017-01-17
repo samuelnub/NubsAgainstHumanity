@@ -30,3 +30,7 @@
 
 14 Jan 2017
     mucking around with peerjs and its server counterpart
+
+16 Jan 2017
+    use stun and turn servers, 
+    https://groups.google.com/forum/#!msg/peerjs/JzIr7INoTbQ/IIykVNHiv_sJ

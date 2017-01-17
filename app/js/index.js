@@ -7,9 +7,10 @@
     const nahGlobal = remote.getGlobal("nah");
 
     let peerServer;
+    let peerMe;
 
     let myProfile;
-    let initialTotalRounds;
+    let initialTotalRounds; // Don't change this lol
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
@@ -130,34 +131,6 @@
         document.body.appendChild(container);
 
         promptNewRound();
-        /*
-        (function initPeerServer() {
-            if (!peerServer) { // TODO: maybe just overwrite it either way.
-                peerServer = PeerServer({
-                    port: (typeof nahGlobal.settings.defaultPort != "undefined" ? nahGlobal.settings.defaultPort : 9000),
-                    path: (typeof nahGlobal.settings.defaultPath != "undefined" ? nahGlobal.settings.defaultPath : "/nah"),
-                    proxied: (typeof nahGlobal.settings.proxied != "undefined" ? nahGlobal.settings.proxied : false),
-                    debug: true
-                });
-            }
-
-            peerServer.on("connection", function (id) {
-                helper.debugMessageRenderer(id + " has connected lol");
-            });
-            peerServer.on("disconnect", function (id) {
-                helper.debugMessageRenderer(id + " has disconnected :(");
-            });
-        })();
-
-
-
-        const peer = new Peer("", {
-            host: "192.168.0.12",
-            port: nahGlobal.settings.defaultPort,
-            path: "/nah",
-            debug: 3
-        });
-        // oh hey. at this point it works lol*/
     }
 
     function promptNewRound() {
@@ -166,24 +139,72 @@
                 colour: "white",
                 text: "Host a new match.",
                 submitCallback: (cardInfo) => {
-                    
+                    (function hostNewMatch() {
+                        (function initPeerServer() {
+                            if (!peerServer) { // TODO: maybe just overwrite it either way.
+                                peerServer = PeerServer({
+                                    port: (typeof nahGlobal.settings.defaultPort != "undefined" ? nahGlobal.settings.defaultPort : 9000),
+                                    path: (typeof nahGlobal.settings.defaultPath != "undefined" ? nahGlobal.settings.defaultPath : "/nah"),
+                                    proxied: (typeof nahGlobal.settings.proxied != "undefined" ? nahGlobal.settings.proxied : false),
+                                    debug: true
+                                });
+                            }
+
+                            peerServer.on("connection", function (id) {
+                                helper.debugMessageRenderer(id + " has connected lol");
+                            });
+                            peerServer.on("disconnect", function (id) {
+                                helper.debugMessageRenderer(id + " has disconnected :(");
+                            });
+                        })();
+
+
+
+                        const peer = new Peer("", {
+                            host: "82.30.62.219",
+                            port: nahGlobal.settings.defaultPort,
+                            path: "/nah",
+                            debug: 3,
+                            config: {
+                                iceServers: [
+                                    {
+                                        url: 'stun:turn1.xirsys.com'
+                                    },
+                                    {
+                                        username: '2386cb64-c082-41f3-bdda-5df76627d370',
+                                        url: 'turn:turn1.xirsys.com:443?transport=udp',
+                                        credential: '30b625c7-3e24-410d-95d8-0bcdec0b2feb'
+                                    },
+                                    {
+                                        username: '2386cb64-c082-41f3-bdda-5df76627d370',
+                                        url: 'turn:turn1.xirsys.com:443?transport=tcp',
+                                        credential: '30b625c7-3e24-410d-95d8-0bcdec0b2feb'
+                                    }
+                                ]
+                            }
+                        });
+                    })();
                 }
             }),
             helper.createCardElement({
                 colour: "white",
                 text: "Join some other friend's match.",
                 submitCallback: (cardInfo) => {
+                    (function joinOtherMatch() {
 
+                    })();
                 }
             })
         ];
 
-        if(myProfile.stats.totalRounds - initialTotalRounds > 0) {
+        if (myProfile.stats.totalRounds - initialTotalRounds > 0) {
             ourWhiteCards.push(helper.createCardElement({
                 colour: "white",
                 text: "Restart this match. I like these guys (or I was forced against my will to replay with them).",
                 submitCallback: (cardInfo) => {
+                    (function restartMatch() {
 
+                    })();
                 }
             }));
         }
@@ -192,9 +213,10 @@
             parentElement: document.body,
             blackCard: helper.createCardElement({
                 colour: "black",
-                text: "Alright, " + helper.getInsult() + ", what do you want to do now?"
+                text: "Alright, you " + helper.getInsult() + ", what do you want to do now?"
             }),
             whiteCards: ourWhiteCards
         });
     }
+
 })();

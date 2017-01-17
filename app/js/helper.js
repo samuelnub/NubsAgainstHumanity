@@ -27,6 +27,8 @@ const consts = {
         "nut",
         "wimp",
         "yahoo",
+        "gas-guzzler",
+        "wumbo",
         "wing-dingly fingle-bob",
         "skadouche-bag",
         "sub-human scum",

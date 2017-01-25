@@ -34,3 +34,7 @@
 16 Jan 2017
     use stun and turn servers, 
     https://groups.google.com/forum/#!msg/peerjs/JzIr7INoTbQ/IIykVNHiv_sJ
+
+25 Jan 2017
+    peerjs moved to simple-peer. I'm a simple man. Go away.
+    

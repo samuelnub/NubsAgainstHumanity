@@ -30,7 +30,7 @@ function createWindow() {
         if(global.nah.settings.debug) {
             mainWindow.webContents.openDevTools();
         }
-
+        console.log(app.getPath("userData"));
         mainWindow.on("closed", function () {
             mainWindow = null;
         });

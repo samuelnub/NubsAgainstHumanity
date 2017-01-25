@@ -1,13 +1,8 @@
 (function nubsAgainstHumanity() {
     const remote = require("electron").remote;
     const helper = require("./helper");
-    const Peer = require("peerjs");
-    const PeerServer = require("peer").PeerServer;
 
     const nahGlobal = remote.getGlobal("nah");
-
-    let peerServer;
-    let peerMe;
 
     let myProfile;
     let initialTotalRounds; // Don't change this lol
@@ -129,7 +124,6 @@
             centred: false
         });
         document.body.appendChild(container);
-
         promptNewRound();
     }
 
@@ -140,49 +134,7 @@
                 text: "Host a new match.",
                 submitCallback: (cardInfo) => {
                     (function hostNewMatch() {
-                        (function initPeerServer() {
-                            if (!peerServer) { // TODO: maybe just overwrite it either way.
-                                peerServer = PeerServer({
-                                    port: (typeof nahGlobal.settings.defaultPort != "undefined" ? nahGlobal.settings.defaultPort : 9000),
-                                    path: (typeof nahGlobal.settings.defaultPath != "undefined" ? nahGlobal.settings.defaultPath : "/nah"),
-                                    proxied: (typeof nahGlobal.settings.proxied != "undefined" ? nahGlobal.settings.proxied : false),
-                                    debug: true
-                                });
-                            }
-
-                            peerServer.on("connection", function (id) {
-                                helper.debugMessageRenderer(id + " has connected lol");
-                            });
-                            peerServer.on("disconnect", function (id) {
-                                helper.debugMessageRenderer(id + " has disconnected :(");
-                            });
-                        })();
-
-
-
-                        const peer = new Peer("", {
-                            host: "82.30.62.219",
-                            port: nahGlobal.settings.defaultPort,
-                            path: "/nah",
-                            debug: 3,
-                            config: {
-                                iceServers: [
-                                    {
-                                        url: 'stun:turn1.xirsys.com'
-                                    },
-                                    {
-                                        username: '2386cb64-c082-41f3-bdda-5df76627d370',
-                                        url: 'turn:turn1.xirsys.com:443?transport=udp',
-                                        credential: '30b625c7-3e24-410d-95d8-0bcdec0b2feb'
-                                    },
-                                    {
-                                        username: '2386cb64-c082-41f3-bdda-5df76627d370',
-                                        url: 'turn:turn1.xirsys.com:443?transport=tcp',
-                                        credential: '30b625c7-3e24-410d-95d8-0bcdec0b2feb'
-                                    }
-                                ]
-                            }
-                        });
+                        
                     })();
                 }
             }),
@@ -191,7 +143,7 @@
                 text: "Join some other friend's match.",
                 submitCallback: (cardInfo) => {
                     (function joinOtherMatch() {
-
+                        
                     })();
                 }
             })

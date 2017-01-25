@@ -4,9 +4,7 @@
   "description": "Cards against humanity, but worse",
   "main": "main.js",
   "dependencies": {
-    "electron": "^1.4.13",
-    "peer": "^0.2.8",
-    "peerjs": "^0.3.14"
+    "electron": "^1.4.13"
   },
   "devDependencies": {},
   "scripts": {
@@ -19,5 +17,13 @@
     "humanity"
   ],
   "author": "Sam Nub",
-  "license": "Creative Commons BY-NC-SA 2.0 license"
+  "license": "CC-BY-NC-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelnub/NubsAgainstHumanity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samuelnub/NubsAgainstHumanity/issues"
+  },
+  "homepage": "https://github.com/samuelnub/NubsAgainstHumanity#readme"
 }

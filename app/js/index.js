@@ -1,11 +1,14 @@
 (function nubsAgainstHumanity() {
     const remote = require("electron").remote;
     const helper = require("./helper");
+    const Peer = require("simple-peer");
 
     const nahGlobal = remote.getGlobal("nah");
 
     let myProfile;
     let initialTotalRounds; // Don't change this lol
+
+    let peers = [];
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
@@ -134,7 +137,42 @@
                 text: "Host a new match.",
                 submitCallback: (cardInfo) => {
                     (function hostNewMatch() {
+                        const initialPeer = new Peer({
+                            initiator: true,
+                            reconnectTimer: helper.consts.reconnectTime,
+                            trickle: false
+                        });
+                        peers.push(initialPeer);
+
+                        const myIdCard = helper.createCardElement({
+                            colour: "white",
+                            blank: true
+                        });
+
+                        const theirIdCard = helper.createCardElement({
+                            colour: "white",
+                            blank: true,
+                            submitCallback: (cardInfo) => {
+                                
+                            }
+                        });
                         
+                        initialPeer.on("signal", function(data) {
+                            myIdCard.getElementsByClassName("blank-input")[0].value = helper.sdpReduce(data); // This function is just beautiful.
+                        });
+
+                        helper.showPromptRenderer({
+                            blackCard: helper.createCardElement({
+                                colour: "black",
+                                text: "Grab your ID from the top white card, and then paste your buddy's ID in the bottom one, then submit!"
+                            }),
+                            whiteCards: [
+                                myIdCard,
+                                theirIdCard
+                            ]
+                        });
+
+
                     })();
                 }
             }),
@@ -143,7 +181,7 @@
                 text: "Join some other friend's match.",
                 submitCallback: (cardInfo) => {
                     (function joinOtherMatch() {
-                        
+
                     })();
                 }
             })

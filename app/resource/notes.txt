@@ -37,4 +37,14 @@
 
 25 Jan 2017
     peerjs moved to simple-peer. I'm a simple man. Go away.
-    
+    don't know if the electron version of chrome also forbids webrtc from non-ssl pages.
+    if it does forbid, I might need to use the node implementation of wrtc...
+
+26 Jan 2017
+    if I want to add twitter support, try using PIN authentication, instead of OAuth,
+    as OAuth needs a callback URL, which I'm too poor to afford.
+    https://dev.twitter.com/oauth/pin-based
+    gonna use WRTC from the browser instead of the 3rd party node implementation
+    it's a bit slow in making the session desc, don't know why.
+    sdp reduction done by https://github.com/fippo/minimal-webrtc
+    you can also close prompts now, like a real conformist.

@@ -166,6 +166,8 @@
 
                         initialPeer.on("signal", (data) => {
                             myIdCard.getElementsByClassName("blank-input")[0].value = JSON.stringify(data); // This function is just beautiful.
+                            myIdCard.getElementsByClassName("blank-input")[0].focus();
+                            myIdCard.getElementsByClassName("blank-input")[0].select();
                         });
 
                         initialPeer.on("connect", () => {
@@ -221,6 +223,8 @@
 
                         joiningPeer.on("signal", (data) => {
                             myIdCard.getElementsByClassName("blank-input")[0].value = JSON.stringify(data);
+                            myIdCard.getElementsByClassName("blank-input")[0].focus();
+                            myIdCard.getElementsByClassName("blank-input")[0].select();
                         });
 
                         joiningPeer.on("connect", () => {

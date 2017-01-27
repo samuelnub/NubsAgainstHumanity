@@ -4,7 +4,8 @@
   "description": "Cards against humanity, but worse",
   "main": "main.js",
   "dependencies": {
-    "electron": "^1.4.13"
+    "electron": "^1.4.13",
+    "simple-peer": "^6.2.1"
   },
   "devDependencies": {},
   "scripts": {

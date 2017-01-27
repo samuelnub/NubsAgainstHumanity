@@ -137,6 +137,8 @@
                 text: "Host a new match.",
                 submitCallback: (cardInfo) => {
                     (function hostNewMatch() {
+                        clearPeers();
+
                         const initialPeer = new Peer({
                             initiator: true,
                             reconnectTimer: helper.consts.reconnectTime,
@@ -153,12 +155,21 @@
                             colour: "white",
                             blank: true,
                             submitCallback: (cardInfo) => {
-                                
+                                try {
+                                    initialPeer.signal(cardInfo.text);
+                                }
+                                catch (err) {
+                                    helper.debugMessageRenderer("Error when trying to signal peer: " + err);
+                                }
                             }
                         });
-                        
-                        initialPeer.on("signal", function(data) {
-                            myIdCard.getElementsByClassName("blank-input")[0].value = helper.sdpReduce(data); // This function is just beautiful.
+
+                        initialPeer.on("signal", (data) => {
+                            myIdCard.getElementsByClassName("blank-input")[0].value = JSON.stringify(data); // This function is just beautiful.
+                        });
+
+                        initialPeer.on("connect", () => {
+                            helper.debugMessageRenderer("You; the initiator, have successfully connected to your peer. Congrats.");
                         });
 
                         helper.showPromptRenderer({
@@ -181,6 +192,51 @@
                 text: "Join some other friend's match.",
                 submitCallback: (cardInfo) => {
                     (function joinOtherMatch() {
+                        clearPeers();
+                        const joiningPeer = new Peer({
+                            initiator: false,
+                            reconnectTimer: helper.consts.reconnectTime,
+                            trickle: false
+                        });
+                        peers.push(joiningPeer);
+
+                        const theirIdCard = helper.createCardElement({
+                            colour: "white",
+                            blank: true,
+                            submitCallback: (cardInfo) => {
+                                try {
+                                    joiningPeer.signal(cardInfo.text);
+                                }
+                                catch (err) {
+                                    helper.debugMessageRenderer("Error when trying to signal peer: " + err);
+                                }
+                            },
+                            promptSubmitCloses: false
+                        });
+
+                        const myIdCard = helper.createCardElement({
+                            colour: "white",
+                            blank: true
+                        });
+
+                        joiningPeer.on("signal", (data) => {
+                            myIdCard.getElementsByClassName("blank-input")[0].value = JSON.stringify(data);
+                        });
+
+                        joiningPeer.on("connect", () => {
+                            helper.debugMessageRenderer("You have successfully connected to your peer. Congrats.");
+                        });
+
+                        helper.showPromptRenderer({
+                            blackCard: helper.createCardElement({
+                                colour: "black",
+                                text: "Your buddy should've passed you their ID, paste it into the top one, submit, and then copy your generated one and give it to them!"
+                            }),
+                            whiteCards: [
+                                theirIdCard,
+                                myIdCard
+                            ]
+                        });
 
                     })();
                 }
@@ -197,6 +253,10 @@
                     })();
                 }
             }));
+        }
+
+        function clearPeers() {
+            peers.splice(0, peers.length);
         }
 
         helper.showPromptRenderer({

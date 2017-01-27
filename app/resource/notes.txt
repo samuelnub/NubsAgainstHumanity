@@ -48,3 +48,8 @@
     it's a bit slow in making the session desc, don't know why.
     sdp reduction done by https://github.com/fippo/minimal-webrtc
     you can also close prompts now, like a real conformist.
+
+27 Jan 2017
+    the sdp reducer was giving a bit of troubles (or I'm just bad at using it),
+    so for now it's just pure stringy signal data
+    

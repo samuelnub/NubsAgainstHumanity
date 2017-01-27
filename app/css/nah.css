@@ -81,7 +81,8 @@ button:active {
     left: 0%;
     top: 0%;
     background-color: var(--cah-red-transparent);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 0.18in;
     padding-left: 1%;
     color: var(--cah-white);
@@ -266,6 +267,8 @@ button:active {
     text-align: left;
     right: 0%;
     border-left: 0.05in solid var(--cah-shadow);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .overlay {

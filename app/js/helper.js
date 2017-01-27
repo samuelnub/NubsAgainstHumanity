@@ -389,7 +389,8 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
         pickAmount: (params.hasOwnProperty("pickAmount") ? params.pickAmount : 0),
         blank: (params.hasOwnProperty("blank") ? params.blank : false),
         submitCallback: (params.hasOwnProperty("submitCallback") ? params.submitCallback : undefined),
-        existingUUID: (params.hasOwnProperty("existingUUID") ? params.existingUUID : undefined)
+        existingUUID: (params.hasOwnProperty("existingUUID") ? params.existingUUID : undefined),
+        promptSubmitCloses: (params.hasOwnProperty("promptSubmitCloses") ? params.promptSubmitCloses : true)
     };
 
     const cardDiv = document.createElement("div");
@@ -474,6 +475,10 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
         cardDiv.appendChild(clickableDiv);
     }
 
+    if(ourParams.promptSubmitCloses) {
+        cardDiv.classList.add("prompt-submit-closes");
+    }
+
     return cardDiv;
 }
 
@@ -515,7 +520,7 @@ function showPromptRenderer(params) {
     });
 
     for (whiteCard of ourParams.whiteCards) {
-        if (whiteCard.getElementsByClassName("submit").length !== 0) {
+        if (whiteCard.getElementsByClassName("submit").length !== 0 && whiteCard.classList.contains("prompt-submit-closes")) {
             whiteCard.getElementsByClassName("submit")[0].addEventListener("click", removeOurPrompt);
         }
         placeElementInContainer(overlayContainerDiv, whiteCard, {

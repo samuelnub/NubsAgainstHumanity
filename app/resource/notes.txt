@@ -52,4 +52,8 @@
 27 Jan 2017
     the sdp reducer was giving a bit of troubles (or I'm just bad at using it),
     so for now it's just pure stringy signal data
+    OOH YES. You don't need to serve your page over https to use wrtc in electron.
+
+28 Jan 2017
+    twit, passport and passport-twitter dependencies now.
     

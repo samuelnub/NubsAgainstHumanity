@@ -5,7 +5,10 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^1.4.13",
-    "simple-peer": "^6.2.1"
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4",
+    "simple-peer": "^6.2.1",
+    "twit": "^2.2.5"
   },
   "devDependencies": {},
   "scripts": {

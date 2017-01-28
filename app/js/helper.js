@@ -7,6 +7,7 @@ const consts = {
 
     profileFileName: "profile.json",
     settingsFileName: "settings.json",
+    keysFileName: "keys.json",
 
     reconnectTime: 1000 * 5,
 

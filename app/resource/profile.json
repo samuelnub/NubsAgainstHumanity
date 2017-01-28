@@ -1,9 +1,9 @@
 {
-    "uuid": "bdcc1d58-185f-4362-9fc9-308f726a8ddc",
+    "uuid": "43b0f767-65b6-4a88-a62e-85cdc2bdf6bb",
     "nickname": "Samuel Nub",
+    "twitterHandle": null,
     "stats": {
         "totalPoints": 0,
         "totalRounds": 0
-    },
-    "leaderboard": []
+    }
 }

@@ -2,26 +2,62 @@
     const remote = require("electron").remote;
     const helper = require("./helper");
     const Peer = require("simple-peer");
+    const passport = require("passport");
+    const PassportTwitterStrategy = require("passport-twitter").Strategy;
+    const Twit = require("twit");
 
     const nahGlobal = remote.getGlobal("nah");
+    const settings = nahGlobal.settings; // lazy
 
     let myProfile;
+    let myKeys; // should be loaded discreetly
     let initialTotalRounds; // Don't change this lol
 
-    let peers = [];
+    let myPeers = [];
+    let myTwit;
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
             myProfile = myProfileLoaded
             initialTotalRounds = myProfile.stats.totalRounds;
-            if (myProfile.nickname === null || myProfile.uuid === null) {
-                createScreenWelcome();
-            }
-            else {
-                createScreenGame();
-            }
+
+            (function loadKeysAndProgress() {
+                helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.keysFileName, (myKeysLoaded) => {
+                    myKeys = myKeysLoaded;
+
+                    if (myProfile.nickname === null || myProfile.uuid === null) {
+                        createScreenWelcome();
+                    }
+                    else {
+                        createScreenGame();
+                    }
+                }, (err) => {
+                    helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, {
+                        twitterConKey: null,
+                        twitterConSec: null,
+                        twitterAccTok: null,
+                        twitterAccSec: null
+                    }, () => {
+                        loadKeysAndProgress();
+                    }, (err) => {
+                        helper.debugMessageRenderer("Couldn't write default keys... Uh, abandon ship. " + err);
+                    });
+                });
+            })();
         }, (err) => {
-            helper.debugMessageRenderer("Unable to read prfile!" + err);
+            helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.profileFileName, {
+                uuid: null,
+                nickname: null,
+                twitterHandle: null,
+                stats: {
+                    totalPoints: 0,
+                    totalRounds: 0
+                }
+            }, () => {
+                init();
+            }, (err) => {
+                helper.debugMessageRenderer("Couldn't write default profile... You're screwed man. " + err);
+            });
         });
     })();
 
@@ -127,6 +163,7 @@
             centred: false
         });
         document.body.appendChild(container);
+        promptTwitterAuth();
         promptNewRound();
     }
 
@@ -144,7 +181,7 @@
                             reconnectTimer: helper.consts.reconnectTime,
                             trickle: false
                         });
-                        peers.push(initialPeer);
+                        myPeers.push(initialPeer);
 
                         const myIdCard = helper.createCardElement({
                             colour: "white",
@@ -200,7 +237,7 @@
                             reconnectTimer: helper.consts.reconnectTime,
                             trickle: false
                         });
-                        peers.push(joiningPeer);
+                        myPeers.push(joiningPeer);
 
                         const theirIdCard = helper.createCardElement({
                             colour: "white",
@@ -260,7 +297,7 @@
         }
 
         function clearPeers() {
-            peers.splice(0, peers.length);
+            myPeers.splice(0, myPeers.length);
         }
 
         helper.showPromptRenderer({
@@ -271,6 +308,22 @@
             }),
             whiteCards: ourWhiteCards
         });
+    }
+
+    function promptTwitterAuth() {
+        if(myKeys.twitterAccTok === null || myKeys.twitterAccSec === null) {
+            passport.use(new PassportTwitterStrategy({
+                consumerKey: myKeys.twitterConKey || "ohNo",
+                consumerSecret: myKeys.twitterConSec || "ohNOOO",
+                callbackURL: "oob"
+            }, (token, tokenSec, profile, done) => {
+                // http://passportjs.org/docs/twitter
+                helper.debugMessageRenderer(token);
+            }));
+            // needs express
+            // passport.authenticate("twitter");
+        }
+
     }
 
 })();

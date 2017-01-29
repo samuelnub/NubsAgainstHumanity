@@ -2,8 +2,7 @@
     const remote = require("electron").remote;
     const helper = require("./helper");
     const Peer = require("simple-peer");
-    const passport = require("passport");
-    const PassportTwitterStrategy = require("passport-twitter").Strategy;
+    const OAuth = require("oauth").OAuth;
     const Twit = require("twit");
 
     const nahGlobal = remote.getGlobal("nah");
@@ -311,19 +310,20 @@
     }
 
     function promptTwitterAuth() {
-        if(myKeys.twitterAccTok === null || myKeys.twitterAccSec === null) {
-            passport.use(new PassportTwitterStrategy({
-                consumerKey: myKeys.twitterConKey || "ohNo",
-                consumerSecret: myKeys.twitterConSec || "ohNOOO",
-                callbackURL: "oob"
-            }, (token, tokenSec, profile, done) => {
-                // http://passportjs.org/docs/twitter
-                helper.debugMessageRenderer(token);
-            }));
-            // needs express
-            // passport.authenticate("twitter");
+        if(myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null) {
+            // we've already got our user auth
         }
 
+        const oauthTwit = new Twit({
+            consumer_key: myKeys.twitterConKey,
+            consumer_secret: myKeys.twitterConSec,
+            app_only_auth: true
+        });
+
+        oauthTwit.post("oauth/request_token", { oauth_callback: "oob" }, (err, data, response) => {
+            console.log(data);
+            console.log(response);
+        });
     }
 
 })();

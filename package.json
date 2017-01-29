@@ -5,8 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^1.4.13",
-    "passport": "^0.3.2",
-    "passport-twitter": "^1.0.4",
+    "oauth": "^0.9.15",
     "simple-peer": "^6.2.1",
     "twit": "^2.2.5"
   },

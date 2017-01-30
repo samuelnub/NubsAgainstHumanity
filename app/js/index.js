@@ -310,20 +310,30 @@
     }
 
     function promptTwitterAuth() {
-        if(myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null) {
+        if (myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null) {
             // we've already got our user auth
         }
-
-        const oauthTwit = new Twit({
-            consumer_key: myKeys.twitterConKey,
-            consumer_secret: myKeys.twitterConSec,
-            app_only_auth: true
-        });
-
-        oauthTwit.post("oauth/request_token", { oauth_callback: "oob" }, (err, data, response) => {
-            console.log(data);
-            console.log(response);
-        });
+        const oauth = new OAuth(
+            "https://api.twitter.com/oauth/request_token",
+            "https://api.twitter.com/oauth/access_token",
+            myKeys.twitterConKey,
+            myKeys.twitterConSec,
+            "1.0",
+            "oob",
+            "HMAC-SHA1"
+        );
+        // http://stackoverflow.com/questions/12873463/how-to-send-the-oauth-request-in-node
+        try {
+            oauth.getOAuthRequestToken((err, oauthTok, oauthSec, res) => {
+                console.log(err);
+                console.log(oauthTok);
+                console.log(oauthSec);
+            });
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Lol, error: " + err);
+        }
+        // hey, it works lmao
     }
 
 })();

@@ -2,7 +2,7 @@
     const remote = require("electron").remote;
     const helper = require("./helper");
     const Peer = require("simple-peer");
-    const OAuth = require("oauth").OAuth;
+    const OAuth = require("oauth").OAuth; // you know what I want? proper documentation for this
     const Twit = require("twit");
 
     const nahGlobal = remote.getGlobal("nah");
@@ -310,28 +310,64 @@
     }
 
     function promptTwitterAuth() {
-        if (myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null) {
-            // we've already got our user auth
-        }
-        const oauth = new OAuth(
-            "https://api.twitter.com/oauth/request_token",
-            "https://api.twitter.com/oauth/access_token",
-            myKeys.twitterConKey,
-            myKeys.twitterConSec,
-            "1.0",
-            "oob",
-            "HMAC-SHA1"
-        );
-        // http://stackoverflow.com/questions/12873463/how-to-send-the-oauth-request-in-node
         try {
-            oauth.getOAuthRequestToken((err, oauthTok, oauthSec, res) => {
-                console.log(err);
-                console.log(oauthTok);
-                console.log(oauthSec);
-            });
+            const twitterApiUrl = "https://api.twitter.com/";
+            const oauth = new OAuth(
+                twitterApiUrl + "oauth/request_token",
+                twitterApiUrl + "oauth/access_token",
+                myKeys.twitterConKey,
+                myKeys.twitterConSec,
+                "1.0",
+                "oob",
+                "HMAC-SHA1"
+            );
+            if (myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null) {
+                // we've already got our user auth
+                oauth.get(
+                    twitterApiUrl + "/1.1/account/verify_credentials.json",
+                    myKeys.twitterAccTok,
+                    myKeys.twitterAccSec,
+                    (err, data, res) => {
+                        if (err) {
+                            // yea, we've got the access tokens, but they're not valid.
+                            myKeys.twitterAccTok = null;
+                            myKeys.twitterAccSec = null;
+                            helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, myKeys, (err) => {
+                                promptTwitterAuth();
+                            }, (err) => {
+                                helper.debugMessageRenderer("Couldn't write to keys file. " + err);
+                            });
+                        }
+                        else {
+                            console.log("Hey, tell Sam not to prompt this sign-in bahooga when you're already signed in. Sorry man.");
+                            return;
+                        }
+                    });
+            }
+
+            // http://stackoverflow.com/questions/12873463/how-to-send-the-oauth-request-in-node
+
+            (function getRequestTokens() {
+                oauth.getOAuthRequestToken((err, oauthTok, oauthSec, res) => {
+                    console.log(err);
+                    console.log(oauthTok);
+                    console.log(oauthSec);
+                    let twitterReqKey = oauthTok;
+                    let twitterReqSec = oauthSec;
+
+                    
+
+                    /*oauth.getOAuthAccessToken(twitterReqKey, twitterReqSec, "this is the oauth_verifier!", (err, oauthTok, oauthSec, res) => {
+                        console.log("---Got the (or tried to) get the access token:---")
+                        console.log(err);
+                        console.log(oauthTok);
+                        console.log(oauthSec);
+                    });*/
+                });
+            })();
         }
         catch (err) {
-            helper.debugMessageRenderer("Lol, error: " + err);
+            helper.debugMessageRenderer("Error when trying to authenticate you with Twitter: " + err);
         }
         // hey, it works lmao
     }

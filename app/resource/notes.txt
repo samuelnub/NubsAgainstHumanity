@@ -68,3 +68,7 @@
     user to easily get. if anyone's motivated enough to get it from the eventual packaged 
     source, congrats.
     
+31 Jan 2017
+    meh, some stuff, oh yea, and if you try to get an access key with a request token that
+    hasn't been authorised yet, it'll invalidate it and make it all messed up. jic
+    

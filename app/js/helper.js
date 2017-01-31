@@ -476,7 +476,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
         cardDiv.appendChild(clickableDiv);
     }
 
-    if(ourParams.promptSubmitCloses) {
+    if (ourParams.promptSubmitCloses) {
         cardDiv.classList.add("prompt-submit-closes");
     }
 
@@ -506,7 +506,8 @@ function showPromptRenderer(params) {
                     debugMessageRenderer("Prompt. " + cardInfo.text);
                 }
             })
-        ])
+        ]),
+        closable: (params.hasOwnProperty("closable") ? params.closable : true)
     };
 
     const overlayDiv = document.createElement("div");
@@ -532,17 +533,19 @@ function showPromptRenderer(params) {
     }
     overlayDiv.appendChild(overlayContainerDiv);
 
-    const closeButton = document.createElement("button");
-    closeButton.id = "close-button";
-    closeButton.innerHTML = "Close";
-    closeButton.addEventListener("click", removeOurPrompt);
+    if (ourParams.closable) {
+        const closeButton = document.createElement("button");
+        closeButton.id = "close-button";
+        closeButton.innerHTML = "Close";
+        closeButton.addEventListener("click", removeOurPrompt);
 
-    function removeOurPrompt(e) {
-        addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
-            ourParams.parentElement.removeChild(element);
-        });
+        function removeOurPrompt(e) {
+            addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
+                ourParams.parentElement.removeChild(element);
+            });
+        }
+        overlayDiv.appendChild(closeButton);
     }
-    overlayDiv.appendChild(closeButton);
 
     ourParams.parentElement.appendChild(overlayDiv);
     addAnimationToElement("fadeInDownBig", overlayDiv, false);

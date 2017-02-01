@@ -163,7 +163,7 @@
         });
         document.body.appendChild(container);
         promptTwitterAuth();
-        promptNewRound();
+        //promptNewRound();
     }
 
     function promptNewRound() {
@@ -347,7 +347,8 @@
 
             // http://stackoverflow.com/questions/12873463/how-to-send-the-oauth-request-in-node
 
-            (function getRequestTokens() {
+            // hello yes i would like to order a triple deluxue variable name
+            (function getRequestTokenAndThenDoTheRestOfThePrompt() {
                 oauth.getOAuthRequestToken((err, oauthTok, oauthSec, res) => {
                     console.log(err);
                     console.log(oauthTok);
@@ -355,14 +356,45 @@
                     let twitterReqKey = oauthTok;
                     let twitterReqSec = oauthSec;
 
-                    
+                    // open a window with twitter authenticate page 'round here
+                    let twitterSignInWindow = new remote.BrowserWindow({ width: settings.width / 3, height: settings.height / 3 });
+                    twitterSignInWindow.on("closed", () => {
+                        twitterSignInWindow = null;
+                    });
+                    twitterSignInWindow.loadURL(twitterApiUrl + "oauth/authenticate" + "?" + "oauth_token=" + twitterReqKey);
 
-                    /*oauth.getOAuthAccessToken(twitterReqKey, twitterReqSec, "this is the oauth_verifier!", (err, oauthTok, oauthSec, res) => {
-                        console.log("---Got the (or tried to) get the access token:---")
-                        console.log(err);
-                        console.log(oauthTok);
-                        console.log(oauthSec);
-                    });*/
+                    helper.showPromptRenderer({
+                        blackCard: helper.createCardElement({
+                            colour: "black",
+                            text: "Sign in with Twitter. Enter the PIN you got into the white card below!"
+                        }),
+                        whiteCards: [
+                            helper.createCardElement({
+                                colour: "white",
+                                blank: true,
+                                submitCallback: (cardInfo) => {
+                                    oauth.getOAuthAccessToken(twitterReqKey, twitterReqSec, cardInfo.text, (err, oauthTok, oauthSec, res) => {
+                                        console.log("---Got the (or tried to) get the access token:---");
+                                        if(err) {
+                                            helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
+                                            getRequestTokenAndThenDoTheRestOfThePrompt();
+                                        }
+                                        else {
+                                            myKeys.twitterAccTok = oauthTok;
+                                            myKeys.twitterAccSec = oauthSec;
+                                            helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, myKeys, () => {
+                                                console.log("hell yea, got the keys!");
+                                            }, (err) => {
+                                                helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
+                                                getRequestTokenAndThenDoTheRestOfThePrompt();
+                                            });
+                                        }
+                                    });
+                                }
+                            })
+                        ],
+                        closable: false // sorry
+                    });
                 });
             })();
         }

@@ -154,8 +154,11 @@ function createUUID() {
 
 exports.sanitizeString = sanitizeString;
 function sanitizeString(message) {
-    if (typeof message != "string") {
-        return "You numbnut, what the hell are you trying to sanitize? Your balls?";
+    if (typeof message == "object") {
+        message = JSON.stringify(message);
+    }
+    if(typeof message != "object" && typeof message != "string") {
+        return "Hey, someone tried to sanitize some hogwash.";
     }
     return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
 };

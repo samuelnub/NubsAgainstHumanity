@@ -74,4 +74,5 @@
     
 1 Feb 2017
     hey look its february, hell yea
+    aw yes, signing in works lol, also fixed the prompt not disappearing when submitting
     

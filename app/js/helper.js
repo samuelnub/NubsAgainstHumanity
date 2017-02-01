@@ -157,7 +157,7 @@ function sanitizeString(message) {
     if (typeof message == "object") {
         message = JSON.stringify(message);
     }
-    if(typeof message != "object" && typeof message != "string") {
+    if (typeof message != "object" && typeof message != "string") {
         return "Hey, someone tried to sanitize some hogwash.";
     }
     return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
@@ -541,13 +541,13 @@ function showPromptRenderer(params) {
         closeButton.id = "close-button";
         closeButton.innerHTML = "Close";
         closeButton.addEventListener("click", removeOurPrompt);
-
-        function removeOurPrompt(e) {
-            addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
-                ourParams.parentElement.removeChild(element);
-            });
-        }
         overlayDiv.appendChild(closeButton);
+    }
+
+    function removeOurPrompt(e) {
+        addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
+            ourParams.parentElement.removeChild(element);
+        });
     }
 
     ourParams.parentElement.appendChild(overlayDiv);

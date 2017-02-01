@@ -8,14 +8,22 @@
 :root {
     --cah-black: #232323;
     --cah-white: #ffffff;
+    --cah-grey-light: rgb(240, 240, 240);
     --cah-grey: rgb(229,229,229);
     --cah-shadow: rgba(0,0,0,0.4);
+    --cah-shadow-size: 0.2in;
     --cah-transparent: rgba(0,0,0,0);
-    --cah-green: limegreen;
+    --cah-blue: rgb(140, 180, 240);
+    --cah-blue-transparent: rgba(140, 180, 240, 0.8);
+    --cah-green: rgb(0, 240, 40);
     --cah-green-transparent: rgba(0, 240, 40, 0.8);
-    --cah-red: red;
+    --cah-red: rgb(240, 0, 40);
     --cah-red-transparent: rgba(240, 0, 40, 0.8);
+    --cah-yellow: rgb(240, 200, 0);
+    --cah-yellow-transparent: rgba(240, 200, 0, 0.8);
     --cah-border-radius: 0.1in;
+    --cah-small-length: 0.05in;
+    --cah-very-small-length: 0.01in;
 }
 
 ::-webkit-scrollbar-track
@@ -74,6 +82,32 @@ button:active {
     transform: scale(0.95);
 }
 
+.circular {
+    display: block;
+    width: calc(var(--cah-border-radius) * 1.8);
+    height: calc(var(--cah-border-radius) * 1.8);
+    border-radius: 50%;
+    box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
+    padding: none !important;
+    border: none !important;
+}
+
+.circular.red {
+    background: var(--cah-red-transparent);
+}
+
+.circular.green {
+    background: var(--cah-green-transparent);
+}
+
+.circular.blue {
+    background: var(--cah-blue-transparent);
+}
+
+.circular.yellow {
+    background: var(--cah-yellow-transparent);
+}
+
 #debug-banner {
     width: 100%;
     height: 0.6in;
@@ -87,7 +121,7 @@ button:active {
     padding-left: 1%;
     color: var(--cah-white);
 
-    box-shadow: 0px 0px 0.1in var(--cah-shadow);
+    box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
     z-index: 1000;
 
     animation-duration: 0.5s;
@@ -121,7 +155,7 @@ button:active {
     max-width: 2.25in;
     max-height: 3.15in;
     border-radius: var(--cah-border-radius);
-    box-shadow: 0px 0px 0.15in var(--cah-shadow);
+    box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
     margin: 0.2in;
     overflow: hidden;
     perspective: 1px; /* Apparently, this fixes clipping on the edges of border-radius'd stuff, http://stackoverflow.com/questions/8705249/css-border-radius-not-trimming-image-on-webkit */
@@ -261,14 +295,17 @@ button:active {
 
 .game-play-area {
     text-align: center;
+    left: 0%;
+    z-index: 0;
 }
 
 .game-chat-area {
     text-align: left;
     right: 0%;
-    border-left: 0.05in solid var(--cah-shadow);
+    background-color: var(--cah-grey-light);
     overflow-x: hidden;
     overflow-y: auto;
+    z-index: 1;
 }
 
 .overlay {
@@ -280,8 +317,44 @@ button:active {
     overflow-y: scroll;
 }
 
-.overlay > #close-button {
+.overlay > .close-button {
     position: fixed;
     right: 1%;
     top: 1%;
+}
+
+.popup-menu {
+    --popup-normal-size: 60%;
+
+    position: fixed;
+    top: calc((100% - var(--popup-normal-size)) / 2);
+    left: calc((100% - var(--popup-normal-size)) / 2);
+    width: var(--popup-normal-size);
+    height: var(--popup-normal-size);
+    background-color: var(--cah-grey-light);
+    box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
+    border-radius: var(--cah-border-radius);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.popup-menu > button.circular.red {
+    position: absolute;
+    right: var(--cah-small-length);
+    top: var(--cah-small-length);
+}
+
+@media screen and (max-width: 4in), screen and (max-height: 4in) {
+    .popup-menu {
+        --popup-mobile-padding: 0.1in;
+
+        top: var(--popup-mobile-padding);
+        left: var(--popup-mobile-padding);
+        width: calc(100% - (var(--popup-mobile-padding) * 2));
+        height: calc(100% - (var(--popup-mobile-padding) * 2));
+    }
+
+    .game-play-area, .game-chat-area {
+        width: 100%;
+    }
 }

@@ -164,6 +164,8 @@ function sanitizeString(message) {
 };
 
 exports.debugMessageRenderer = function (message) {
+    console.log("Debug message:");
+    console.log(message);
     const stillThereAnimName = "shake";
     if (!document.getElementById("debug-banner") || (document.getElementById("debug-banner") && document.getElementById("debug-banner").classList.contains("animated") && !document.getElementById("debug-banner").classList.contains(stillThereAnimName))) {
         if (document.getElementById("debug-banner")) {
@@ -486,6 +488,27 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
     return cardDiv;
 }
 
+exports.createPopupMenuElement = createPopupMenuElement;
+function createPopupMenuElement(params) {
+    const ourParams = {
+        // not many params yet lol
+    };
+
+    const boxDiv = document.createElement("div");
+    boxDiv.classList.add("popup-menu");
+
+    const closeButton = document.createElement("button");
+    closeButton.classList.add("circular", "red");
+    closeButton.addEventListener("click", (e) => {
+        addAnimationToElement("fadeOutUpBig", boxDiv, false, (element) => {
+            document.body.removeChild(element);
+        })
+    });
+
+    boxDiv.appendChild(closeButton);
+    return boxDiv;
+}
+
 exports.showPromptRenderer = showPromptRenderer;
 function showPromptRenderer(params) {
     const ourParams = {
@@ -538,12 +561,12 @@ function showPromptRenderer(params) {
 
     if (ourParams.closable) {
         const closeButton = document.createElement("button");
-        closeButton.id = "close-button";
+        closeButton.classList.add("close-button");
         closeButton.innerHTML = "Close";
         closeButton.addEventListener("click", removeOurPrompt);
         overlayDiv.appendChild(closeButton);
     }
-
+    
     function removeOurPrompt(e) {
         addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
             ourParams.parentElement.removeChild(element);

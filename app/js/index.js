@@ -32,7 +32,7 @@
                     }
                 }, (err) => {
                     helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, {
-                        twitterConKey: null,
+                        twitterConKey: null, // TODO: on release builds, put the god damn consumer keys here. i dont care.
                         twitterConSec: null,
                         twitterAccTok: null,
                         twitterAccSec: null
@@ -162,8 +162,8 @@
             centred: false
         });
         document.body.appendChild(container);
-        promptTwitterAuth();
-        //promptNewRound();
+        promptTwitterAuth(false);
+        document.body.appendChild(helper.createPopupMenuElement());
     }
 
     function promptNewRound() {
@@ -309,7 +309,7 @@
         });
     }
 
-    function promptTwitterAuth() {
+    function promptTwitterAuth(force) {
         try {
             const twitterApiUrl = "https://api.twitter.com/";
             const oauth = new OAuth(
@@ -321,7 +321,7 @@
                 "oob",
                 "HMAC-SHA1"
             );
-            if (myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null) {
+            if (myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null && !force) {
                 // we've already got our user auth
                 oauth.get(
                     twitterApiUrl + "/1.1/account/verify_credentials.json",
@@ -344,59 +344,60 @@
                         }
                     });
             }
+            else {
+                // http://stackoverflow.com/questions/12873463/how-to-send-the-oauth-request-in-node
+                // hello yes i would like to order a triple deluxue variable name
+                (function getRequestTokenAndThenDoTheRestOfThePrompt() {
+                    oauth.getOAuthRequestToken((err, oauthTok, oauthSec, res) => {
+                        console.log(err);
+                        console.log(oauthTok);
+                        console.log(oauthSec);
+                        let twitterReqKey = oauthTok;
+                        let twitterReqSec = oauthSec;
 
-            // http://stackoverflow.com/questions/12873463/how-to-send-the-oauth-request-in-node
+                        // open a window with twitter authenticate page 'round here
+                        let twitterSignInWindow = new remote.BrowserWindow({ width: Math.ceil(settings.width / 2), height: Math.ceil(settings.height / 1.5) });
+                        twitterSignInWindow.on("closed", () => {
+                            twitterSignInWindow = null;
+                        });
+                        twitterSignInWindow.loadURL(twitterApiUrl + "oauth/authenticate" + "?" + "oauth_token=" + twitterReqKey);
 
-            // hello yes i would like to order a triple deluxue variable name
-            (function getRequestTokenAndThenDoTheRestOfThePrompt() {
-                oauth.getOAuthRequestToken((err, oauthTok, oauthSec, res) => {
-                    console.log(err);
-                    console.log(oauthTok);
-                    console.log(oauthSec);
-                    let twitterReqKey = oauthTok;
-                    let twitterReqSec = oauthSec;
-
-                    // open a window with twitter authenticate page 'round here
-                    let twitterSignInWindow = new remote.BrowserWindow({ width: settings.width / 3, height: settings.height / 3 });
-                    twitterSignInWindow.on("closed", () => {
-                        twitterSignInWindow = null;
-                    });
-                    twitterSignInWindow.loadURL(twitterApiUrl + "oauth/authenticate" + "?" + "oauth_token=" + twitterReqKey);
-
-                    helper.showPromptRenderer({
-                        blackCard: helper.createCardElement({
-                            colour: "black",
-                            text: "Sign in with Twitter. Enter the PIN you got into the white card below!"
-                        }),
-                        whiteCards: [
-                            helper.createCardElement({
-                                colour: "white",
-                                blank: true,
-                                submitCallback: (cardInfo) => {
-                                    oauth.getOAuthAccessToken(twitterReqKey, twitterReqSec, cardInfo.text, (err, oauthTok, oauthSec, res) => {
-                                        console.log("---Got the (or tried to) get the access token:---");
-                                        if(err) {
-                                            helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
-                                            getRequestTokenAndThenDoTheRestOfThePrompt();
-                                        }
-                                        else {
-                                            myKeys.twitterAccTok = oauthTok;
-                                            myKeys.twitterAccSec = oauthSec;
-                                            helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, myKeys, () => {
-                                                console.log("hell yea, got the keys!");
-                                            }, (err) => {
-                                                helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
+                        helper.showPromptRenderer({
+                            blackCard: helper.createCardElement({
+                                colour: "black",
+                                text: "Sign in with Twitter. Enter the PIN you get into the white card below!"
+                            }),
+                            whiteCards: [
+                                helper.createCardElement({
+                                    colour: "white",
+                                    blank: true,
+                                    submitCallback: (cardInfo) => {
+                                        oauth.getOAuthAccessToken(twitterReqKey, twitterReqSec, cardInfo.text, (err, oauthTok, oauthSec, res) => {
+                                            console.log("---Got the (or tried to) access token:---");
+                                            if (err) {
+                                                helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
                                                 getRequestTokenAndThenDoTheRestOfThePrompt();
-                                            });
-                                        }
-                                    });
-                                }
-                            })
-                        ],
-                        closable: false // sorry
+                                            }
+                                            else {
+                                                myKeys.twitterAccTok = oauthTok;
+                                                myKeys.twitterAccSec = oauthSec;
+                                                helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, myKeys, () => {
+                                                    console.log("hell yea, got the keys!");
+                                                    twitterSignInWindow.close();
+                                                }, (err) => {
+                                                    helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
+                                                    getRequestTokenAndThenDoTheRestOfThePrompt();
+                                                });
+                                            }
+                                        });
+                                    }
+                                })
+                            ],
+                            closable: !force
+                        });
                     });
-                });
-            })();
+                })();
+            }
         }
         catch (err) {
             helper.debugMessageRenderer("Error when trying to authenticate you with Twitter: " + err);

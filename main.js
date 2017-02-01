@@ -11,7 +11,7 @@ let mainWindow;
 function createWindow() {
     global.nah = {}; // our little namespace object thing. Just don't wanna pollute the global object
 
-    helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.settingsFileName, function(settingsJson) {
+    helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.settingsFileName, function (settingsJson) {
         global.nah.settings = settingsJson;
 
         mainWindow = new BrowserWindow({
@@ -27,14 +27,23 @@ function createWindow() {
             slashes: true
         }));
 
-        if(global.nah.settings.debug) {
+        if (global.nah.settings.debug) {
             mainWindow.webContents.openDevTools();
         }
+
+        // just so links will open in your default browser instead of messing up everything
+        mainWindow.webContents.on("will-navigate", handleRedirect);
+        mainWindow.webContents.on("new-window", handleRedirect);
+        function handleRedirect(e, url) {
+            e.preventDefault()
+            electron.shell.openExternal(url);
+        }
+
         console.log(app.getPath("userData"));
         mainWindow.on("closed", function () {
             mainWindow = null;
         });
-    }, function(err) {
+    }, function (err) {
         console.error("Encountered an error when trying to read settings.json file");
         console.error(err);
     });
@@ -42,14 +51,14 @@ function createWindow() {
 
 app.on("ready", createWindow);
 
-app.on("window-all-closed", function() {
-    if(process.platform !== "darwin") {
+app.on("window-all-closed", function () {
+    if (process.platform !== "darwin") {
         app.quit();
     }
 });
 
-app.on("activate", function() {
-    if(mainWindow == null) {
+app.on("activate", function () {
+    if (mainWindow == null) {
         createWindow();
     }
 });

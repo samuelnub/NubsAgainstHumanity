@@ -12,6 +12,9 @@
     let myKeys; // should be loaded discreetly
     let initialTotalRounds; // Don't change this lol
 
+    let playAreaElement;
+    let chatAreaElement;
+
     let myPeers = [];
     let myTwit;
 
@@ -146,21 +149,66 @@
         const playAreaColWidth = 9;
         const chatAreaColWidth = 12 - playAreaColWidth;
 
-        const playAreaContainer = helper.createContainerElement(true, 2);
-        playAreaContainer.classList.add("game-play-area");
-        helper.placeElementInContainer(container, playAreaContainer, {
+        const playAreaDiv = helper.createContainerElement(true, 2);
+        playAreaDiv.classList.add("game-play-area");
+        helper.placeElementInContainer(container, playAreaDiv, {
             row: 0,
             col: playAreaColWidth,
             centred: false
         });
 
-        const chatAreaContainer = document.createElement("div");
-        chatAreaContainer.classList.add("game-chat-area");
-        helper.placeElementInContainer(container, chatAreaContainer, {
+        const chatAreaDiv = document.createElement("div");
+        chatAreaDiv.classList.add("game-chat-area");
+        helper.placeElementInContainer(container, chatAreaDiv, {
             row: 0,
             col: chatAreaColWidth,
             centred: false
         });
+
+        (function setupPlayArea() {
+
+        })();
+
+        (function setupChatArea() {
+            const chatMessagesDiv = document.createElement("div");
+            chatMessagesDiv.classList.add("chat-messages");
+
+            const chatBoxTextarea = document.createElement("textarea");
+            chatBoxTextarea.classList.add("chat-box");
+            chatBoxTextarea.placeholder = "Type your stupid message here";
+
+            const chatSubmitButton = document.createElement("button");
+            chatSubmitButton.classList.add("chat-submit");
+            chatSubmitButton.appendChild(helper.createFontAwesomeElement({
+                icon: "arrow-right"
+            })); // that's pretty awesome
+            chatSubmitButton.addEventListener("click", (e) => {
+                // should make this a seperate function so it can be called whenever y'need it
+                // TODO: sending messages should do a whole lot more than just dumping it in the messages list
+                if(chatBoxTextarea.value == "") {
+                    return;
+                }
+                const messageCharLimit = 420;
+                if(chatBoxTextarea.value.length > messageCharLimit) {
+                    helper.debugMessageRenderer("Your message was too long. Sorry man. Being too well-endowed has its tradeoffs.");
+                    return;
+                }
+                const chatMessageDiv = document.createElement("div");
+
+                chatMessageDiv.classList.add("chat-message");
+                chatMessageDiv.innerHTML = helper.sanitizeString(chatBoxTextarea.value, messageCharLimit);
+                chatBoxTextarea.value = "";
+                chatMessagesDiv.appendChild(chatMessageDiv);
+            });
+
+            chatAreaDiv.appendChild(chatMessagesDiv);
+            chatAreaDiv.appendChild(chatBoxTextarea);
+            chatAreaDiv.appendChild(chatSubmitButton);
+        })();
+
+        playAreaElement = playAreaDiv;
+        chatAreaElement = chatAreaElement;
+
         document.body.appendChild(container);
         promptTwitterAuth(false);
         document.body.appendChild(helper.createPopupMenuElement());
@@ -376,7 +424,7 @@
                                             console.log("---Got the (or tried to) access token:---");
                                             if (err) {
                                                 helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
-                                                getRequestTokenAndThenDoTheRestOfThePrompt();
+                                                promptTwitterAuth();
                                             }
                                             else {
                                                 myKeys.twitterAccTok = oauthTok;
@@ -386,7 +434,7 @@
                                                     twitterSignInWindow.close();
                                                 }, (err) => {
                                                     helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
-                                                    getRequestTokenAndThenDoTheRestOfThePrompt();
+                                                    promptTwitterAuth();
                                                 });
                                             }
                                         });
@@ -404,5 +452,7 @@
         }
         // hey, it works lmao
     }
+
+
 
 })();

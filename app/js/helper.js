@@ -153,14 +153,17 @@ function createUUID() {
 };
 
 exports.sanitizeString = sanitizeString;
-function sanitizeString(message) {
+function sanitizeString(message, charLimit) {
     if (typeof message == "object") {
         message = JSON.stringify(message);
     }
     if (typeof message != "object" && typeof message != "string") {
         return "Hey, someone tried to sanitize some hogwash.";
     }
-    return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
+    if(charLimit) {
+        message.slice(0, charLimit);
+    }
+    return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code|br|\/br)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
 };
 
 exports.debugMessageRenderer = function (message) {
@@ -372,6 +375,32 @@ function addAnimationToElement(animName, element, infinite, callback /* 1 argume
     return element;
 };
 
+exports.createFontAwesomeElement = createFontAwesomeElement;
+function createFontAwesomeElement(params /* you can omit all the "fa" prefixes */) {
+    const ourParams = {
+        icon: (params.hasOwnProperty("icon") ? params.icon : "exclamation-triangle"),
+        enlarge: (params.hasOwnProperty("enlarge") ? params.enlarge : undefined),
+        spin: (params.hasOwnProperty("spin") ? params.spin : false),
+        rotate: (params.hasOwnProperty("rotate") ? params.rotate : undefined),
+        flip: (params.hasOwnProperty("flip") ? params.flip : undefined)
+    };
+    const ourIcon = document.createElement("i");
+    ourIcon.classList.add("fa", "fa-" + ourParams.icon);
+    if(ourParams.enlarge) {
+        ourIcon.classList.add("fa-" + ourParams.enlarge);
+    }
+    if(ourParams.spin) {
+        ourIcon.classList.add("fa-" + "spin");
+    }
+    if(ourParams.rotate) {
+        ourIcon.classList.add("fa-" + rotate);
+    }
+    if(ourParams.flip) {
+        ourIcon.classList.add("fa-" + (ourParams.flip === "h" ? "horizontal" : "vertical"));
+    }
+    return ourIcon;
+}
+
 exports.textMoveCursorToEnd = textMoveCursorToEnd;
 function textMoveCursorToEnd(e) {
     // use this as your "click" event listener function
@@ -384,6 +413,12 @@ function textMoveCursorToEnd(e) {
 exports.getElementByClassAndUUID = getElementByClassAndUUID;
 function getElementByClassAndUUID(className, UUID) {
     return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.contains(className) ? document.getElementById(uuid) : undefined);
+};
+
+exports.getElementByClassName = getElementByClassName;
+function getElementByClassName(className) {
+    // I'm really lazy and i dont like having to access the first element each time. use this when you're sure you've only got one instance of your stupid class
+    return document.getElementsByClassName(className)[0];
 };
 
 exports.createCardElement = createCardElement;
@@ -403,15 +438,15 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
     cardDiv.classList.add("card", (ourParams.colour === "white" || ourParams.colour === "black" ? ourParams.colour : "black"));
     cardDiv.id = (typeof ourParams.existingUUID == "undefined" ? createUUID() : ourParams.existingUUID);
 
-    let blankInputDiv;
+    let blankInputElement;
     let textDiv;
 
     if (ourParams.blank === true) {
-        blankInputDiv = document.createElement("textarea");
-        blankInputDiv.classList.add("blank-input");
-        blankInputDiv.setAttribute("placeholder", consts.underline);
-        blankInputDiv.addEventListener("click", textMoveCursorToEnd);
-        cardDiv.appendChild(blankInputDiv);
+        blankInputElement = document.createElement("textarea");
+        blankInputElement.classList.add("blank-input");
+        blankInputElement.setAttribute("placeholder", consts.underline);
+        blankInputElement.addEventListener("click", textMoveCursorToEnd);
+        cardDiv.appendChild(blankInputElement);
     }
     else {
         textDiv = document.createElement("div");
@@ -441,7 +476,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
         submitDiv.addEventListener("click", function (e) {
             ourParams.submitCallback({
                 colour: ourParams.colour,
-                text: (ourParams.blank ? sanitizeString(blankInputDiv.value) : sanitizeString(textDiv.innerHTML)),
+                text: (ourParams.blank ? sanitizeString(blankInputElement.value) : sanitizeString(textDiv.innerHTML)),
                 packName: sanitizeString(packNameDiv.innerHTML), // TODO: get user-set stuff for these 2
                 pickAmount: (typeof pickAmountDiv != "undefined" ? pickAmountDiv.innerHTML : ourParams.pickAmount),
                 blank: ourParams.blank,

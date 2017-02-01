@@ -1,7 +1,7 @@
 /* Pretty much just overrides the main bootstrap stuff lol */
 
 @font-face {
-    font-family: Coolvetica;
+    font-family: "Coolvetica";
     src: url("../resource/fonts/coolvetica.ttf");
 }
 
@@ -82,6 +82,20 @@ button:active {
     transform: scale(0.95);
 }
 
+textarea/*[class="blank-input"]*/ {
+    resize: none;
+    position: absolute;
+    text-align: left;
+    font-size: var(--card-font-size);
+    font-weight: 400;
+    border: none;
+    background: var(--cah-transparent);
+}
+
+textarea:focus {
+    outline: none !important;
+}
+
 .circular {
     display: block;
     width: calc(var(--cah-border-radius) * 1.8);
@@ -115,8 +129,7 @@ button:active {
     left: 0%;
     top: 0%;
     background-color: var(--cah-red-transparent);
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden;
     padding-top: 0.18in;
     padding-left: 1%;
     color: var(--cah-white);
@@ -130,10 +143,12 @@ button:active {
 #debug-banner > #debug-text {
     font-size: 1.3em;
     width: 80%;
+    height: 100%;
     top: 40%;
     left: 2%;
     right: 20%;
     font-weight: 300;
+    overflow-y: auto;
 }
 
 #debug-banner > #debug-text::before {
@@ -192,6 +207,15 @@ button:active {
     overflow-y: auto;
 }
 
+textarea[class="blank-input"] {
+    width: 90%;
+    height: 70%;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+}
+
 .card > .pack-name {
     position: absolute;
     text-align: left;
@@ -217,26 +241,6 @@ button:active {
 
 .card > .pick-amount::before {
     content: "Pick ";
-}
-
-.card > textarea[class="blank-input"] {
-    width: 90%;
-    height: 70%;
-    resize: none;
-    position: absolute;
-    text-align: left;
-    top: 5%;
-    bottom: 5%;
-    left: 5%;
-    right: 5%;
-    font-size: var(--card-font-size);
-    font-weight: 400;
-    border: none;
-    background: var(--cah-transparent);
-}
-
-.card > textarea[class="blank-input"]:focus {
-    outline: none !important;
 }
 
 .card > .clickable {
@@ -300,12 +304,56 @@ button:active {
 }
 
 .game-chat-area {
+    --chat-box-height: 0.6in;
+
     text-align: left;
     right: 0%;
     background-color: var(--cah-grey-light);
+    overflow: hidden;
+    padding: 0%;
+    z-index: 1;
+}
+
+.game-chat-area > .chat-messages {
+    position: absolute;
+    width: 96%;
+    left: 2%;
+    top: 2%;
+    bottom: var(--chat-box-height);
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 1;
+    word-wrap: break-word;
+}
+
+.game-chat-area > .chat-messages > .chat-message {
+    padding: var(--cah-small-length);
+}
+
+.game-chat-area > .chat-messages > .chat-message:nth-child(even) {
+    background-color: var(--cah-white);
+}
+
+.game-chat-area > textarea.chat-box {
+    position: absolute;
+    bottom: 0%;
+    width: calc(100% - var(--chat-box-height));
+    height: var(--chat-box-height);
+    background-color: var(--cah-white);
+}
+
+.game-chat-area > button.chat-submit {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: var(--chat-box-height);
+    height: var(--chat-box-height);
+    border: none;
+    background-color: var(--cah-green);
+    border-radius: 0px;
+}
+
+.game-chat-area > button.chat-submit:hover {
+    transform: scale(1);
 }
 
 .overlay {

@@ -77,4 +77,6 @@
     aw yes, signing in works lol, also fixed the prompt not disappearing when submitting
     a popup menu that looks pretty clean
     also, media queries
+    by the way, outerHTML will get the element's html as a string too!
+    font awesome addition, gotta say, it's pretty awesome
     

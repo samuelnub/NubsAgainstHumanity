@@ -2,6 +2,8 @@ const fs = require("fs");
 const http = require("http");
 
 const consts = {
+    appName: "Nubs Against Humanity",
+
     resRootPath: "./app/resource/",
     resCardsPath: "./app/resource/cards/",
 
@@ -9,7 +11,7 @@ const consts = {
     settingsFileName: "settings.json",
     keysFileName: "keys.json",
 
-    reconnectTime: 1000 * 5,
+    timeoutTime: 1000 * 5,
 
     underline: "________",
     insults: [
@@ -452,6 +454,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
         textDiv = document.createElement("div");
         textDiv.classList.add("text");
         textDiv.innerHTML = sanitizeString(ourParams.text);
+        textDiv.title = "Input your stupid text";
         cardDiv.appendChild(textDiv);
     }
 
@@ -504,6 +507,7 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
 
         const clickableDiv = document.createElement("div");
         clickableDiv.classList.add("clickable");
+        clickableDiv.title = "Submit this stupid card";
         clickableDiv.addEventListener("click", function (e) {
             if (!cardDiv.classList.contains("selected") && submitDiv.style.visibility !== "visible" && cancelDiv.style.visibility !== "visible") {
                 cardDiv.classList.add("selected");
@@ -533,7 +537,7 @@ function createPopupMenuElement(params) {
     boxDiv.classList.add("popup-menu");
 
     const closeButton = document.createElement("button");
-    closeButton.classList.add("circular", "red");
+    closeButton.classList.add("dot", "red");
     closeButton.addEventListener("click", (e) => {
         addAnimationToElement("fadeOutUpBig", boxDiv, false, (element) => {
             document.body.removeChild(element);

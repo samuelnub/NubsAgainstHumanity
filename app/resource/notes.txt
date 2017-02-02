@@ -80,3 +80,8 @@
     by the way, outerHTML will get the element's html as a string too!
     font awesome addition, gotta say, it's pretty awesome
     
+2 Feb 2017
+    a pretty slick navigation bar (that's its official name, TIL) also,
+    TODO: please, for the love of god, don't do file I/O operations in your browser
+    page. If you accidentally clear the document, you're beyond screwed. Load up all needed
+    stuff in the main process first.

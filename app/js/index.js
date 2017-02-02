@@ -14,6 +14,7 @@
 
     let playAreaElement;
     let chatAreaElement;
+    let navBarElement;
 
     let myPeers = [];
     let myTwit;
@@ -167,6 +168,7 @@
 
         (function setupPlayArea() {
 
+            playAreaElement = playAreaDiv;
         })();
 
         (function setupChatArea() {
@@ -179,8 +181,10 @@
 
             const chatSubmitButton = document.createElement("button");
             chatSubmitButton.classList.add("chat-submit");
+            chatSubmitButton.title = "Send your stupid message";
             chatSubmitButton.appendChild(helper.createFontAwesomeElement({
-                icon: "arrow-right"
+                icon: "arrow-right",
+                enlarge: "2x"
             })); // that's pretty awesome
             chatSubmitButton.addEventListener("click", (e) => {
                 // should make this a seperate function so it can be called whenever y'need it
@@ -188,7 +192,7 @@
                 if(chatBoxTextarea.value == "") {
                     return;
                 }
-                const messageCharLimit = 420;
+                const messageCharLimit = 420; // ha ha look it's the weed number
                 if(chatBoxTextarea.value.length > messageCharLimit) {
                     helper.debugMessageRenderer("Your message was too long. Sorry man. Being too well-endowed has its tradeoffs.");
                     return;
@@ -204,10 +208,70 @@
             chatAreaDiv.appendChild(chatMessagesDiv);
             chatAreaDiv.appendChild(chatBoxTextarea);
             chatAreaDiv.appendChild(chatSubmitButton);
+
+            chatAreaElement = chatAreaDiv;
         })();
 
-        playAreaElement = playAreaDiv;
-        chatAreaElement = chatAreaElement;
+        (function setupNavBar() {
+            let navBarCurrentlyRevealed = true;
+            const navBarDiv = document.createElement("div");
+            navBarDiv.classList.add("nav-bar");
+            
+            const navBarTogglerButton = document.createElement("button");
+            navBarTogglerButton.classList.add("toggler");
+            navBarTogglerButton.appendChild(helper.createFontAwesomeElement({
+                icon: "bars",
+                enlarge: "2x"
+            }));
+            navBarTogglerButton.addEventListener("click", (e) => {
+                if(navBarCurrentlyRevealed) {
+                    helper.addAnimationToElement("slideOutLeft", navBarDiv, false, () => {
+                        navBarDiv.classList.add("stowed");
+                    });
+                }
+                else {
+                    navBarDiv.classList.remove("stowed");
+                    helper.addAnimationToElement("slideInLeft", navBarDiv, false, () => {
+
+                    });
+                }
+                navBarCurrentlyRevealed = !navBarCurrentlyRevealed;
+            });
+
+            const navBarInnerDiv = document.createElement("div");
+            navBarInnerDiv.classList.add("inner");
+            
+            let clickedTimes = 0;
+            let clickedCycles = 0;
+            const appNameHeader = document.createElement("h3");
+            appNameHeader.classList.add("app-name"); // in case you wanna do stuff. idk. this is probably just a one time thing.
+            appNameHeader.innerHTML = helper.consts.appName + "<hr>";
+            appNameHeader.style.padding = "var(--cah-small-length)";
+            appNameHeader.style.userSelect = "none";
+            appNameHeader.style.cursor = "default";
+            appNameHeader.addEventListener("click", (e) => {
+                clickedTimes++;
+                if(clickedTimes > 10) {
+                    clickedTimes = 0;
+                    clickedCycles++;
+                    if(clickedCycles === 5) {
+                        appNameHeader.innerHTML = helper.consts.appName + " ಠ_ಠ" + "<hr>";
+                    }
+                    helper.addAnimationToElement("tada", appNameHeader, false);
+                }
+
+            });
+
+            navBarInnerDiv.appendChild(appNameHeader);
+
+            navBarDiv.appendChild(navBarTogglerButton);
+            navBarDiv.appendChild(navBarInnerDiv);
+            document.body.appendChild(navBarDiv);
+            navBarElement = navBarDiv;
+        })();
+
+
+
 
         document.body.appendChild(container);
         promptTwitterAuth(false);
@@ -225,7 +289,7 @@
 
                         const initialPeer = new Peer({
                             initiator: true,
-                            reconnectTimer: helper.consts.reconnectTime,
+                            reconnectTimer: helper.consts.timeoutTime,
                             trickle: false
                         });
                         myPeers.push(initialPeer);
@@ -281,7 +345,7 @@
                         clearPeers();
                         const joiningPeer = new Peer({
                             initiator: false,
-                            reconnectTimer: helper.consts.reconnectTime,
+                            reconnectTimer: helper.consts.timeoutTime,
                             trickle: false
                         });
                         myPeers.push(joiningPeer);
@@ -359,6 +423,10 @@
 
     function promptTwitterAuth(force) {
         try {
+            if(myKeys.twitterConKey === null || myKeys.twitterConSec === null) {
+                helper.debugMessageRenderer("Hey. This app's Twitter consumer keys are missing. Shoot.");
+                return;
+            }
             const twitterApiUrl = "https://api.twitter.com/";
             const oauth = new OAuth(
                 twitterApiUrl + "oauth/request_token",
@@ -424,7 +492,7 @@
                                             console.log("---Got the (or tried to) access token:---");
                                             if (err) {
                                                 helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
-                                                promptTwitterAuth();
+                                                setTimeout(promptTwitterAuth, helper.consts.timeoutTime);
                                             }
                                             else {
                                                 myKeys.twitterAccTok = oauthTok;
@@ -434,7 +502,7 @@
                                                     twitterSignInWindow.close();
                                                 }, (err) => {
                                                     helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
-                                                    promptTwitterAuth();
+                                                    setTimeout(promptTwitterAuth, helper.consts.timeoutTime);
                                                 });
                                             }
                                         });

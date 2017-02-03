@@ -85,3 +85,7 @@
     TODO: please, for the love of god, don't do file I/O operations in your browser
     page. If you accidentally clear the document, you're beyond screwed. Load up all needed
     stuff in the main process first.
+
+3 Feb 2017
+    TODO: make the "submit" and "cancel" buttons; uh, actual button elements, not divs.
+    

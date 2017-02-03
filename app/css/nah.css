@@ -8,9 +8,14 @@
 :root {
     --cah-black: #232323;
     --cah-white: #ffffff;
-    --cah-grey-light: rgb(240, 240, 240);
+    --cah-grey-very-light: rgb(245, 245, 245);
+    --cah-grey-semi-light: rgb(235, 235, 235); /* soon it'll be 50 shades of grey */
+    --cah-grey-light: rgb(240, 240, 240); 
+    --cah-grey-semi-dark: rgb(220, 220, 220);
+    --cah-grey-dark: rgb(210, 210, 210);
+    --cah-grey-very-dark: rgb(100, 100, 100);
     --cah-grey: rgb(229,229,229);
-    --cah-shadow: rgba(0,0,0,0.4);
+    --cah-shadow: rgba(0,0,0,0.3);
     --cah-shadow-size: 0.2in;
     --cah-transparent: rgba(0,0,0,0);
     --cah-blue: rgb(140, 180, 240);
@@ -21,9 +26,12 @@
     --cah-red-transparent: rgba(240, 0, 40, 0.8);
     --cah-yellow: rgb(240, 200, 0);
     --cah-yellow-transparent: rgba(240, 200, 0, 0.8);
+    --cah-font-size-large: 1.5em;
     --cah-border-radius: 0.1in;
     --cah-small-length: 0.05in;
     --cah-very-small-length: 0.01in;
+    --cah-transition-duration: 0.1s;
+    --cah-transition-duration-long: 0.5s;
 }
 
 ::-webkit-scrollbar-track
@@ -60,15 +68,16 @@ body {
 }
 
 button {
+    color: var(--cah-black);
     padding: var(--cah-small-length);
     background-color: var(--cah-grey-light);
-    box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
     border-radius: var(--cah-border-radius);
     border: none;
+    transition: all var(--cah-transition-duration) ease;
 }
 
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 button:focus {
@@ -76,7 +85,7 @@ button:focus {
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(1);
 }
 
 img {
@@ -106,7 +115,6 @@ hr {
     width: calc(var(--cah-border-radius) * 1.8);
     height: calc(var(--cah-border-radius) * 1.8);
     border-radius: 50%;
-    box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
     padding: none !important;
     border: none !important;
 }
@@ -333,10 +341,11 @@ textarea[class="blank-input"] {
 
 .game-chat-area > .chat-messages > .chat-message {
     padding: var(--cah-small-length);
+    border-bottom: var(--cah-very-small-length) solid var(--cah-grey);
 }
 
 .game-chat-area > .chat-messages > .chat-message:nth-child(odd) {
-    background-color: var(--cah-white);
+    background-color: var(--cah-grey-very-light);
 }
 
 .game-chat-area > textarea.chat-box {
@@ -357,10 +366,24 @@ textarea[class="blank-input"] {
     background-color: var(--cah-green);
     border-radius: 0px;
     box-shadow: none;
+    overflow: hidden;
 }
 
 .game-chat-area > button.chat-submit:hover {
     transform: scale(1);
+}
+
+.game-chat-area > button.chat-submit > .fa {
+    transition: all var(--cah-transition-duration) ease;
+}
+
+.game-chat-area > button.chat-submit:hover > .fa {
+    padding-right: calc(var(--cah-small-length) * 2);
+}
+
+.game-chat-area > button.chat-submit:active > .fa {
+    padding-right: 0in;
+    padding-left: calc(var(--cah-small-length) * 2);
 }
 
 .nav-bar {
@@ -373,6 +396,7 @@ textarea[class="blank-input"] {
     height: 100%;
     background-color: var(--cah-grey-light);
     word-wrap: break-word;
+    border-right: var(--cah-very-small-length) solid var(--cah-grey);
     z-index: 2;
 }
 
@@ -383,7 +407,7 @@ textarea[class="blank-input"] {
 .nav-bar > .toggler {
     position: absolute;
     left: 100%;
-    top: var(--cah-small-length);
+    top: calc(var(--cah-small-length) * 4);
     box-shadow: none;
     border-radius: 0in var(--cah-border-radius) var(--cah-border-radius) 0in;
 }
@@ -394,6 +418,29 @@ textarea[class="blank-input"] {
     overflow-x: hidden;
     overflow-y: auto;
     word-wrap: break-word;
+}
+
+.nav-bar > .inner > button {
+    color: var(--cah-grey-very-dark);
+    text-align: left;
+    font-size: var(--cah-font-size-large);
+    width: 100%;
+    background: none;
+    border-radius: 0in;
+    box-shadow: 0in 0in 0in var(--cah-transparent);
+    padding: calc(var(--cah-small-length) * 2);
+    border-bottom: var(--cah-very-small-length) solid var(--cah-grey);
+    font-weight: 100;
+}
+
+.nav-bar > .inner > button:nth-of-type(1) { /* nth-of-type is "less conditional", more elements available */
+    border-top: var(--cah-very-small-length) solid var(--cah-grey);
+}
+
+.nav-bar > .inner > button:hover {
+    transform: scale(1);
+    background-color: var(--cah-grey-semi-light);
+    padding-left: calc(var(--cah-small-length) * 4);
 }
 
 .overlay {
@@ -412,14 +459,14 @@ textarea[class="blank-input"] {
 }
 
 .popup-menu {
-    --popup-normal-size: 60%;
+    --popup-normal-size: 66%;
 
     position: fixed;
     top: calc((100% - var(--popup-normal-size)) / 2);
     left: calc((100% - var(--popup-normal-size)) / 2);
     width: var(--popup-normal-size);
     height: var(--popup-normal-size);
-    background-color: var(--cah-grey-light);
+    background-color: var(--cah-grey-semi-light);
     box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
     border-radius: var(--cah-border-radius);
     overflow: hidden;
@@ -443,7 +490,7 @@ textarea[class="blank-input"] {
     }
 
     .game-play-area, .game-chat-area {
-        width: 100%;
+        width: calc(100% - 0.5in);
     }
 
     .nav-bar {

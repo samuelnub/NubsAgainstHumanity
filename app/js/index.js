@@ -167,7 +167,7 @@
         });
 
         (function setupPlayArea() {
-
+            //TODO, actually, might make this a "call anywhere - in fact, use it as a button callback" function
             playAreaElement = playAreaDiv;
         })();
 
@@ -245,8 +245,10 @@
             let clickedCycles = 0;
             const appNameHeader = document.createElement("h3");
             appNameHeader.classList.add("app-name"); // in case you wanna do stuff. idk. this is probably just a one time thing.
-            appNameHeader.innerHTML = helper.consts.appName + "<hr>";
+            appNameHeader.innerHTML = helper.consts.appName;
+            appNameHeader.style.position = "relative";
             appNameHeader.style.padding = "var(--cah-small-length)";
+            appNameHeader.style.paddingBottom = "calc(var(--cah-small-length) * 4)"
             appNameHeader.style.userSelect = "none";
             appNameHeader.style.cursor = "default";
             appNameHeader.addEventListener("click", (e) => {
@@ -255,7 +257,7 @@
                     clickedTimes = 0;
                     clickedCycles++;
                     if(clickedCycles === 5) {
-                        appNameHeader.innerHTML = helper.consts.appName + " ಠ_ಠ" + "<hr>";
+                        appNameHeader.innerHTML = helper.consts.appName + " ಠ_ಠ";
                     }
                     helper.addAnimationToElement("tada", appNameHeader, false);
                 }
@@ -264,14 +266,29 @@
 
             navBarInnerDiv.appendChild(appNameHeader);
 
+            addButtonToNavBar("New round", showNewGamePopupMenu);
+
+            function addButtonToNavBar(text, callback) {
+                const button = document.createElement("button");
+                // button.classList.add(); // if you need it
+                button.innerHTML = text;
+                button.addEventListener("click", (e) => {
+                    callback();
+                });
+                navBarInnerDiv.appendChild(button);
+            }
+
             navBarDiv.appendChild(navBarTogglerButton);
             navBarDiv.appendChild(navBarInnerDiv);
             document.body.appendChild(navBarDiv);
             navBarElement = navBarDiv;
         })();
 
+        function showNewGamePopupMenu() {
+            const popupMenuElement = helper.createPopupMenuElement();
 
-
+            document.body.appendChild(helper.addAnimationToElement("fadeInDownBig", popupMenuElement, false));
+        }
 
         document.body.appendChild(container);
         promptTwitterAuth(false);

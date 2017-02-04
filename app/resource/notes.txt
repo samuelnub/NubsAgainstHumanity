@@ -88,4 +88,13 @@
 
 3 Feb 2017
     TODO: make the "submit" and "cancel" buttons; uh, actual button elements, not divs.
+    when working with the nav bar as well as the popup menus, use the > inner div
+    set up the twit client and the twit stream too. add your own listeners to the stream
+    when you need it.
+    
+4 Feb 2017
+    february: the month that big O became a huge O
+    some stupid array helpers
+    also getting the twitter profiles when making a new game
+    and also local images
     

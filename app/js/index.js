@@ -10,19 +10,23 @@
 
     let myProfile;
     let myKeys; // should be loaded discreetly
-    let initialTotalRounds; // Don't change this lol
+    let initialTotalGames; // Don't change this lol
 
     let playAreaElement;
     let chatAreaElement;
     let navBarElement;
 
-    let myPeers = [];
-    let myTwit;
+    let myTwit = {
+        myHandle: null, // just store the handle, or else keeping a whole copy will make it obsolete after a while
+        client: null,
+        stream: null
+    };
+    let myPeers = []; // Don't keep a bunch of peer objects, keep an array of general objects, and nest the peer object inside. name each peer based on twitter handle, by the way
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
             myProfile = myProfileLoaded
-            initialTotalRounds = myProfile.stats.totalRounds;
+            initialTotalGames = myProfile.stats.totalGames;
 
             (function loadKeysAndProgress() {
                 helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.keysFileName, (myKeysLoaded) => {
@@ -54,7 +58,7 @@
                 twitterHandle: null,
                 stats: {
                     totalPoints: 0,
-                    totalRounds: 0
+                    totalGames: 0
                 }
             }, () => {
                 init();
@@ -72,7 +76,7 @@
         const blackCard = helper.createCardElement({
             colour: "black",
             text: (myProfile.nickname === null || myProfile.uuid === null ? "I'm a " + helper.getInsult() + ", and they call me " + helper.consts.underline + "." : "Hey there, " + myProfile.nickname),
-            packName: "Nubs Against Humanity",
+            packName: helper.consts.appName,
             pickAmount: 1,
             blank: false
         });
@@ -80,7 +84,7 @@
         const whiteCard = helper.createCardElement({
             colour: "white",
             text: (myProfile.nickname !== null && myProfile.uuid !== null ? "Let me in, you " + helper.getInsult() + "!" : "I'm the nameless creature"),
-            packName: "Nubs Against Humanity",
+            packName: helper.consts.appName,
             pickAmount: 0,
             blank: (myProfile.nickname !== null && myProfile.uuid !== null ? false : true),
             submitCallback: (cardInfo) => {
@@ -167,7 +171,19 @@
         });
 
         (function setupPlayArea() {
-            //TODO, actually, might make this a "call anywhere - in fact, use it as a button callback" function
+            // this is just the first-time-launch version. at the end when the user finishes making a new game within the popup menu, it should totally change this
+            const bigNewGameButton = document.createElement("button");
+            bigNewGameButton.classList.add("big-new-game-button");
+            bigNewGameButton.appendChild(helper.createFontAwesomeElement({
+                icon: "plus",
+                enlarge: "5x"
+            }));
+            bigNewGameButton.addEventListener("click", (e) => {
+                showNewGamePopupMenu();
+            });
+            bigNewGameButton.title = "Create a new game";
+            playAreaDiv.appendChild(bigNewGameButton);
+
             playAreaElement = playAreaDiv;
         })();
 
@@ -189,11 +205,11 @@
             chatSubmitButton.addEventListener("click", (e) => {
                 // should make this a seperate function so it can be called whenever y'need it
                 // TODO: sending messages should do a whole lot more than just dumping it in the messages list
-                if(chatBoxTextarea.value == "") {
+                if (chatBoxTextarea.value == "") {
                     return;
                 }
                 const messageCharLimit = 420; // ha ha look it's the weed number
-                if(chatBoxTextarea.value.length > messageCharLimit) {
+                if (chatBoxTextarea.value.length > messageCharLimit) {
                     helper.debugMessageRenderer("Your message was too long. Sorry man. Being too well-endowed has its tradeoffs.");
                     return;
                 }
@@ -216,7 +232,7 @@
             let navBarCurrentlyRevealed = true;
             const navBarDiv = document.createElement("div");
             navBarDiv.classList.add("nav-bar");
-            
+
             const navBarTogglerButton = document.createElement("button");
             navBarTogglerButton.classList.add("toggler");
             navBarTogglerButton.appendChild(helper.createFontAwesomeElement({
@@ -224,7 +240,7 @@
                 enlarge: "2x"
             }));
             navBarTogglerButton.addEventListener("click", (e) => {
-                if(navBarCurrentlyRevealed) {
+                if (navBarCurrentlyRevealed) {
                     helper.addAnimationToElement("slideOutLeft", navBarDiv, false, () => {
                         navBarDiv.classList.add("stowed");
                     });
@@ -240,7 +256,7 @@
 
             const navBarInnerDiv = document.createElement("div");
             navBarInnerDiv.classList.add("inner");
-            
+
             let clickedTimes = 0;
             let clickedCycles = 0;
             const appNameHeader = document.createElement("h3");
@@ -253,10 +269,10 @@
             appNameHeader.style.cursor = "default";
             appNameHeader.addEventListener("click", (e) => {
                 clickedTimes++;
-                if(clickedTimes > 10) {
+                if (clickedTimes > 10) {
                     clickedTimes = 0;
                     clickedCycles++;
-                    if(clickedCycles === 5) {
+                    if (clickedCycles === 5) {
                         appNameHeader.innerHTML = helper.consts.appName + " ಠ_ಠ";
                     }
                     helper.addAnimationToElement("tada", appNameHeader, false);
@@ -266,7 +282,7 @@
 
             navBarInnerDiv.appendChild(appNameHeader);
 
-            addButtonToNavBar("New round", showNewGamePopupMenu);
+            addButtonToNavBar("New game", showNewGamePopupMenu);
 
             function addButtonToNavBar(text, callback) {
                 const button = document.createElement("button");
@@ -285,17 +301,94 @@
         })();
 
         function showNewGamePopupMenu() {
-            const popupMenuElement = helper.createPopupMenuElement();
+            const popupMenuElement = helper.createPopupMenuElement({ title: "Create New Game" });
+            const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
 
-            document.body.appendChild(helper.addAnimationToElement("fadeInDownBig", popupMenuElement, false));
+            const twitterHandlesDiv = document.createElement("div");
+            twitterHandlesDiv.classList.add("twitter-handles");
+
+            const twitterHandleInput = document.createElement("input");
+            twitterHandleInput.type = "text";
+            twitterHandleInput.placeholder = "Twitter @handle to invite";
+            twitterHandleInput.addEventListener("keyup", (e) => {
+                if (e.which !== 13) {
+                    return;
+                }
+                if (twitterHandleInput.value == "") {
+                    return;
+                }
+                (function addTwitterHandleToList() {
+                    if (twitterHandlesDiv.getElementsByClassName("twitter-handle").length >= 10) { // TODO: make it a user-settable limit
+                        helper.debugMessageRenderer("You sure? Adding over 10 people ain't the brightest idea. It might require <i>more social interaction</i>");
+                    }
+                    const handleText = twitterHandleInput.value;
+                    if (handleText == myTwit.myHandle) {
+                        helper.debugMessageRenderer("You uh... can't add yourself. Sorry man.");
+                        return;
+                    }
+                    if (helper.arraySearchBySubItems(myPeers, { twitterHandle: handleText }, true, true)) {
+                        // already exists, no dupes
+                        return;
+                    }
+                    const twitterHandleDiv = document.createElement("div");
+                    twitterHandleDiv.classList.add("twitter-handle");
+
+                    const handleNameText = document.createElement("p");
+                    handleNameText.classList.add("handle-name");
+                    handleNameText.innerHTML = "@" + handleText.split("@").join("");
+
+                    const profilePicImg = document.createElement("img");
+                    profilePicImg.classList.add("profile-pic", "add-backdrop");
+
+                    try {
+                        myTwit.client.get("users/show", { screen_name: handleText.split("@").join("") }, (err, data, res) => {
+                            if (err) {
+                                profilePicImg.src = helper.consts.resImagesPath + "question-mark.png";
+                                profilePicImg.title = "Unknown handle";
+                            }
+                            else {
+                                profilePicImg.src = data.profile_image_url;
+                                profilePicImg.addEventListener("click", (e) => {
+                                    remote.shell.openExternal(helper.consts.twitterUrl + handleText.split("@").join(""));
+                                });
+                                myPeers.push({ twitterHandle: handleText });
+                            }
+                            twitterHandleDiv.appendChild(profilePicImg);
+                        });
+                    }
+                    catch (err) {
+                        helper.debugMessageRenderer("Couldn't make Twitter API calls! " + err);
+                    }
+
+                    const removeButton = document.createElement("button");
+                    removeButton.classList.add("unstyle");
+                    removeButton.appendChild(helper.createFontAwesomeElement({
+                        icon: "times", // y'know, like, times, the multiplication sign. In case you were confused
+                        enlarge: "2x"
+                    }));
+                    removeButton.addEventListener("click", (e) => {
+                        twitterHandlesDiv.removeChild(twitterHandleDiv);
+                        helper.arrayRemoveBySubItems(myPeers, { twitterHandle: handleText }, true, true);
+                    });
+
+                    twitterHandleDiv.appendChild(handleNameText);
+                    twitterHandleDiv.appendChild(removeButton);
+
+                    twitterHandlesDiv.appendChild(twitterHandleDiv);
+                })();
+            });
+
+            innerDiv.appendChild(twitterHandleInput);
+            innerDiv.appendChild(twitterHandlesDiv);
+
+            document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
         }
 
         document.body.appendChild(container);
-        promptTwitterAuth(false);
-        document.body.appendChild(helper.createPopupMenuElement());
+        setupTwitter(false);
     }
 
-    function promptNewRound() {
+    function promptNewGame() { // TODO: get rid of this lol
         const ourWhiteCards = [
             helper.createCardElement({
                 colour: "white",
@@ -412,7 +505,7 @@
             })
         ];
 
-        if (myProfile.stats.totalRounds - initialTotalRounds > 0) {
+        if (myProfile.stats.totalGames - initialTotalGames > 0) {
             ourWhiteCards.push(helper.createCardElement({
                 colour: "white",
                 text: "Restart this match. I like these guys (or I was forced against my will to replay with them).",
@@ -438,9 +531,9 @@
         });
     }
 
-    function promptTwitterAuth(force) {
+    function setupTwitter(force) {
         try {
-            if(myKeys.twitterConKey === null || myKeys.twitterConSec === null) {
+            if (myKeys.twitterConKey === null || myKeys.twitterConSec === null) {
                 helper.debugMessageRenderer("Hey. This app's Twitter consumer keys are missing. Shoot.");
                 return;
             }
@@ -454,7 +547,7 @@
                 "oob",
                 "HMAC-SHA1"
             );
-            if (myKeys.twitterAccTok !== null && myKeys.twitterAccSec !== null && !force) {
+            if ((myKeys.twitterAccTok !== null || myKeys.twitterAccSec !== null) && !force) {
                 // we've already got our user auth
                 oauth.get(
                     twitterApiUrl + "/1.1/account/verify_credentials.json",
@@ -466,13 +559,14 @@
                             myKeys.twitterAccTok = null;
                             myKeys.twitterAccSec = null;
                             helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, myKeys, (err) => {
-                                promptTwitterAuth();
+                                setupTwit();
                             }, (err) => {
                                 helper.debugMessageRenderer("Couldn't write to keys file. " + err);
                             });
                         }
                         else {
                             console.log("Hey, tell Sam not to prompt this sign-in bahooga when you're already signed in. Sorry man.");
+                            setupTwit(force);
                             return;
                         }
                     });
@@ -509,7 +603,7 @@
                                             console.log("---Got the (or tried to) access token:---");
                                             if (err) {
                                                 helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
-                                                setTimeout(promptTwitterAuth, helper.consts.timeoutTime);
+                                                setTimeout(setupTwitter, helper.consts.timeoutTime);
                                             }
                                             else {
                                                 myKeys.twitterAccTok = oauthTok;
@@ -517,9 +611,10 @@
                                                 helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.keysFileName, myKeys, () => {
                                                     console.log("hell yea, got the keys!");
                                                     twitterSignInWindow.close();
+                                                    setupTwit(force);
                                                 }, (err) => {
                                                     helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
-                                                    setTimeout(promptTwitterAuth, helper.consts.timeoutTime);
+                                                    setTimeout(setupTwitter, helper.consts.timeoutTime);
                                                 });
                                             }
                                         });
@@ -531,9 +626,43 @@
                     });
                 })();
             }
+
+            function setupTwit(force) {
+                if ((myTwit.client !== null || myTwit.stream !== null) && !force) {
+                    return;
+                }
+                myTwit.client = new Twit({
+                    consumer_key: myKeys.twitterConKey,
+                    consumer_secret: myKeys.twitterConSec,
+                    access_token: myKeys.twitterAccTok,
+                    access_token_secret: myKeys.twitterAccSec,
+                    timeout_ms: helper.consts.reconnectTimer
+                });
+
+                myTwit.stream = myTwit.client.stream("user", { track: "#" + helper.consts.appNamePascal });
+                myTwit.stream.on("limit", (limitMsg) => {
+                    helper.debugMessageRenderer("Woah there nelly! Twitter doesn't like the number of requests we're sending them! " + limitMsg);
+                });
+                myTwit.stream.on("connected", (res) => {
+                    console.log("Connected to twitter stream! " + res);
+                });
+                myTwit.stream.on("reconnect", (req, res, conInterval) => {
+                    console.log("Attempting to reconnect to Twitter... with reconnect time of: " + conInterval);
+                });
+                myTwit.stream.on("warning", (warning) => {
+                    helper.debugMessageRenderer("Oh boy! Your internet connection's getting choppy, according to Twitter. " + warning);
+                });
+                myTwit.client.get("account/verify_credentials", { skip_status: true }, (err, data, res) => {
+                    if (err) {
+                        helper.debugMessageRenderer("Couldn't get our own Twitter profile " + err);
+                    }
+                    myTwit.myHandle = data.screen_name;
+                    console.log(myTwit.myHandle);
+                });
+            }
         }
         catch (err) {
-            helper.debugMessageRenderer("Error when trying to authenticate you with Twitter: " + err);
+            helper.debugMessageRenderer("Error when trying to setup Twitter stuff: " + err);
         }
         // hey, it works lmao
     }

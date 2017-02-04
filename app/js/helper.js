@@ -3,13 +3,18 @@ const http = require("http");
 
 const consts = {
     appName: "Nubs Against Humanity",
+    appNameCamel: "nubsAgainstHumanity",
+    appNamePascal: "NubsAgainstHumanity",
 
     resRootPath: "./app/resource/",
     resCardsPath: "./app/resource/cards/",
+    resImagesPath: "../app/resource/images/", // yo, working with images is somehow different, TODO: standardise this bull
 
     profileFileName: "profile.json",
     settingsFileName: "settings.json",
     keysFileName: "keys.json",
+
+    twitterUrl: "https://twitter.com/",
 
     timeoutTime: 1000 * 5,
 
@@ -162,7 +167,7 @@ function sanitizeString(message, charLimit) {
     if (typeof message != "object" && typeof message != "string") {
         return "Hey, someone tried to sanitize some hogwash.";
     }
-    if(charLimit) {
+    if (charLimit) {
         message.slice(0, charLimit);
     }
     return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code|br|\/br)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
@@ -388,16 +393,16 @@ function createFontAwesomeElement(params /* you can omit all the "fa" prefixes *
     };
     const ourIcon = document.createElement("i");
     ourIcon.classList.add("fa", "fa-" + ourParams.icon);
-    if(ourParams.enlarge) {
+    if (ourParams.enlarge) {
         ourIcon.classList.add("fa-" + ourParams.enlarge);
     }
-    if(ourParams.spin) {
+    if (ourParams.spin) {
         ourIcon.classList.add("fa-" + "spin");
     }
-    if(ourParams.rotate) {
+    if (ourParams.rotate) {
         ourIcon.classList.add("fa-" + rotate);
     }
-    if(ourParams.flip) {
+    if (ourParams.flip) {
         ourIcon.classList.add("fa-" + (ourParams.flip === "h" ? "horizontal" : "vertical"));
     }
     return ourIcon;
@@ -413,14 +418,16 @@ function textMoveCursorToEnd(e) {
 };
 
 exports.getElementByClassAndUUID = getElementByClassAndUUID;
-function getElementByClassAndUUID(className, UUID) {
-    return (typeof document.getElementById(uuid) != "undefined" && document.getElementById(uuid).classList.contains(className) ? document.getElementById(uuid) : undefined);
+function getElementByClassAndUUID(className, UUID, parentElement) {
+    const element = (parentElement ? parentElement : document);
+    return (typeof element.getElementById(uuid) != "undefined" && element.getElementById(uuid).classList.contains(className) ? element.getElementById(uuid) : undefined);
 };
 
 exports.getElementByClassName = getElementByClassName;
-function getElementByClassName(className) {
+function getElementByClassName(className, parentElement) {
     // I'm really lazy and i dont like having to access the first element each time. use this when you're sure you've only got one instance of your stupid class
-    return document.getElementsByClassName(className)[0];
+    const element = (parentElement ? parentElement : document);
+    return element.getElementsByClassName(className)[0];
 };
 
 exports.createCardElement = createCardElement;
@@ -530,22 +537,31 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
 exports.createPopupMenuElement = createPopupMenuElement;
 function createPopupMenuElement(params) {
     const ourParams = {
-        // not many params yet lol
+        title: (params.hasOwnProperty("title") ? params.title : "Untitled Popup Menu")
     };
 
-    const boxDiv = document.createElement("div");
-    boxDiv.classList.add("popup-menu");
+    const popupMenuDiv = document.createElement("div");
+    popupMenuDiv.classList.add("popup-menu");
 
     const closeButton = document.createElement("button");
     closeButton.classList.add("dot", "red");
     closeButton.addEventListener("click", (e) => {
-        addAnimationToElement("fadeOutUpBig", boxDiv, false, (element) => {
+        addAnimationToElement("fadeOutUpBig", popupMenuDiv, false, (element) => {
             document.body.removeChild(element);
         })
     });
 
-    boxDiv.appendChild(closeButton);
-    return boxDiv;
+    const titleP = document.createElement("p");
+    titleP.classList.add("title");
+    titleP.innerHTML = sanitizeString(ourParams.title);
+
+    const popupMenuInnerDiv = document.createElement("div");
+    popupMenuInnerDiv.classList.add("inner");
+
+    popupMenuDiv.appendChild(closeButton);
+    popupMenuDiv.appendChild(titleP);
+    popupMenuDiv.appendChild(popupMenuInnerDiv);
+    return popupMenuDiv;
 }
 
 exports.showPromptRenderer = showPromptRenderer;
@@ -605,7 +621,7 @@ function showPromptRenderer(params) {
         closeButton.addEventListener("click", removeOurPrompt);
         overlayDiv.appendChild(closeButton);
     }
-    
+
     function removeOurPrompt(e) {
         addAnimationToElement("fadeOutUpBig", overlayDiv, false, (element) => {
             ourParams.parentElement.removeChild(element);
@@ -634,4 +650,73 @@ function splitStringAtIndex(message, index) {
         first: message.substring(0, index),
         second: message.substring(index)
     };
+}
+
+exports.getStringPrefixed = getStringPrefixed;
+function getStringPrefixed(prefix, message) {
+    // this'll also get rid of any instances of the prefix in the substring. useful for twitter #hashtags/@handles
+    return prefix + message.split(prefix).join("");
+}
+
+exports.arrayGetMatchesBySubItems = arrayGetMatchesBySubItems;
+function arrayGetMatchesBySubItems(params) { // oh boy, i wonder what the big O rating for this is.
+    const ourParams = {
+        array: (params.hasOwnProperty("array") ? params.array : []),
+        subItems: (params.hasOwnProperty("subItems") ? params.subItems : {}),
+        stopAtFirstMatch: (params.hasOwnProperty("stopAtFirstMatch") ? params.stopAtFirstMatch : true),
+        ignoreCaseValue: (params.hasOwnProperty("ignoreCaseValue") ? params.ignoreCaseValue : false),
+        foreachCallback: (params.hasOwnProperty("foreachCallback") ? params.foreachCallback : undefined)
+    };
+    const subItemsToMatchCount = Object.keys(ourParams.subItems).length;
+    const matches = [];
+    for (arrayElement of ourParams.array) {
+        let currentSubItemMatchesCount = 0;
+        for (item in ourParams.subItems) {
+            if (arrayElement.hasOwnProperty(item) && (ourParams.ignoreCaseValue && typeof arrayElement[item] == "string" && typeof ourParams.subItems[item] == "string" ? arrayElement[item].toLowerCase() === ourParams.subItems[item].toLowerCase() : arrayElement[item] === ourParams.subItems[item])) {
+                currentSubItemMatchesCount++;
+            }
+            if (currentSubItemMatchesCount === subItemsToMatchCount) {
+                if(typeof ourParams.foreachCallback != "function") {
+                    matches.push(arrayElement);
+                }
+                else {
+                    ourParams.foreachCallback(arrayElement);
+                }
+            }
+            if (ourParams.stopAtFirstMatch && typeof ourParams.foreachCallback != "function") {
+                return matches;
+            }
+        }
+    }
+    if(typeof ourParams.foreachCallback != "function") {
+        return matches;
+    }
+}
+
+exports.arraySearchBySubItems = arraySearchBySubItems;
+function arraySearchBySubItems(array, subItems, stopAtFirstMatch, ignoreCaseValue) {
+    const matches = 0;
+    arrayGetMatchesBySubItems({
+        array: array,
+        subItems: subItems,
+        stopAtFirstMatch: stopAtFirstMatch,
+        ignoreCaseValue: ignoreCaseValue,
+        foreachCallback: (arrayElement) => {
+            matches++;
+        }
+    });
+    return matches;
+}
+
+exports.arrayRemoveBySubItems = arrayRemoveBySubItems;
+function arrayRemoveBySubItems(array, subItems, stopAtFirstMatch, ignoreCaseValue) {
+    arrayGetMatchesBySubItems({
+        array: array,
+        subItems: subItems,
+        stopAtFirstMatch: stopAtFirstMatch,
+        ignoreCaseValue: ignoreCaseValue,
+        foreachCallback: (arrayElement) => {
+            array.splice(array.indexOf(arrayElement), 1);
+        }
+    });
 }

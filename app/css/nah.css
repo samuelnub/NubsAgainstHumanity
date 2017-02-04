@@ -26,12 +26,15 @@
     --cah-red-transparent: rgba(240, 0, 40, 0.8);
     --cah-yellow: rgb(240, 200, 0);
     --cah-yellow-transparent: rgba(240, 200, 0, 0.8);
+    --cah-font-size-small: 0.95em;
+    --cah-font-size-regular: 1.1em;
     --cah-font-size-large: 1.5em;
     --cah-border-radius: 0.1in;
     --cah-small-length: 0.05in;
     --cah-very-small-length: 0.01in;
-    --cah-transition-duration: 0.1s;
-    --cah-transition-duration-long: 0.5s;
+    --cah-profile-pic-length: 0.4in;
+    --cah-duration-short: 0.1s;
+    --cah-duration-long: 0.8s;
 }
 
 ::-webkit-scrollbar-track
@@ -42,6 +45,7 @@
 ::-webkit-scrollbar
 {
 	width: 0.5em;
+    height: 0.5em;
 	background-color: #F5F5F5;
 }
 
@@ -61,6 +65,14 @@ body {
     overflow-y: hidden;
 }
 
+body.asswipe {
+    cursor: wait !important;
+}
+
+.unstyle /* me irl */ {
+    all: unset;
+}
+
 .centred {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -73,7 +85,7 @@ button {
     background-color: var(--cah-grey-light);
     border-radius: var(--cah-border-radius);
     border: none;
-    transition: all var(--cah-transition-duration) ease;
+    transition: all var(--cah-duration-short) ease;
 }
 
 button:hover {
@@ -92,12 +104,43 @@ img {
     max-width: 100%;
 }
 
+img.add-backdrop {
+    background-color: var(--cah-shadow);
+}
+
+img:after {
+    /* https://bitsofco.de/styling-broken-images/ */
+    content: attr(title);
+    color: var(--cah-grey-very-dark);
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cah-grey-dark);
+    text-align: center;
+    overflow: hidden;
+    z-index: 2; /* cover the image */
+}
+
+input {
+    height: var(--cah-font-size-large);
+    padding: var(--cah-small-length);
+    padding-left: calc(var(--cah-small-length) * 2);
+    padding-right: calc(var(--cah-small-length) * 2);
+    font-size: var(--cah-font-size-large);
+    border: none;
+}
+
+input:focus {
+    outline: none !important;
+}
+
 textarea/*[class="blank-input"]*/ {
     resize: none;
-    position: absolute;
     text-align: left;
     font-size: var(--card-font-size);
-    font-weight: 400;
     border: none;
     background: var(--cah-transparent);
 }
@@ -220,7 +263,8 @@ hr {
     overflow-y: auto;
 }
 
-textarea[class="blank-input"] {
+.card > textarea[class="blank-input"] {
+    position: absolute;
     width: 90%;
     height: 70%;
     top: 5%;
@@ -316,6 +360,22 @@ textarea[class="blank-input"] {
     z-index: 0;
 }
 
+.game-play-area > .big-new-game-button {
+    --button-size: 1in;
+    color: var(--cah-grey-semi-dark);
+    transform: scale(4);
+    position: absolute;
+    width: var(--button-size);
+    height: var(--button-size);
+    top: calc(50% - (var(--button-size) / 2));
+    left: calc(50% - (var(--button-size) / 2));
+    background-color: var(--cah-transparent);
+}
+
+.game-play-area > .big-new-game-button:hover {
+    color: var(--cah-grey-dark);
+}
+
 .game-chat-area {
     --chat-box-height: 0.6in;
 
@@ -336,6 +396,7 @@ textarea[class="blank-input"] {
     overflow-x: hidden;
     overflow-y: auto;
     word-wrap: break-word;
+    font-size: var(--cah-font-size-regular);
     white-space: pre-wrap; /* now you can make A E S T H E T I C  A R T with proper whitespace */
 }
 
@@ -374,7 +435,7 @@ textarea[class="blank-input"] {
 }
 
 .game-chat-area > button.chat-submit > .fa {
-    transition: all var(--cah-transition-duration) ease;
+    transition: all var(--cah-duration-short) ease;
 }
 
 .game-chat-area > button.chat-submit:hover > .fa {
@@ -459,7 +520,7 @@ textarea[class="blank-input"] {
 }
 
 .popup-menu {
-    --popup-normal-size: 66%;
+    --popup-normal-size: 55%;
 
     position: fixed;
     top: calc((100% - var(--popup-normal-size)) / 2);
@@ -470,6 +531,7 @@ textarea[class="blank-input"] {
     box-shadow: 0px 0px var(--cah-shadow-size) var(--cah-shadow);
     border-radius: var(--cah-border-radius);
     overflow: hidden;
+    animation-duration: var(--cah-duration-long);
     z-index: 100;
 }
 
@@ -477,6 +539,79 @@ textarea[class="blank-input"] {
     position: absolute;
     right: var(--cah-small-length);
     top: var(--cah-small-length);
+}
+
+.popup-menu > .title {
+    position: absolute;
+    color: var(--cah-grey-very-dark);
+    top: var(--cah-small-length);
+    left: calc(var(--cah-small-length) * 2);
+    font-size: var(--cah-font-size-small);
+    overflow: hidden;
+    user-select: none;
+}
+
+.popup-menu > .inner {
+    position: absolute;
+    left: var(--cah-small-length);
+    bottom: calc(var(--cah-very-small-length) * 4);
+    width: calc(100% - (var(--cah-small-length) * 2));
+    height: calc(100% - (var(--cah-small-length) * 7)); /* eugh. odd numbers. */
+    border-radius: 0in 0in var(--cah-border-radius) var(--cah-border-radius);
+}
+
+.popup-menu > .inner > input {
+    width: 100%;
+}
+
+.popup-menu > .inner > .twitter-handles {
+    position: absolute;
+    top: calc(var(--cah-font-size-large) * 2);
+    bottom: 0%;
+    width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.popup-menu > .inner > .twitter-handles > .twitter-handle {
+    --twitter-handle-height: 0.6in;
+
+    position: relative;
+    width: 100%;
+    height: var(--twitter-handle-height);
+    border-bottom: var(--cah-very-small-length) solid var(--cah-grey);
+}
+
+.popup-menu > .inner > .twitter-handles > .twitter-handle:nth-of-type(odd) {
+    background-color: var(--cah-grey-light);
+}
+
+.popup-menu > .inner > .twitter-handles > .twitter-handle:nth-last-of-type(1) {
+    margin-bottom: calc(var(--cah-small-length) * 4);
+}
+
+.popup-menu > .inner > .twitter-handles > .twitter-handle > .profile-pic {
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.popup-menu > .inner > .twitter-handles > .twitter-handle > .handle-name {
+    position: absolute;
+    color: var(--cah-grey-very-dark);
+    top: 50%; /* these two lines, just to centre text on the y axis. nice one css */
+    line-height: calc(50% - (var(--cah-font-size-large) / 2));
+    left: calc(var(--twitter-handle-height) + var(--cah-small-length));
+    height: 100%;
+    font-size: var(--cah-font-size-large);
+}
+
+.popup-menu > .inner > .twitter-handles > .twitter-handle > button {
+    position: absolute;
+    height: 100%;
+    right: var(--cah-small-length);
 }
 
 @media screen and (max-width: 4in), screen and (max-height: 4in) {

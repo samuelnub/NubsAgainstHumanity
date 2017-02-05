@@ -97,4 +97,31 @@
     some stupid array helpers
     also getting the twitter profiles when making a new game
     and also local images
+    by the way, the myPeers array should look like:
+    myPeers = [
+        {
+            profile: {
+                uuid: "...",
+                nickname: "doofus",
+                twitterHandle: "do_ofus",
+                ...
+            },
+            inGame: false,
+            peer: new Peer(),
+            ...
+        },
+        {
+            ...
+        },
+        ...
+    ];
+
+5 Feb 2017
+    oh yea, tell the user somewhere that "yea, it's hip and cool to spam twitter calls, but
+    guess whose ass is gonna get throttled at the end of the day? yea, you"
+    TODO: reduce the search calls in addTwitterHandleToList(), it's really bogging me down
+    if you spam the same twitter handle in that func, you may get visual dupes, but don't 
+    worry man, they aren't real.
+    a bit of cleanup too
+    
     

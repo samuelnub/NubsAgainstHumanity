@@ -537,7 +537,8 @@ function createCardElement(params /* colour: "black" or "white" | text: yep. | p
 exports.createPopupMenuElement = createPopupMenuElement;
 function createPopupMenuElement(params) {
     const ourParams = {
-        title: (params.hasOwnProperty("title") ? params.title : "Untitled Popup Menu")
+        title: (params.hasOwnProperty("title") ? params.title : "Untitled Popup Menu"),
+        closeCallback: (params.hasOwnProperty("closeCallback") ? params.closeCallback : undefined)
     };
 
     const popupMenuDiv = document.createElement("div");
@@ -547,6 +548,9 @@ function createPopupMenuElement(params) {
     closeButton.classList.add("dot", "red");
     closeButton.addEventListener("click", (e) => {
         addAnimationToElement("fadeOutUpBig", popupMenuDiv, false, (element) => {
+            if(typeof ourParams.closeCallback == "function") {
+                ourParams.closeCallback(element);
+            }
             document.body.removeChild(element);
         })
     });
@@ -693,9 +697,24 @@ function arrayGetMatchesBySubItems(params) { // oh boy, i wonder what the big O 
     }
 }
 
+exports.arrayGetMatchBySubItems = arrayGetMatchBySubItems;
+function arrayGetMatchBySubItems(array, subItems, ignoreCaseValue) {
+    let match;
+    arrayGetMatchesBySubItems({
+        array: array,
+        subItems: subItems,
+        stopAtFirstMatch: true,
+        ignoreCaseValue: ignoreCaseValue,
+        foreachCallback: (arrayElement) => {
+            match = arrayElement;
+        }
+    });
+    return match;
+}
+
 exports.arraySearchBySubItems = arraySearchBySubItems;
 function arraySearchBySubItems(array, subItems, stopAtFirstMatch, ignoreCaseValue) {
-    const matches = 0;
+    let matches = 0;
     arrayGetMatchesBySubItems({
         array: array,
         subItems: subItems,

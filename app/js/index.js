@@ -3,21 +3,19 @@
     const helper = require("./helper");
     const Peer = require("simple-peer");
     const OAuth = require("oauth").OAuth; // you know what I want? proper documentation for this
-    const Twit = require("twit");
+    const Twit = require("twit"); 774982
 
     const nahGlobal = remote.getGlobal("nah");
     const settings = nahGlobal.settings; // lazy
 
     let myProfile;
     let myKeys; // should be loaded discreetly
-    let initialTotalGames; // Don't change this lol
 
     let playAreaElement;
     let chatAreaElement;
     let navBarElement;
 
     let myTwit = {
-        myHandle: null, // just store the handle, or else keeping a whole copy will make it obsolete after a while
         client: null,
         stream: null
     };
@@ -25,8 +23,7 @@
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
-            myProfile = myProfileLoaded
-            initialTotalGames = myProfile.stats.totalGames;
+            myProfile = myProfileLoaded;
 
             (function loadKeysAndProgress() {
                 helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.keysFileName, (myKeysLoaded) => {
@@ -107,7 +104,7 @@
 
         const welcomeHeader = document.createElement("h1");
         welcomeHeader.id = "welcome-header";
-        welcomeHeader.innerHTML = (myProfile.nickname === null || myProfile.uuid === null ? "Welcome to Hell." : "Welcome back.");
+        welcomeHeader.innerHTML = (myProfile.nickname === null || myProfile.uuid === null ? "Welcome to " + helper.consts.appName : "Welcome back.");
         helper.placeElementInContainer(container, helper.addAnimationToElement("fadeInDown", welcomeHeader, false), {
             row: 0,
             col: 12,
@@ -205,7 +202,7 @@
             chatSubmitButton.addEventListener("click", (e) => {
                 // should make this a seperate function so it can be called whenever y'need it
                 // TODO: sending messages should do a whole lot more than just dumping it in the messages list
-                if (chatBoxTextarea.value == "") {
+                if (chatBoxTextarea.value === "") {
                     return;
                 }
                 const messageCharLimit = 420; // ha ha look it's the weed number
@@ -301,11 +298,31 @@
         })();
 
         function showNewGamePopupMenu() {
-            const popupMenuElement = helper.createPopupMenuElement({ title: "Create New Game" });
+            const minOtherPeers = 1; // should be two for a regular game, but i don't have friends. im sorry
+            const myPeersTemp = [];
+            let canAdd = true; // we don't want too many dupes
+            const popupMenuElement = helper.createPopupMenuElement({
+                title: "Create New Game", closeCallback: (element) => {
+                    for (tempPeer of myPeersTemp) {
+                        helper.arrayRemoveBySubItems(myPeers, {
+                            twitterHandle: tempPeer.twitterHandle,
+                            inGame: false,
+                        }, false, true);
+                    }
+                }
+            });
             const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
 
             const twitterHandlesDiv = document.createElement("div");
             twitterHandlesDiv.classList.add("twitter-handles");
+
+            const gameCommenceButton = document.createElement("button");
+            gameCommenceButton.classList.add("game-commence");
+            gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
+            gameCommenceButton.innerHTML = "Commence";
+            gameCommenceButton.addEventListener("click", (e) => {
+                helper.debugMessageRenderer("Yep, TODO");
+            });
 
             const twitterHandleInput = document.createElement("input");
             twitterHandleInput.type = "text";
@@ -314,19 +331,27 @@
                 if (e.which !== 13) {
                     return;
                 }
-                if (twitterHandleInput.value == "") {
+                if (twitterHandleInput.value === "") {
                     return;
                 }
                 (function addTwitterHandleToList() {
-                    if (twitterHandlesDiv.getElementsByClassName("twitter-handle").length >= 10) { // TODO: make it a user-settable limit
-                        helper.debugMessageRenderer("You sure? Adding over 10 people ain't the brightest idea. It might require <i>more social interaction</i>");
+                    if (!canAdd) {
+                        return;
                     }
-                    const handleText = twitterHandleInput.value;
-                    if (handleText == myTwit.myHandle) {
+                    if (myPeersTemp.length >= 10) { // TODO: make it a user-settable limit
+                        helper.debugMessageRenderer("You sure? Adding over 10 people ain't the brightest idea. It might require <i>more social interaction</i>");
+                        return;
+                    }
+                    const handleText = twitterHandleInput.value.split("@").join("");
+                    const peerToConsider = {
+                        twitterHandle: handleText,
+                        inGame: false
+                    };
+                    if (handleText.toLowerCase() === myProfile.twitterHandle.toLowerCase()) {
                         helper.debugMessageRenderer("You uh... can't add yourself. Sorry man.");
                         return;
                     }
-                    if (helper.arraySearchBySubItems(myPeers, { twitterHandle: handleText }, true, true)) {
+                    if (helper.arraySearchBySubItems(myPeersTemp, peerToConsider, true, true)) {
                         // already exists, no dupes
                         return;
                     }
@@ -335,13 +360,14 @@
 
                     const handleNameText = document.createElement("p");
                     handleNameText.classList.add("handle-name");
-                    handleNameText.innerHTML = "@" + handleText.split("@").join("");
+                    handleNameText.innerHTML = "@" + handleText;
 
                     const profilePicImg = document.createElement("img");
                     profilePicImg.classList.add("profile-pic", "add-backdrop");
 
                     try {
-                        myTwit.client.get("users/show", { screen_name: handleText.split("@").join("") }, (err, data, res) => {
+                        canAdd = false;
+                        myTwit.client.get("users/show", { screen_name: handleText }, (err, data, res) => {
                             if (err) {
                                 profilePicImg.src = helper.consts.resImagesPath + "question-mark.png";
                                 profilePicImg.title = "Unknown handle";
@@ -349,9 +375,34 @@
                             else {
                                 profilePicImg.src = data.profile_image_url;
                                 profilePicImg.addEventListener("click", (e) => {
-                                    remote.shell.openExternal(helper.consts.twitterUrl + handleText.split("@").join(""));
+                                    remote.shell.openExternal(helper.consts.twitterUrl + handleText);
                                 });
-                                myPeers.push({ twitterHandle: handleText });
+
+                                myTwit.client.get("friendships/show", { source_screen_name: myProfile.twitterHandle, target_screen_name: handleText }, (err, data, res) => {
+                                    if (err) {
+                                        throw "Trouble getting your relationship between you and " + handleText;
+                                    }
+                                    else if (data.relationship.source.can_dm && data.relationship.source.followed_by && data.relationship.source.following /* so they can DM me back */) {
+                                        if (helper.arraySearchBySubItems(myPeersTemp, peerToConsider, true, true) === 0) { // at this point, we're async, so there might be an entry already
+                                            myPeersTemp.push(peerToConsider);
+                                            gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
+                                        }
+                                    }
+                                    else {
+                                        const warningLink = document.createElement("a");
+                                        warningLink.classList.add("unstyle");
+                                        warningLink.appendChild(helper.createFontAwesomeElement({
+                                            icon: "exclamation",
+                                            enlarge: "2x"
+                                        }));
+                                        warningLink.title = "You two are not following each other! You/they probably won't be able to receive direct messages";
+                                        warningLink.addEventListener("click", (e) => {
+                                            remote.shell.openExternal(helper.consts.twitterUrl + handleText);
+                                        });
+                                        twitterHandleDiv.appendChild(warningLink);
+                                    }
+                                    canAdd = true; // petty semaphore
+                                });
                             }
                             twitterHandleDiv.appendChild(profilePicImg);
                         });
@@ -367,8 +418,9 @@
                         enlarge: "2x"
                     }));
                     removeButton.addEventListener("click", (e) => {
+                        helper.arrayRemoveBySubItems(myPeersTemp, peerToConsider, true, true);
+                        gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
                         twitterHandlesDiv.removeChild(twitterHandleDiv);
-                        helper.arrayRemoveBySubItems(myPeers, { twitterHandle: handleText }, true, true);
                     });
 
                     twitterHandleDiv.appendChild(handleNameText);
@@ -380,155 +432,13 @@
 
             innerDiv.appendChild(twitterHandleInput);
             innerDiv.appendChild(twitterHandlesDiv);
+            innerDiv.appendChild(gameCommenceButton);
 
             document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
         }
 
         document.body.appendChild(container);
         setupTwitter(false);
-    }
-
-    function promptNewGame() { // TODO: get rid of this lol
-        const ourWhiteCards = [
-            helper.createCardElement({
-                colour: "white",
-                text: "Host a new match.",
-                submitCallback: (cardInfo) => {
-                    (function hostNewMatch() {
-                        clearPeers();
-
-                        const initialPeer = new Peer({
-                            initiator: true,
-                            reconnectTimer: helper.consts.timeoutTime,
-                            trickle: false
-                        });
-                        myPeers.push(initialPeer);
-
-                        const myIdCard = helper.createCardElement({
-                            colour: "white",
-                            blank: true
-                        });
-
-                        const theirIdCard = helper.createCardElement({
-                            colour: "white",
-                            blank: true,
-                            submitCallback: (cardInfo) => {
-                                try {
-                                    initialPeer.signal(cardInfo.text);
-                                }
-                                catch (err) {
-                                    helper.debugMessageRenderer("Error when trying to signal peer: " + err);
-                                }
-                            }
-                        });
-
-                        initialPeer.on("signal", (data) => {
-                            myIdCard.getElementsByClassName("blank-input")[0].value = JSON.stringify(data); // This function is just beautiful.
-                            myIdCard.getElementsByClassName("blank-input")[0].focus();
-                            myIdCard.getElementsByClassName("blank-input")[0].select();
-                        });
-
-                        initialPeer.on("connect", () => {
-                            helper.debugMessageRenderer("You; the initiator, have successfully connected to your peer. Congrats.");
-                        });
-
-                        helper.showPromptRenderer({
-                            blackCard: helper.createCardElement({
-                                colour: "black",
-                                text: "Grab your ID from the top white card, and then paste your buddy's ID in the bottom one, then submit!"
-                            }),
-                            whiteCards: [
-                                myIdCard,
-                                theirIdCard
-                            ]
-                        });
-
-
-                    })();
-                }
-            }),
-            helper.createCardElement({
-                colour: "white",
-                text: "Join some other friend's match.",
-                submitCallback: (cardInfo) => {
-                    (function joinOtherMatch() {
-                        clearPeers();
-                        const joiningPeer = new Peer({
-                            initiator: false,
-                            reconnectTimer: helper.consts.timeoutTime,
-                            trickle: false
-                        });
-                        myPeers.push(joiningPeer);
-
-                        const theirIdCard = helper.createCardElement({
-                            colour: "white",
-                            blank: true,
-                            submitCallback: (cardInfo) => {
-                                try {
-                                    joiningPeer.signal(cardInfo.text);
-                                }
-                                catch (err) {
-                                    helper.debugMessageRenderer("Error when trying to signal peer: " + err);
-                                }
-                            },
-                            promptSubmitCloses: false
-                        });
-
-                        const myIdCard = helper.createCardElement({
-                            colour: "white",
-                            blank: true
-                        });
-
-                        joiningPeer.on("signal", (data) => {
-                            myIdCard.getElementsByClassName("blank-input")[0].value = JSON.stringify(data);
-                            myIdCard.getElementsByClassName("blank-input")[0].focus();
-                            myIdCard.getElementsByClassName("blank-input")[0].select();
-                        });
-
-                        joiningPeer.on("connect", () => {
-                            helper.debugMessageRenderer("You have successfully connected to your peer. Congrats.");
-                        });
-
-                        helper.showPromptRenderer({
-                            blackCard: helper.createCardElement({
-                                colour: "black",
-                                text: "Your buddy should've passed you their ID, paste it into the top one, submit, and then copy your generated one and give it to them!"
-                            }),
-                            whiteCards: [
-                                theirIdCard,
-                                myIdCard
-                            ]
-                        });
-
-                    })();
-                }
-            })
-        ];
-
-        if (myProfile.stats.totalGames - initialTotalGames > 0) {
-            ourWhiteCards.push(helper.createCardElement({
-                colour: "white",
-                text: "Restart this match. I like these guys (or I was forced against my will to replay with them).",
-                submitCallback: (cardInfo) => {
-                    (function restartMatch() {
-
-                    })();
-                }
-            }));
-        }
-
-        function clearPeers() {
-            myPeers.splice(0, myPeers.length);
-        }
-
-        helper.showPromptRenderer({
-            parentElement: document.body,
-            blackCard: helper.createCardElement({
-                colour: "black",
-                text: "Alright, you " + helper.getInsult() + ", what do you want to do now?"
-            }),
-            whiteCards: ourWhiteCards
-        });
     }
 
     function setupTwitter(force) {
@@ -656,8 +566,8 @@
                     if (err) {
                         helper.debugMessageRenderer("Couldn't get our own Twitter profile " + err);
                     }
-                    myTwit.myHandle = data.screen_name;
-                    console.log(myTwit.myHandle);
+                    myProfile.twitterHandle = data.screen_name;
+                    console.log(myProfile.twitterHandle);
                 });
             }
         }
@@ -667,6 +577,14 @@
         // hey, it works lmao
     }
 
-
-
+    window.onbeforeunload = (e) => { // save up boyz
+        helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.profileFileName, myProfile, () => {
+            // hell yea
+        }, (err) => {
+        });
+        helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.settingsFileName, settings, () => {
+            // yip
+        }, (err) => {
+        });
+    }
 })();

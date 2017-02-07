@@ -1,7 +1,7 @@
 (function nubsAgainstHumanity() {
     const remote = require("electron").remote;
     const helper = require("./helper");
-    const Peer = require("simple-peer");
+    const SimplePeer = require("simple-peer");
     const OAuth = require("oauth").OAuth; // you know what I want? proper documentation for this
     const Twit = require("twit"); 774982
 
@@ -321,7 +321,14 @@
             gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
             gameCommenceButton.innerHTML = "Commence";
             gameCommenceButton.addEventListener("click", (e) => {
-                helper.debugMessageRenderer("Yep, TODO");
+                gameCommenceButton.disabled = true;
+                for (peerTemp of myPeersTemp) {
+                    connectPeerViaTwitterAndAdd(peerTemp, () => {
+                        if (myPeersTemp.indexOf(peerTemp) === myPeersTemp.length - 1) {
+                            gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
+                        }
+                    });
+                }
             });
 
             const twitterHandleInput = document.createElement("input");
@@ -439,6 +446,42 @@
 
         document.body.appendChild(container);
         setupTwitter(false);
+    }
+
+    function connectPeerViaTwitterAndAdd(peer, callback) {
+        try {
+            const myPeer = new SimplePeer({
+                initiator: true,
+                trickle: false,
+                reconnectTimer: helper.consts.reconnectTimer
+            });
+            myPeer.on("signal", (signalData) => {
+                const myMessage = JSON.stringify({
+                    appName: helper.consts.appName, // just so i know.
+                    senderTwitterHandle: myProfile.twitterHandle,
+                    receiverTwitterHandle: peer.twitterHandle,
+                    senderIsHost: true,
+                    signalData: signalData
+                });
+                myTwit.client.post("direct_messages/new", { screen_name: peer.twitterHandle, text: myMessage }, (err, data, res) => {
+                    if (err) {
+                        helper.debugMessageRenderer("Couldn't direct message " + peer.twitterHandle + ", " + err);
+                    }
+                    else {
+                        console.log(data);
+                        // if errorless, wait for the other guy's stream to accept it, generate a response signal and send it back, then we can negotiate a connection and we both can add our peer objects to the myPeers array
+                        // TODO: for now, let's just call the callback.
+                        // The recepient should delete this DM from their side when they receive it and process it, and you should do the same to theirs
+                        if (typeof callback == "function") {
+                            callback(/* could have stuff passed in. will flesh out */);
+                        }
+                    }
+                });
+            });
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Error trying to connect with peer. " + err);
+        }
     }
 
     function setupTwitter(force) {

@@ -615,7 +615,10 @@ hr {
 .popup-menu > .inner > .twitter-handles > .twitter-handle > .profile-pic {
     cursor: pointer;
     position: absolute;
-    height: 100%;
+    top: calc((var(--twitter-handle-height) / 2) - (var(--cah-profile-pic-length) / 2));
+    left: calc((var(--twitter-handle-height) / 2) - (var(--cah-profile-pic-length) / 2));
+    width: var(--cah-profile-pic-length);
+    height: var(--cah-profile-pic-length);
     border-radius: 50%;
 }
 

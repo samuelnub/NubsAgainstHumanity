@@ -124,4 +124,9 @@
     worry man, they aren't real.
     a bit of cleanup too
     
+6 Feb 2017
+    TODO: more exception catching and handling please, thanks
+    DM's
+
+7 Feb 2017
     

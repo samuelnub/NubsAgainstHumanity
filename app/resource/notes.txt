@@ -129,4 +129,5 @@
     DM's
 
 7 Feb 2017
+    removed sdp reduce functions, sadly :(
     

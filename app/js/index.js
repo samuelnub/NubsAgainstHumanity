@@ -3,8 +3,8 @@
     const helper = require("./helper");
     const SimplePeer = require("simple-peer");
     const OAuth = require("oauth").OAuth; // you know what I want? proper documentation for this
-    const Twit = require("twit"); 774982
-
+    const Twit = require("twit");
+    
     const nahGlobal = remote.getGlobal("nah");
     const settings = nahGlobal.settings; // lazy
 
@@ -20,6 +20,10 @@
         stream: null
     };
     let myPeers = []; // Don't keep a bunch of peer objects, keep an array of general objects, and nest the peer object inside. name each peer based on twitter handle, by the way
+
+    const myState = {
+        inGame: null
+    };
 
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
@@ -458,8 +462,7 @@
             myPeer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({
                     appName: helper.consts.appName, // just so i know.
-                    senderTwitterHandle: myProfile.twitterHandle,
-                    receiverTwitterHandle: peer.twitterHandle,
+                    senderProfile: myProfile,
                     senderIsHost: true,
                     signalData: signalData
                 });
@@ -589,7 +592,7 @@
                     consumer_secret: myKeys.twitterConSec,
                     access_token: myKeys.twitterAccTok,
                     access_token_secret: myKeys.twitterAccSec,
-                    timeout_ms: helper.consts.reconnectTimer
+                    timeout_ms: helper.consts.reconnectTimer 
                 });
 
                 myTwit.stream = myTwit.client.stream("user", { track: "#" + helper.consts.appNamePascal });

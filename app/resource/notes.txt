@@ -131,3 +131,11 @@
 7 Feb 2017
     removed sdp reduce functions, sadly :(
     
+8 Feb 2017
+    for now, it'll be a star topology, if i eventually shake off my laziness, it might 
+    automatically attempt to makek a full mesh with every other peer in the game
+    we'll see how bad the star topology works, though i'd need more people to test it with
+    ...which i'm going to have a hard time doing
+    also capped the nicknames' max char length
+    working on stream listeners for game joining
+    

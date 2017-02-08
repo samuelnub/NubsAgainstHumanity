@@ -20,6 +20,7 @@
         stream: null
     };
     let myPeers = []; // Don't keep a bunch of peer objects, keep an array of general objects, and nest the peer object inside. name each peer based on twitter handle, by the way
+    let myInvites = []; // if you're the type of person who likes to wait for invites instead
 
     const myState = {
         inGame: null
@@ -90,7 +91,7 @@
             blank: (myProfile.nickname !== null && myProfile.uuid !== null ? false : true),
             submitCallback: (cardInfo) => {
                 if (cardInfo.blank) {
-                    myProfile.nickname = cardInfo.text;
+                    myProfile.nickname = helper.sanitizeString(cardInfo.text, helper.consts.charLimit);
                     myProfile.uuid = helper.createUUID();
                     helper.JSONToFileAsync(helper.consts.resRootPath + helper.consts.profileFileName, myProfile, () => {
                         helper.addAnimationToElement("fadeOutUpBig", container, false, () => {
@@ -284,6 +285,7 @@
             navBarInnerDiv.appendChild(appNameHeader);
 
             addButtonToNavBar("New game", showNewGamePopupMenu);
+            addButtonToNavBar("Join game", showJoinGamePopupMenu);
 
             function addButtonToNavBar(text, callback) {
                 const button = document.createElement("button");
@@ -306,7 +308,8 @@
             const myPeersTemp = [];
             let canAdd = true; // we don't want too many dupes
             const popupMenuElement = helper.createPopupMenuElement({
-                title: "Create New Game", closeCallback: (element) => {
+                title: "Create New Game", 
+                closeCallback: (element) => {
                     for (tempPeer of myPeersTemp) {
                         helper.arrayRemoveBySubItems(myPeers, {
                             twitterHandle: tempPeer.twitterHandle,
@@ -448,6 +451,45 @@
             document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
         }
 
+        function showJoinGamePopupMenu() {
+            helper.debugMessageRenderer("hey, TODO");
+            let setIntervalId;
+            const popupMenuElement = helper.createPopupMenuElement({
+                title: "Join game",
+                closeCallback: (element) => {
+                    clearInterval(setIntervalId);
+                }
+            });
+            const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
+
+            const twitterHandlesDiv = document.createElement("div");
+            twitterHandlesDiv.classList.add("twitter-handles");
+
+            const intervalTime = helper.consts.waitTime * 2;
+            setIntervalId = setInterval(showInvites, intervalTime);
+            let myInvitesTemp = myInvites.slice(0);
+            showInvites();
+            function showInvites() {
+                if(JSON.stringify(myInvitesTemp) === JSON.stringify(myInvites)) {
+                    return; // currently my cheap method for comparing arrays/anything at all
+                }
+                myInvitesTemp = myInvites.slice(0);
+                for(invite of myInvitesTemp) {
+                    const twitterHandleDiv = document.createElement("div");
+                    twitterHandleDiv.classList.add("twitter-handle");
+
+                    const handleNameText = document.createElement("p");
+                    handleNameText.classList.add("handle-name");
+                    handleNameText.innerHTML = invite.profile.twitterHandle;
+
+
+                    // TODO
+                }
+            }
+
+            document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
+        }
+
         document.body.appendChild(container);
         setupTwitter(false);
     }
@@ -462,8 +504,8 @@
             myPeer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({
                     appName: helper.consts.appName, // just so i know.
-                    senderProfile: myProfile,
-                    senderIsHost: true,
+                    profile: myProfile,
+                    isHost: true,
                     signalData: signalData
                 });
                 myTwit.client.post("direct_messages/new", { screen_name: peer.twitterHandle, text: myMessage }, (err, data, res) => {
@@ -484,6 +526,54 @@
         }
         catch (err) {
             helper.debugMessageRenderer("Error trying to connect with peer. " + err);
+        }
+    }
+
+    function setupReceiverTwitterStream() {
+        try {
+            myTwit.stream.on("direct_message", (message) => {
+                if(message.direct_message.text.search(helper.consts.appName) === -1) {
+                    return;
+                }
+                else {
+                    let textParsed;
+                    try {
+                        textParsed = JSON.parse(message.direct_message.text);
+                    }
+                    catch (err) {
+                        console.log("got a dm containing our app name... but we can't parse it. it's either someone saying it, or the json's corrupted lol");
+                    }
+                    if(!textParsed.hasOwnProperty("appName") || !textParsed.hasOwnProperty("profile") || !textParsed.hasOwnProperty("isHost") || !textParsed.hasOwnProperty("signalData")) {
+                        return;
+                    }
+                    else {
+                        if(textParsed.isHost === true) {
+                            // they invited you. store it in the invites array and generate a response when the user opens up the "join game" menu and selects it
+                            myInvites.push(textParsed);
+                            console.log(myInvites);
+                            const inviteExpiryTime = 1000 * 60 * 5;
+                            setTimeout(() => {
+                                myInvites.splice(myInvites.indexOf(textParsed), 1);
+                            }, inviteExpiryTime);
+                        }
+                        else if(textParsed.isHost === false) {
+                            // they heard your invite and this is their response, connect automatically
+                            const peer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: textParsed.profile.twitterHandle }, true);
+                            peer.signal(textParsed.signalData);
+                            peer.on("connect", () => {
+                                helper.debugMessageRenderer("Wowzers, just connected with " + textParsed.profile.twitterHandle);
+                                // TODO: a whole lot more
+                            });
+                        }
+                        else {
+                            return;
+                        }
+                    }
+                }
+            });
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Error receiving invites! " + err);
         }
     }
 
@@ -559,7 +649,7 @@
                                             console.log("---Got the (or tried to) access token:---");
                                             if (err) {
                                                 helper.debugMessageRenderer("An error occurred when trying to authorize with twitter! " + helper.sanitizeString(err));
-                                                setTimeout(setupTwitter, helper.consts.timeoutTime);
+                                                setTimeout(setupTwitter, helper.consts.waitTime);
                                             }
                                             else {
                                                 myKeys.twitterAccTok = oauthTok;
@@ -570,7 +660,7 @@
                                                     setupTwit(force);
                                                 }, (err) => {
                                                     helper.debugMessageRenderer("Couldn't write keys to file, reattempting sign in... " + err);
-                                                    setTimeout(setupTwitter, helper.consts.timeoutTime);
+                                                    setTimeout(setupTwitter, helper.consts.waitTime);
                                                 });
                                             }
                                         });
@@ -615,6 +705,9 @@
                     myProfile.twitterHandle = data.screen_name;
                     console.log(myProfile.twitterHandle);
                 });
+                (function otherStreamListeners() {
+                    setupReceiverTwitterStream(); // TODO
+                })();
             }
         }
         catch (err) {

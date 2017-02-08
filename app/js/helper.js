@@ -16,7 +16,8 @@ const consts = {
 
     twitterUrl: "https://twitter.com/",
 
-    timeoutTime: 1000 * 5,
+    waitTime: 1000 * 5,
+    charLimit: 120,
 
     underline: "________",
     insults: [

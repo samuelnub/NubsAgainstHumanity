@@ -577,10 +577,6 @@ hr {
     height: var(--cah-profile-pic-length);
 }
 
-.popup-menu > .inner > .twitter-handles {
-    transition: all var(--cah-duration-long) ease;
-}
-
 .popup-menu > .inner > .twitter-handles.new-game {
     position: absolute;
     top: calc(var(--cah-profile-pic-length) + var(--cah-small-length));
@@ -606,6 +602,7 @@ hr {
     width: 100%;
     height: var(--twitter-handle-height);
     border-bottom: var(--cah-very-small-length) solid var(--cah-grey);
+    transition: all var(--cah-duration-short) ease;
 }
 
 .popup-menu > .inner > .twitter-handles > .twitter-handle:nth-of-type(odd) {
@@ -667,7 +664,7 @@ hr {
 }
 
 .popup-menu > .inner > .twitter-handles.join-game > .twitter-handle:hover {
-    color: var(--cah-grey-very-light);
+    background-color: var(--cah-grey-very-light);
 }
 
 @media screen and (max-width: 4in), screen and (max-height: 4in) {

@@ -513,15 +513,15 @@
 
     function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callback) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
         try {
-            const myPeer = new SimplePeer({
+            const peer = new SimplePeer({
                 initiator: initiator,
                 trickle: false,
                 reconnectTimer: helper.consts.reconnectTimer
             });
             if (!initiator && invite !== null) {
-                myPeer.signal(invite.signalData);
+                peer.signal(invite.signalData);
             }
-            myPeer.on("signal", (signalData) => {
+            peer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({
                     appName: helper.consts.appName, // just so i know.
                     isHost: initiator,
@@ -532,7 +532,7 @@
                         helper.debugMessageRenderer("Couldn't direct message " + myPeer.twitterHandle + ", " + err);
                     }
                     else {
-                        myPeer.peer = myPeer;
+                        myPeer.peer = peer;
                         myPeers.push(myPeer);
                         console.log(data);
                         // if errorless, wait for the other guy's stream to accept it, generate a response signal and send it back, then we can negotiate a connection and we both can add our peer objects to the myPeers array

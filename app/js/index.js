@@ -4,7 +4,7 @@
     const SimplePeer = require("simple-peer");
     const OAuth = require("oauth").OAuth; // you know what I want? proper documentation for this
     const Twit = require("twit");
-    
+
     const nahGlobal = remote.getGlobal("nah");
     const settings = nahGlobal.settings; // lazy
 
@@ -304,7 +304,7 @@
             const myPeersTemp = [];
             let canAdd = true; // we don't want too many dupes
             const popupMenuElement = helper.createPopupMenuElement({
-                title: "Create New Game", 
+                title: "Create New Game",
                 closeCallback: (element) => {
                     for (tempPeer of myPeersTemp) {
                         helper.arrayRemoveBySubItems(myPeers, {
@@ -463,11 +463,11 @@
             let myInvitesTemp = myInvites.slice(0);
             showInvites(true);
             function showInvites(force) {
-                if(JSON.stringify(myInvitesTemp) === JSON.stringify(myInvites) && !force) {
+                if (JSON.stringify(myInvitesTemp) === JSON.stringify(myInvites) && !force) {
                     return; // currently my cheap method for comparing arrays/anything at all
                 }
                 myInvitesTemp = myInvites.slice(0);
-                for(invite of myInvitesTemp) {
+                for (invite of myInvitesTemp) {
                     // TODO: make these one easier function if you need to really do it a third time
                     const twitterHandleDiv = document.createElement("div");
                     twitterHandleDiv.classList.add("twitter-handle");
@@ -479,7 +479,7 @@
                     const profilePicImg = document.createElement("img");
                     profilePicImg.classList.add("profile-pic", "add-backdrop");
                     profilePicImg.src = invite.twitterProfilePicUrl;
-                    
+
                     const joinButton = document.createElement("button");
                     joinButton.classList.add("unstyle");
                     joinButton.appendChild(helper.createFontAwesomeElement({
@@ -513,15 +513,15 @@
 
     function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callback) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
         try {
-            const peer = new SimplePeer({
+            myPeer.peer = new SimplePeer({
                 initiator: initiator,
                 trickle: false,
                 reconnectTimer: helper.consts.reconnectTimer
             });
             if (!initiator && invite !== null) {
-                peer.signal(invite.signalData);
+                myPeer.peer.signal(invite.signalData);
             }
-            peer.on("signal", (signalData) => {
+            myPeer.peer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({
                     appName: helper.consts.appName, // just so i know.
                     isHost: initiator,
@@ -532,7 +532,6 @@
                         helper.debugMessageRenderer("Couldn't direct message " + myPeer.twitterHandle + ", " + err);
                     }
                     else {
-                        myPeer.peer = peer;
                         myPeers.push(myPeer);
                         console.log(data);
                         // if errorless, wait for the other guy's stream to accept it, generate a response signal and send it back, then we can negotiate a connection and we both can add our peer objects to the myPeers array
@@ -553,7 +552,7 @@
     function setupReceiverTwitterStream() {
         try {
             myTwit.stream.on("direct_message", (message) => {
-                if(message.direct_message.text.search(helper.consts.appName) === -1) {
+                if (message.direct_message.text.search(helper.consts.appName) === -1) {
                     return;
                 }
                 else {
@@ -564,15 +563,15 @@
                     catch (err) {
                         console.log("got a dm containing our app name... but we can't parse it. it's either someone saying it, or the json's corrupted lol");
                     }
-                    if(!textParsed.hasOwnProperty("appName") || !textParsed.hasOwnProperty("isHost") || !textParsed.hasOwnProperty("signalData")) {
+                    if (!textParsed.hasOwnProperty("appName") || !textParsed.hasOwnProperty("isHost") || !textParsed.hasOwnProperty("signalData")) {
                         return;
                     }
                     else {
-                        if(textParsed.isHost === true) {
+                        textParsed.twitterHandle = message.direct_message.sender.screen_name;
+                        textParsed.twitterProfilePicUrl = message.direct_message.sender.profile_image_url;
+                        // attach more things before you smack it into the array
+                        if (textParsed.isHost === true) {
                             // they invited you. store it in the invites array and generate a response when the user opens up the "join game" menu and selects it
-                            textParsed.twitterHandle = message.direct_message.sender.screen_name;
-                            textParsed.twitterProfilePicUrl = message.direct_message.sender.profile_image_url;
-                            // attach more things before you smack it into the array
                             myInvites.push(textParsed);
                             console.log(myInvites);
                             const inviteExpiryTime = 1000 * 60 * 5;
@@ -580,11 +579,14 @@
                                 myInvites.splice(myInvites.indexOf(textParsed), 1);
                             }, inviteExpiryTime);
                         }
-                        else if(textParsed.isHost === false) {
+                        else if (textParsed.isHost === false) {
                             // they heard your invite and this is their response, connect automatically
                             const myPeer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: textParsed.twitterHandle }, true);
+                            console.log(textParsed);
+                            console.log(myPeer);
+                            console.log(myPeers); // TODO: test temp
                             myPeer.peer.signal(textParsed.signalData);
-                            myPeer.on("connect", () => {
+                            myPeer.peer.on("connect", () => {
                                 helper.debugMessageRenderer("Wowzers, just connected with " + textParsed.twitterHandle);
                                 myPeer.connected = true;
                                 // TODO: a whole lot more
@@ -707,7 +709,7 @@
                     consumer_secret: myKeys.twitterConSec,
                     access_token: myKeys.twitterAccTok,
                     access_token_secret: myKeys.twitterAccSec,
-                    timeout_ms: helper.consts.reconnectTimer 
+                    timeout_ms: helper.consts.reconnectTimer
                 });
 
                 myTwit.stream = myTwit.client.stream("user", { track: "#" + helper.consts.appNamePascal });

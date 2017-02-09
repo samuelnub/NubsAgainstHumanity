@@ -461,9 +461,9 @@
             const intervalTime = helper.consts.waitTime * 2;
             setIntervalId = setInterval(showInvites, intervalTime);
             let myInvitesTemp = myInvites.slice(0);
-            showInvites();
-            function showInvites() {
-                if(JSON.stringify(myInvitesTemp) === JSON.stringify(myInvites)) {
+            showInvites(true);
+            function showInvites(force) {
+                if(JSON.stringify(myInvitesTemp) === JSON.stringify(myInvites) && !force) {
                     return; // currently my cheap method for comparing arrays/anything at all
                 }
                 myInvitesTemp = myInvites.slice(0);
@@ -498,9 +498,11 @@
                     twitterHandleDiv.appendChild(handleNameText);
                     twitterHandleDiv.appendChild(joinButton);
 
-                    twitterHandlesDiv.appendChild(twitterProfilePicUrl);
+                    twitterHandlesDiv.innerHTML = "";
+                    twitterHandlesDiv.appendChild(twitterHandleDiv);
                 }
             }
+            innerDiv.appendChild(twitterHandlesDiv);
 
             document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
         }
@@ -509,7 +511,7 @@
         setupTwitter(false);
     }
 
-    function connectPeerViaTwitterAndAdd(peer, invite, initiator, callback) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
+    function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callback) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
         try {
             const myPeer = new SimplePeer({
                 initiator: initiator,
@@ -525,13 +527,13 @@
                     isHost: initiator,
                     signalData: signalData
                 }); // no need to send our profile at this point, it's redundant in the DM
-                myTwit.client.post("direct_messages/new", { screen_name: peer.twitterHandle, text: myMessage }, (err, data, res) => {
+                myTwit.client.post("direct_messages/new", { screen_name: myPeer.twitterHandle, text: myMessage }, (err, data, res) => {
                     if (err) {
-                        helper.debugMessageRenderer("Couldn't direct message " + peer.twitterHandle + ", " + err);
+                        helper.debugMessageRenderer("Couldn't direct message " + myPeer.twitterHandle + ", " + err);
                     }
                     else {
-                        peer.peer = myPeer;
-                        myPeers.push(peer);
+                        myPeer.peer = myPeer;
+                        myPeers.push(myPeer);
                         console.log(data);
                         // if errorless, wait for the other guy's stream to accept it, generate a response signal and send it back, then we can negotiate a connection and we both can add our peer objects to the myPeers array
                         // TODO: for now, let's just call the callback.
@@ -580,11 +582,11 @@
                         }
                         else if(textParsed.isHost === false) {
                             // they heard your invite and this is their response, connect automatically
-                            const peer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: textParsed.profile.twitterHandle }, true);
-                            peer.signal(textParsed.signalData);
-                            peer.on("connect", () => {
-                                helper.debugMessageRenderer("Wowzers, just connected with " + textParsed.profile.twitterHandle);
-                                peer.connected = true;
+                            const myPeer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: textParsed.twitterHandle }, true);
+                            myPeer.peer.signal(textParsed.signalData);
+                            myPeer.on("connect", () => {
+                                helper.debugMessageRenderer("Wowzers, just connected with " + textParsed.twitterHandle);
+                                myPeer.connected = true;
                                 // TODO: a whole lot more
                             });
                         }

@@ -352,7 +352,7 @@
                         helper.debugMessageRenderer("You sure? Adding over 10 people ain't the brightest idea. It might require <i>more social interaction</i>");
                         return;
                     }
-                    const handleText = twitterHandleInput.value.split("@").join("");
+                    const handleText = helper.sanitizeString(twitterHandleInput.value.split("@").join(""));
                     const peerToConsider = helper.createPeerObject(null, false, handleText, null, null);
                     if (handleText.toLowerCase() === myProfile.twitterHandle.toLowerCase()) {
                         helper.debugMessageRenderer("You uh... can't add yourself. Sorry man.");
@@ -428,6 +428,7 @@
                     removeButton.addEventListener("click", (e) => {
                         helper.arrayRemoveBySubItems(myPeersTemp, peerToConsider, true, true);
                         gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
+                        myPeersTemp.splice(0, myPeersTemp.length);
                         twitterHandlesDiv.removeChild(twitterHandleDiv);
                     });
 
@@ -553,42 +554,42 @@
         try {
             myTwit.stream.on("direct_message", (message) => {
                 console.log(message);
-                if (message.direct_message.text.search(helper.consts.appName) === -1) {
+                if (message.direct_message.text.search(helper.consts.appName) === -1 || message.direct_message.sender.screen_name.toLowerCase() === myProfile.twitterHandle.toLowerCase()) {
                     return;
                 }
                 else {
-                    let textParsed;
+                    let inviteParsed;
                     try {
-                        textParsed = JSON.parse(message.direct_message.text);
+                        inviteParsed = JSON.parse(message.direct_message.text);
                     }
                     catch (err) {
                         console.log("got a dm containing our app name... but we can't parse it. it's either someone saying it, or the json's corrupted lol");
                     }
-                    if (!textParsed.hasOwnProperty("appName") || !textParsed.hasOwnProperty("isHost") || !textParsed.hasOwnProperty("signalData")) {
+                    if (!inviteParsed.hasOwnProperty("appName") || !inviteParsed.hasOwnProperty("isHost") || !inviteParsed.hasOwnProperty("signalData")) {
                         return;
                     }
                     else {
-                        textParsed.twitterHandle = message.direct_message.recipient.screen_name;
-                        textParsed.twitterProfilePicUrl = message.direct_message.recipient.profile_image_url;
+                        inviteParsed.twitterHandle = message.direct_message.sender.screen_name;
+                        inviteParsed.twitterProfilePicUrl = message.direct_message.sender.profile_image_url;
                         // attach more things before you smack it into the array
-                        if (textParsed.isHost === true) {
+                        if (inviteParsed.isHost === true) {
                             // they invited you. store it in the invites array and generate a response when the user opens up the "join game" menu and selects it
-                            myInvites.push(textParsed);
+                            myInvites.push(inviteParsed);
                             console.log(myInvites);
                             const inviteExpiryTime = 1000 * 60 * 5;
                             setTimeout(() => {
-                                myInvites.splice(myInvites.indexOf(textParsed), 1);
+                                myInvites.splice(myInvites.indexOf(inviteParsed), 1);
                             }, inviteExpiryTime);
                         }
-                        else if (textParsed.isHost === false) {
+                        else if (inviteParsed.isHost === false) {
                             // they heard your invite and this is their response, connect automatically
-                            const myPeer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: textParsed.twitterHandle }, true);
-                            console.log(textParsed);
+                            const myPeer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: inviteParsed.twitterHandle }, true);
+                            console.log(inviteParsed);
                             console.log(myPeer);
                             console.log(myPeers); // TODO: test temp
-                            myPeer.peer.signal(textParsed.signalData);
+                            myPeer.peer.signal(inviteParsed.signalData);
                             myPeer.peer.on("connect", () => {
-                                helper.debugMessageRenderer("Wowzers, just connected with " + textParsed.twitterHandle);
+                                helper.debugMessageRenderer("Wowzers, just connected with " + inviteParsed.twitterHandle);
                                 myPeer.connected = true;
                                 // TODO: a whole lot more
                             });

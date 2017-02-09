@@ -577,6 +577,10 @@ hr {
     height: var(--cah-profile-pic-length);
 }
 
+.popup-menu > .inner > .twitter-handles {
+    transition: all var(--cah-duration-long) ease;
+}
+
 .popup-menu > .inner > .twitter-handles.new-game {
     position: absolute;
     top: calc(var(--cah-profile-pic-length) + var(--cah-small-length));
@@ -631,6 +635,10 @@ hr {
     font-size: var(--cah-font-size-large);
 }
 
+.popup-menu > .inner > .twitter-handles > .twitter-handle > .handle-name::before {
+    content: "@";
+}
+
 .popup-menu > .inner > .twitter-handles > .twitter-handle > a {
     position: absolute;
     right: calc(var(--cah-small-length) + var(--twitter-handle-height));
@@ -656,6 +664,10 @@ hr {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.popup-menu > .inner > .twitter-handles.join-game > .twitter-handle:hover {
+    color: var(--cah-grey-very-light);
 }
 
 @media screen and (max-width: 4in), screen and (max-height: 4in) {

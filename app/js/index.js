@@ -367,7 +367,7 @@
 
                     const handleNameText = document.createElement("p");
                     handleNameText.classList.add("handle-name");
-                    handleNameText.innerHTML = "@" + handleText;
+                    handleNameText.innerHTML = handleText;
 
                     const profilePicImg = document.createElement("img");
                     profilePicImg.classList.add("profile-pic", "add-backdrop");
@@ -522,7 +522,7 @@
             if (!initiator && invite !== null) {
                 myPeer.peer.signal(invite.signalData);
                 myPeer.peer.on("connect", () => {
-                    helper.debugMessageRenderer("Wowzers, just connected with " + inviteParsed.twitterHandle + " (you're the guest here)");
+                    helper.debugMessageRenderer("Wowzers, just connected with " + myPeer.twitterHandle + " (you're the guest here)");
                     myPeer.connected = true;
                     // TODO: a whole lot more
                 });

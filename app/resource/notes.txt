@@ -144,4 +144,7 @@
 9 Feb 2017
     just finished up the sending and receiving of stuff, need to test and see if it actually
     works lol. 
+    hell yea, fixed it, turned out that the undefined error was because the stream also
+    picks up on our sent DMs lol
+    i'm relieved
     

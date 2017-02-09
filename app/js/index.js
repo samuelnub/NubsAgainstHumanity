@@ -521,6 +521,11 @@
             });
             if (!initiator && invite !== null) {
                 myPeer.peer.signal(invite.signalData);
+                myPeer.peer.on("connect", () => {
+                    helper.debugMessageRenderer("Wowzers, just connected with " + inviteParsed.twitterHandle + " (you're the guest here)");
+                    myPeer.connected = true;
+                    // TODO: a whole lot more
+                });
             }
             myPeer.peer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({

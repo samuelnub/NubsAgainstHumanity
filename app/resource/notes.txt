@@ -100,13 +100,15 @@
     by the way, the myPeers array should look like:
     myPeers = [
         {
-            profile: {
+            profile: { // main profile attained later, when already connected. it's redundant sending it in the DM
                 uuid: "...",
                 nickname: "doofus",
                 twitterHandle: "do_ofus",
                 ...
             },
-            inGame: false,
+            twitterHandle: "do_ofus", // temporary, initially obtained
+            twitterProfilePicUrl: "http://dickCheney.com/weh.png", // just to save on API calls
+            connected: false,
             peer: new Peer(),
             ...
         },
@@ -138,4 +140,8 @@
     ...which i'm going to have a hard time doing
     also capped the nicknames' max char length
     working on stream listeners for game joining
+
+9 Feb 2017
+    just finished up the sending and receiving of stuff, need to test and see if it actually
+    works lol. 
     

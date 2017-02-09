@@ -22,10 +22,6 @@
     let myPeers = []; // Don't keep a bunch of peer objects, keep an array of general objects, and nest the peer object inside. name each peer based on twitter handle, by the way
     let myInvites = []; // if you're the type of person who likes to wait for invites instead
 
-    const myState = {
-        inGame: null
-    };
-
     (function init() {
         helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.profileFileName, (myProfileLoaded) => {
             myProfile = myProfileLoaded;
@@ -313,7 +309,7 @@
                     for (tempPeer of myPeersTemp) {
                         helper.arrayRemoveBySubItems(myPeers, {
                             twitterHandle: tempPeer.twitterHandle,
-                            inGame: false,
+                            connected: false,
                         }, false, true);
                     }
                 }
@@ -321,7 +317,7 @@
             const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
 
             const twitterHandlesDiv = document.createElement("div");
-            twitterHandlesDiv.classList.add("twitter-handles");
+            twitterHandlesDiv.classList.add("twitter-handles", "new-game");
 
             const gameCommenceButton = document.createElement("button");
             gameCommenceButton.classList.add("game-commence");
@@ -330,7 +326,7 @@
             gameCommenceButton.addEventListener("click", (e) => {
                 gameCommenceButton.disabled = true;
                 for (peerTemp of myPeersTemp) {
-                    connectPeerViaTwitterAndAdd(peerTemp, () => {
+                    connectPeerViaTwitterAndAdd(peerTemp, null, true, () => {
                         if (myPeersTemp.indexOf(peerTemp) === myPeersTemp.length - 1) {
                             gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
                         }
@@ -357,10 +353,7 @@
                         return;
                     }
                     const handleText = twitterHandleInput.value.split("@").join("");
-                    const peerToConsider = {
-                        twitterHandle: handleText,
-                        inGame: false
-                    };
+                    const peerToConsider = helper.createPeerObject(null, false, handleText, null, null);
                     if (handleText.toLowerCase() === myProfile.twitterHandle.toLowerCase()) {
                         helper.debugMessageRenderer("You uh... can't add yourself. Sorry man.");
                         return;
@@ -387,7 +380,8 @@
                                 profilePicImg.title = "Unknown handle";
                             }
                             else {
-                                profilePicImg.src = data.profile_image_url;
+                                peerToConsider.twitterProfilePicUrl = data.profile_image_url;
+                                profilePicImg.src = peerToConsider.twitterProfilePicUrl;
                                 profilePicImg.addEventListener("click", (e) => {
                                     remote.shell.openExternal(helper.consts.twitterUrl + handleText);
                                 });
@@ -452,7 +446,6 @@
         }
 
         function showJoinGamePopupMenu() {
-            helper.debugMessageRenderer("hey, TODO");
             let setIntervalId;
             const popupMenuElement = helper.createPopupMenuElement({
                 title: "Join game",
@@ -463,7 +456,7 @@
             const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
 
             const twitterHandlesDiv = document.createElement("div");
-            twitterHandlesDiv.classList.add("twitter-handles");
+            twitterHandlesDiv.classList.add("twitter-handles", "join-game");
 
             const intervalTime = helper.consts.waitTime * 2;
             setIntervalId = setInterval(showInvites, intervalTime);
@@ -475,15 +468,37 @@
                 }
                 myInvitesTemp = myInvites.slice(0);
                 for(invite of myInvitesTemp) {
+                    // TODO: make these one easier function if you need to really do it a third time
                     const twitterHandleDiv = document.createElement("div");
                     twitterHandleDiv.classList.add("twitter-handle");
 
                     const handleNameText = document.createElement("p");
                     handleNameText.classList.add("handle-name");
-                    handleNameText.innerHTML = invite.profile.twitterHandle;
+                    handleNameText.innerHTML = invite.twitterHandle;
 
+                    const profilePicImg = document.createElement("img");
+                    profilePicImg.classList.add("profile-pic", "add-backdrop");
+                    profilePicImg.src = invite.twitterProfilePicUrl;
+                    
+                    const joinButton = document.createElement("button");
+                    joinButton.classList.add("unstyle");
+                    joinButton.appendChild(helper.createFontAwesomeElement({
+                        icon: "arrow-right",
+                        enlarge: "2x"
+                    }));
+                    joinButton.addEventListener("click", (e) => {
+                        connectPeerViaTwitterAndAdd(helper.createPeerObject(
+                            null, false, invite.twitterHandle, invite.twitterProfilePicUrl, null
+                        ), invite, false, () => {
+                            helper.debugMessageRenderer("Trying to connect...");
+                        });
+                    });
 
-                    // TODO
+                    twitterHandleDiv.appendChild(profilePicImg);
+                    twitterHandleDiv.appendChild(handleNameText);
+                    twitterHandleDiv.appendChild(joinButton);
+
+                    twitterHandlesDiv.appendChild(twitterProfilePicUrl);
                 }
             }
 
@@ -494,25 +509,29 @@
         setupTwitter(false);
     }
 
-    function connectPeerViaTwitterAndAdd(peer, callback) {
+    function connectPeerViaTwitterAndAdd(peer, invite, initiator, callback) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
         try {
             const myPeer = new SimplePeer({
-                initiator: true,
+                initiator: initiator,
                 trickle: false,
                 reconnectTimer: helper.consts.reconnectTimer
             });
+            if (!initiator && invite !== null) {
+                myPeer.signal(invite.signalData);
+            }
             myPeer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({
                     appName: helper.consts.appName, // just so i know.
-                    profile: myProfile,
-                    isHost: true,
+                    isHost: initiator,
                     signalData: signalData
-                });
+                }); // no need to send our profile at this point, it's redundant in the DM
                 myTwit.client.post("direct_messages/new", { screen_name: peer.twitterHandle, text: myMessage }, (err, data, res) => {
                     if (err) {
                         helper.debugMessageRenderer("Couldn't direct message " + peer.twitterHandle + ", " + err);
                     }
                     else {
+                        peer.peer = myPeer;
+                        myPeers.push(peer);
                         console.log(data);
                         // if errorless, wait for the other guy's stream to accept it, generate a response signal and send it back, then we can negotiate a connection and we both can add our peer objects to the myPeers array
                         // TODO: for now, let's just call the callback.
@@ -543,12 +562,15 @@
                     catch (err) {
                         console.log("got a dm containing our app name... but we can't parse it. it's either someone saying it, or the json's corrupted lol");
                     }
-                    if(!textParsed.hasOwnProperty("appName") || !textParsed.hasOwnProperty("profile") || !textParsed.hasOwnProperty("isHost") || !textParsed.hasOwnProperty("signalData")) {
+                    if(!textParsed.hasOwnProperty("appName") || !textParsed.hasOwnProperty("isHost") || !textParsed.hasOwnProperty("signalData")) {
                         return;
                     }
                     else {
                         if(textParsed.isHost === true) {
                             // they invited you. store it in the invites array and generate a response when the user opens up the "join game" menu and selects it
+                            textParsed.twitterHandle = message.direct_message.sender.screen_name;
+                            textParsed.twitterProfilePicUrl = message.direct_message.sender.profile_image_url;
+                            // attach more things before you smack it into the array
                             myInvites.push(textParsed);
                             console.log(myInvites);
                             const inviteExpiryTime = 1000 * 60 * 5;
@@ -562,6 +584,7 @@
                             peer.signal(textParsed.signalData);
                             peer.on("connect", () => {
                                 helper.debugMessageRenderer("Wowzers, just connected with " + textParsed.profile.twitterHandle);
+                                peer.connected = true;
                                 // TODO: a whole lot more
                             });
                         }

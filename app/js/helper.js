@@ -549,6 +549,17 @@ function getInsult() {
     return consts.insults[Math.floor(Math.random() * consts.insults.length)];
 }
 
+exports.createPeerObject = createPeerObject;
+function createPeerObject(profile, connected, twitterHandle, twitterProfilePicUrl, peer) { // just so i know what's involved
+    return {
+        profile: profile || null,
+        connected: connected || null,
+        twitterHandle: twitterHandle || null,
+        twitterProfilePicUrl: twitterProfilePicUrl || null,
+        peer: peer || null
+    };
+}
+
 // Helpers for these helper functions. nice lol
 exports.getCorrectPath = getCorrectPath;
 function getCorrectPath(filePath) {

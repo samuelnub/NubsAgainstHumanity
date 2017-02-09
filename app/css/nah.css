@@ -577,7 +577,7 @@ hr {
     height: var(--cah-profile-pic-length);
 }
 
-.popup-menu > .inner > .twitter-handles {
+.popup-menu > .inner > .twitter-handles.new-game {
     position: absolute;
     top: calc(var(--cah-profile-pic-length) + var(--cah-small-length));
     bottom: calc(var(--cah-profile-pic-length) + var(--cah-small-length));
@@ -647,6 +647,15 @@ hr {
     right: var(--cah-small-length);
     width: calc(var(--twitter-handle-height) / 2);
     height: 100%;
+}
+
+.popup-menu > .inner > .twitter-handles.join-game {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 @media screen and (max-width: 4in), screen and (max-height: 4in) {

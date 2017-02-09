@@ -552,6 +552,7 @@
     function setupReceiverTwitterStream() {
         try {
             myTwit.stream.on("direct_message", (message) => {
+                console.log(message);
                 if (message.direct_message.text.search(helper.consts.appName) === -1) {
                     return;
                 }
@@ -567,10 +568,10 @@
                         return;
                     }
                     else {
+                        textParsed.twitterHandle = message.direct_message.recipient.screen_name;
+                        textParsed.twitterProfilePicUrl = message.direct_message.recipient.profile_image_url;
                         // attach more things before you smack it into the array
                         if (textParsed.isHost === true) {
-                            textParsed.twitterHandle = message.direct_message.sender.screen_name;
-                            textParsed.twitterProfilePicUrl = message.direct_message.sender.profile_image_url;
                             // they invited you. store it in the invites array and generate a response when the user opens up the "join game" menu and selects it
                             myInvites.push(textParsed);
                             console.log(myInvites);
@@ -580,8 +581,6 @@
                             }, inviteExpiryTime);
                         }
                         else if (textParsed.isHost === false) {
-                            textParsed.twitterHandle = message.direct_message.recipient.screen_name;
-                            textParsed.twitterProfilePicUrl = message.direct_message.recipient.profile_image_url;
                             // they heard your invite and this is their response, connect automatically
                             const myPeer = helper.arrayGetMatchBySubItems(myPeers, { twitterHandle: textParsed.twitterHandle }, true);
                             console.log(textParsed);

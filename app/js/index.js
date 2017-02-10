@@ -326,9 +326,14 @@
             gameCommenceButton.addEventListener("click", (e) => {
                 gameCommenceButton.disabled = true;
                 for (peerTemp of myPeersTemp) {
-                    connectPeerViaTwitterAndAdd(peerTemp, null, true, () => {
-                        if (myPeersTemp.indexOf(peerTemp) === myPeersTemp.length - 1) {
-                            gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
+                    connectPeerViaTwitterAndAdd(peerTemp, null, true, {
+                        messagePostCallback: (messageData) => {
+                            if (myPeersTemp.indexOf(peerTemp) === myPeersTemp.length - 1) {
+                                gameCommenceButton.disabled = (myPeersTemp.length < minOtherPeers ? true : false);
+                            }
+                        },
+                        peerConnectCallback: () => {
+                            helper.debugMessageRenderer("Connected with " + peerTemp.twitterHandle + " (You're the host)");
                         }
                     });
                 }
@@ -490,9 +495,11 @@
                     joinButton.addEventListener("click", (e) => {
                         connectPeerViaTwitterAndAdd(helper.createPeerObject(
                             null, false, invite.twitterHandle, invite.twitterProfilePicUrl, null
-                        ), invite, false, () => {
-                            helper.debugMessageRenderer("Trying to connect...");
-                        });
+                        ), invite, false, {
+                                peerConnectCallback: () => {
+                                    helper.debugMessageRenderer("Connected with " + invite.twitterHandle + " (You're the guest)");
+                                }
+                            });
                     });
 
                     twitterHandleDiv.appendChild(profilePicImg);
@@ -512,7 +519,14 @@
         setupTwitter(false);
     }
 
-    function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callback) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
+    function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callbacks) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
+        const ourCallbacks = {
+            messagePostCallback: (callbacks.hasOwnProperty("messagePostCallback") ? callbacks.messagePostCallback : (messageData) => { }),
+            peerConnectCallback: (callbacks.hasOwnProperty("peerConnectCallback") ? callbacks.peerConnectCallback : () => { }),
+            peerDataCallback: (callbacks.hasOwnProperty("peerDataCallback") ? callbacks.peerDataCallback : (data) => { }),
+            peerErrorCallback: (callbacks.hasOwnProperty("peerErrorCallback") ? callbacks.peerErrorCallback : (err) => { }),
+            peerCloseCallback: (callbacks.hasOwnProperty("peerCloseCallback") ? callbacks.peerCloseCallback : () => { })
+        };
         try {
             myPeer.peer = new SimplePeer({
                 initiator: initiator,
@@ -521,11 +535,6 @@
             });
             if (!initiator && invite !== null) {
                 myPeer.peer.signal(invite.signalData);
-                myPeer.peer.on("connect", () => {
-                    helper.debugMessageRenderer("Wowzers, just connected with " + myPeer.twitterHandle + " (you're the guest here)");
-                    myPeer.connected = true;
-                    // TODO: a whole lot more
-                });
             }
             myPeer.peer.on("signal", (signalData) => {
                 const myMessage = JSON.stringify({
@@ -539,16 +548,17 @@
                     }
                     else {
                         myPeers.push(myPeer);
-                        console.log(data);
                         // if errorless, wait for the other guy's stream to accept it, generate a response signal and send it back, then we can negotiate a connection and we both can add our peer objects to the myPeers array
                         // TODO: for now, let's just call the callback.
                         // The recepient should delete this DM from their side when they receive it and process it, and you should do the same to theirs
-                        if (typeof callback == "function") {
-                            callback(/* could have stuff passed in. will flesh out */);
-                        }
+                        ourCallbacks.messagePostCallback(data);
                     }
                 });
             });
+            myPeer.peer.on("connect", ourCallbacks.peerConnectCallback);
+            myPeer.peer.on("data", ourCallbacks.peerDataCallback);
+            myPeer.peer.on("error", ourCallbacks.peerErrorCallback);
+            myPeer.peer.on("close", ourCallbacks.peerCloseCallback);
         }
         catch (err) {
             helper.debugMessageRenderer("Error trying to connect with peer. " + err);
@@ -593,11 +603,6 @@
                             console.log(myPeer);
                             console.log(myPeers); // TODO: test temp
                             myPeer.peer.signal(inviteParsed.signalData);
-                            myPeer.peer.on("connect", () => {
-                                helper.debugMessageRenderer("Wowzers, just connected with " + inviteParsed.twitterHandle);
-                                myPeer.connected = true;
-                                // TODO: a whole lot more
-                            });
                         }
                         else {
                             return;

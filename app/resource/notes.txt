@@ -147,4 +147,9 @@
     hell yea, fixed it, turned out that the undefined error was because the stream also
     picks up on our sent DMs lol
     i'm relieved
+    TODO: on("error") handling for peers, or else the user would be left scratching their heads
+    TODO: message sending via chatbox
+    
+10 Feb 2017
+    peer callbacks specified in connectPeerViaTwitterAndAdd()
     

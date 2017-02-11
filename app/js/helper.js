@@ -560,6 +560,47 @@ function createPeerObject(profile, connected, twitterHandle, twitterProfilePicUr
     };
 }
 
+exports.createStatesObject = createStatesObject;
+function createStatesObject() {
+    const statesElement = document.createElement("div");
+    return {
+        statesElement: statesElement,
+        toggleState: (stateName, emit /* give 0/false to not emit, 1 to emit if toggled on, 2 for both  */, emitDetail) => {
+            statesElement.classList.toggle(stateName);
+            if(emit === 1 || emit === 2) {
+                if(statesElement.classList.contains(stateName)) {
+                    emit(stateName, emitDetail);
+                }
+                else if(!statesElement.classList.contains(stateName) && emit === 2) {
+                    emit(stateName, emitDetail);
+                }
+            }
+        },
+        addState: (stateName, emit, emitDetail) => {
+            statesElement.classList.add(stateName);
+            if(emit) {
+                emit(stateName, emitDetail);
+            }
+        },
+        removeState: (stateName, emit, emitDetail) => {
+            statesElement.classList.remove(stateName);
+            if(emit) {
+                emit(stateName, emitDetail);
+            }
+        },
+        emit: (eventName, emitDetail) => {
+            const event = new CustomEvent(eventName, emitDetail);
+            statesElement.dispatchEvent(event);
+        },
+        on: (eventName, callback) => {
+            statesElement.addEventListener(eventName, callback);
+        },
+        removeOn: (eventName, callback) => {
+            statesElement.removeEventListener(eventName, callback);
+        }
+    };
+}
+
 // Helpers for these helper functions. nice lol
 exports.getCorrectPath = getCorrectPath;
 function getCorrectPath(filePath) {

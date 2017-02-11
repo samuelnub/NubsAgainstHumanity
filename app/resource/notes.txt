@@ -152,4 +152,7 @@
     
 10 Feb 2017
     peer callbacks specified in connectPeerViaTwitterAndAdd()
+
+11 Feb 2017
+    state machine
     

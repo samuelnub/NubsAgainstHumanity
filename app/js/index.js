@@ -11,6 +11,8 @@
     let myProfile;
     let myKeys; // should be loaded discreetly
 
+    let stateElement = helper.createStatesObject();
+
     let playAreaElement;
     let chatAreaElement;
     let navBarElement;

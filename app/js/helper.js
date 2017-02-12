@@ -456,7 +456,7 @@ function createPopupMenuElement(params) {
     closeButton.classList.add("dot", "red");
     closeButton.addEventListener("click", (e) => {
         addAnimationToElement("fadeOutUpBig", popupMenuDiv, false, (element) => {
-            if(typeof ourParams.closeCallback == "function") {
+            if (typeof ourParams.closeCallback == "function") {
                 ourParams.closeCallback(element);
             }
             document.body.removeChild(element);
@@ -560,43 +560,65 @@ function createPeerObject(profile, connected, twitterHandle, twitterProfilePicUr
     };
 }
 
-exports.createStatesObject = createStatesObject;
-function createStatesObject() {
-    const statesElement = document.createElement("div");
-    return {
-        statesElement: statesElement,
-        toggleState: (stateName, emit /* give 0/false to not emit, 1 to emit if toggled on, 2 for both  */, emitDetail) => {
-            statesElement.classList.toggle(stateName);
-            if(emit === 1 || emit === 2) {
-                if(statesElement.classList.contains(stateName)) {
-                    emit(stateName, emitDetail);
-                }
-                else if(!statesElement.classList.contains(stateName) && emit === 2) {
-                    emit(stateName, emitDetail);
-                }
+exports.StateMachine = StateMachine;
+function StateMachine(logChanges) {
+    const self = this;
+    self.statesElement = document.createElement("div");
+    self.logChanges = logChanges;
+
+    self.toggleState = (stateName, emit /* give 0/false to not emit, 1 to emit if toggled on, 2 for both  */, emitDetail) => {
+        self.statesElement.classList.toggle(stateName);
+        if (emit === 1 || emit === 2) {
+            if (self.statesElement.classList.contains(stateName)) {
+                self.emit(stateName, emitDetail);
             }
-        },
-        addState: (stateName, emit, emitDetail) => {
-            statesElement.classList.add(stateName);
-            if(emit) {
-                emit(stateName, emitDetail);
+            else if (!self.statesElement.classList.contains(stateName) && emit === 2) {
+                self.emit(stateName, emitDetail);
             }
-        },
-        removeState: (stateName, emit, emitDetail) => {
-            statesElement.classList.remove(stateName);
-            if(emit) {
-                emit(stateName, emitDetail);
-            }
-        },
-        emit: (eventName, emitDetail) => {
-            const event = new CustomEvent(eventName, emitDetail);
-            statesElement.dispatchEvent(event);
-        },
-        on: (eventName, callback) => {
-            statesElement.addEventListener(eventName, callback);
-        },
-        removeOn: (eventName, callback) => {
-            statesElement.removeEventListener(eventName, callback);
+        }
+        self.log();
+    };
+
+    self.addState = (stateName, emit, emitDetail) => {
+        self.statesElement.classList.add(stateName);
+        if (emit) {
+            self.emit(stateName, emitDetail);
+        }
+        self.log();
+    };
+
+    self.removeState = (stateName, emit, emitDetail) => {
+        self.statesElement.classList.remove(stateName);
+        if (emit) {
+            self.emit(stateName, emitDetail);
+        }
+        self.log();
+    };
+
+    self.isState = (stateName) => {
+        return self.statesElement.classList.contains(stateName);
+        self.log();
+    };
+
+    self.emit = (eventName, emitDetail) => {
+        const event = new CustomEvent(eventName, emitDetail);
+        self.statesElement.dispatchEvent(event);
+        self.log();
+    };
+
+    self.on = (eventName, callback) => {
+        self.statesElement.addEventListener(eventName, callback);
+        self.log();
+    };
+
+    self.removeOn = (eventName, callback) => {
+        self.statesElement.removeEventListener(eventName, callback);
+        self.log();
+    };
+
+    function log() {
+        if (self.logChanges) {
+            console.log(self.statesElement);
         }
     };
 }
@@ -640,7 +662,7 @@ function arrayGetMatchesBySubItems(params) { // oh boy, i wonder what the big O 
                 currentSubItemMatchesCount++;
             }
             if (currentSubItemMatchesCount === subItemsToMatchCount) {
-                if(typeof ourParams.foreachCallback != "function") {
+                if (typeof ourParams.foreachCallback != "function") {
                     matches.push(arrayElement);
                 }
                 else {
@@ -652,7 +674,7 @@ function arrayGetMatchesBySubItems(params) { // oh boy, i wonder what the big O 
             }
         }
     }
-    if(typeof ourParams.foreachCallback != "function") {
+    if (typeof ourParams.foreachCallback != "function") {
         return matches;
     }
 }

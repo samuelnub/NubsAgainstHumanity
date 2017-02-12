@@ -11,7 +11,7 @@
     let myProfile;
     let myKeys; // should be loaded discreetly
 
-    let stateElement = helper.createStatesObject();
+    let states = new helper.StateMachine(settings.debug);
 
     let playAreaElement;
     let chatAreaElement;
@@ -65,6 +65,12 @@
             }, (err) => {
                 helper.debugMessageRenderer("Couldn't write default profile... You're screwed man. " + err);
             });
+        });
+    })();
+
+    (function setupStateListeners() {
+        states.on("game-commence", (e) => {
+            
         });
     })();
 
@@ -148,7 +154,7 @@
 
     function createScreenGame() {
         document.body.innerHTML = "";
-
+        
         const container = helper.createContainerElement(true, 1);
 
         const playAreaColWidth = 9;
@@ -190,7 +196,7 @@
         (function setupChatArea() {
             const chatMessagesDiv = document.createElement("div");
             chatMessagesDiv.classList.add("chat-messages");
-
+            
             const chatBoxTextarea = document.createElement("textarea");
             chatBoxTextarea.classList.add("chat-box");
             chatBoxTextarea.placeholder = "Type your stupid message here";

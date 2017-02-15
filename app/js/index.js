@@ -68,8 +68,8 @@
         });
     })();
 
-    (function setupStateListeners() {
-        states.on("game-commence", (e) => {
+    (function setupEventListeners() {
+        states.on(helper.consts.eventNames.peerConnect, (e) => {
             
         });
     })();
@@ -527,6 +527,17 @@
         setupTwitter(false);
     }
 
+    function sendChatMessage(params) {
+        const ourParams = {
+            message: (params.hasOwnProperty("message") ? params.message : ""),
+            toAllPeers: (params.hasOwnProperty("toAllPeers") ? params.toAllPeers : false),
+            charLimit: (params.hasOwnProperty("charLimit") ? params.charLimit : 1000),
+            callback: (params.hasOwnProperty("callback") ? params.callback: (messageInfo) => {})
+        };
+
+        
+    }
+
     function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callbacks) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
         const ourCallbacks = {
             messagePostCallback: (callbacks.hasOwnProperty("messagePostCallback") ? callbacks.messagePostCallback : (messageData) => { }),
@@ -563,10 +574,20 @@
                     }
                 });
             });
-            myPeer.peer.on("connect", ourCallbacks.peerConnectCallback);
-            myPeer.peer.on("data", ourCallbacks.peerDataCallback);
-            myPeer.peer.on("error", ourCallbacks.peerErrorCallback);
-            myPeer.peer.on("close", ourCallbacks.peerCloseCallback);
+            myPeer.peer.on("connect", () => {
+                states.emit(helper.consts.eventNames.peerConnect);
+                ourCallbacks.peerConnectCallback();
+            });
+            myPeer.peer.on("data", (data) => {
+                ourCallbacks.peerDataCallback(data);
+            });
+            myPeer.peer.on("error", (err) => {
+                ourCallbacks.peerErrorCallback(err);
+            });
+            myPeer.peer.on("close", () => {
+                states.emit(helper.consts.eventNames.peerClose);
+                ourCallbacks.peerCloseCallback();
+            });
         }
         catch (err) {
             helper.debugMessageRenderer("Error trying to connect with peer. " + err);

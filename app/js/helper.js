@@ -19,6 +19,17 @@ const consts = {
     waitTime: 1000 * 5,
     charLimit: 120,
 
+    stateNames: {
+        peerInConnection: "peer-in-connection",
+        gameInProgress: "game-in-progress"
+    },
+    eventNames: {
+        peerConnect: "peer-connect",
+        peerClose: "peer-close",
+        gameCommence: "game-commence",
+        gameTerminate: "game-terminate"
+    },
+
     underline: "________",
     insults: [
         "sickle cell",
@@ -45,6 +56,7 @@ const consts = {
         "sub-human scum",
         "dried up remnant within an unsanitized toilet bowl",
         "sick pterodactyl",
+        "homo sapien, sans the sapien",
         "mentally handicapped individual"
     ]
 };
@@ -566,37 +578,18 @@ function StateMachine(logChanges) {
     self.statesElement = document.createElement("div");
     self.logChanges = logChanges;
 
-    self.toggleState = (stateName, emit /* give 0/false to not emit, 1 to emit if toggled on, 2 for both  */, emitDetail) => {
-        self.statesElement.classList.toggle(stateName);
-        if (emit === 1 || emit === 2) {
-            if (self.statesElement.classList.contains(stateName)) {
-                self.emit(stateName, emitDetail);
-            }
-            else if (!self.statesElement.classList.contains(stateName) && emit === 2) {
-                self.emit(stateName, emitDetail);
-            }
-        }
+    self.set = (stateName, value) => {
+        self.statesElement.setAttribute(stateName, (typeof value != "undefined" ? value : true)); // I assume you just want it to be a true value
         self.log();
     };
 
-    self.addState = (stateName, emit, emitDetail) => {
-        self.statesElement.classList.add(stateName);
-        if (emit) {
-            self.emit(stateName, emitDetail);
-        }
+    self.remove = (stateName) => {
+        self.statesElement.removeAttribute(stateName);
         self.log();
     };
 
-    self.removeState = (stateName, emit, emitDetail) => {
-        self.statesElement.classList.remove(stateName);
-        if (emit) {
-            self.emit(stateName, emitDetail);
-        }
-        self.log();
-    };
-
-    self.isState = (stateName) => {
-        return self.statesElement.classList.contains(stateName);
+    self.get = (stateName) => {
+        return self.statesElement.getAttribute(stateName);
         self.log();
     };
 

@@ -158,3 +158,8 @@
     
 12 Feb 2017
     not much today lol
+
+15 Feb 2017
+    wibble wobble
+    chat message function wip
+    

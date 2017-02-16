@@ -533,7 +533,7 @@
 
             const chatMessageDiv = document.createElement("div");
             chatMessageDiv.classList.add("chat-message");
-            chatMessageDiv.innerHTML = helper.sanitizeString(chatBoxTextarea.value, messageCharLimit);
+            chatMessageDiv.innerHTML = ourParams.message;
 
             chatMessagesDiv.appendChild(chatMessageDiv);
 

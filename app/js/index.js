@@ -211,6 +211,8 @@
             chatSubmitButton.addEventListener("click", (e) => {
                 sendChatMessage({
                     message: chatBoxTextarea.value,
+                    charLimit: 420, // haha, it's the weed number. TODO: magic weed number.
+                    clearChatBox: true,
                     toMyPeers: true
                 });
             });
@@ -517,7 +519,7 @@
 
     function sendChatMessage(params) {
         const ourParams = {
-            message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (ourParams.hasOwnProperty(charLimit) ? ourParams.charLimit : 1000)) : ""),
+            message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (params.hasOwnProperty(charLimit) ? params.charLimit : 1000)) : ""),
             clearChatBox: (params.hasOwnProperty("clearChatBox") ? params.clearChatBox : false),
             toMyPeers: (params.hasOwnProperty("toMyPeers") ? params.toMyPeers : false), // false for a local message, true for all, and an array for specific ones (wont really be used)
             callback: (params.hasOwnProperty("callback") ? params.callback : (messageInfo) => {}) // TODO: message callback

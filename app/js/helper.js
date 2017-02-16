@@ -29,6 +29,11 @@ const consts = {
         gameCommence: "game-commence",
         gameTerminate: "game-terminate"
     },
+    peerDataTypes: {
+        debug: "debug",
+        chatMessage: "chat-message",
+        response: "response" // a confirmation
+    },
 
     underline: "________",
     insults: [
@@ -572,6 +577,14 @@ function createPeerObject(profile, connected, twitterHandle, twitterProfilePicUr
     };
 }
 
+exports.createPeerDataObject = createPeerDataObject;
+function createPeerDataObject(type, contents) {
+    return {
+        type: type || consts.peerDataTypes.debug, // just the different types
+        contents: contents || {} // often not plain text
+    };
+}
+
 exports.StateMachine = StateMachine;
 function StateMachine(logChanges) {
     const self = this;
@@ -604,7 +617,7 @@ function StateMachine(logChanges) {
         self.log();
     };
 
-    self.removeOn = (eventName, callback) => {
+    self.off = (eventName, callback) => {
         self.statesElement.removeEventListener(eventName, callback);
         self.log();
     };

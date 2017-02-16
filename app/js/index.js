@@ -70,7 +70,7 @@
 
     (function setupEventListeners() {
         states.on(helper.consts.eventNames.peerConnect, (e) => {
-            
+
         });
     })();
 
@@ -154,7 +154,7 @@
 
     function createScreenGame() {
         document.body.innerHTML = "";
-        
+
         const container = helper.createContainerElement(true, 1);
 
         const playAreaColWidth = 9;
@@ -196,7 +196,7 @@
         (function setupChatArea() {
             const chatMessagesDiv = document.createElement("div");
             chatMessagesDiv.classList.add("chat-messages");
-            
+
             const chatBoxTextarea = document.createElement("textarea");
             chatBoxTextarea.classList.add("chat-box");
             chatBoxTextarea.placeholder = "Type your stupid message here";
@@ -209,22 +209,10 @@
                 enlarge: "2x"
             })); // that's pretty awesome
             chatSubmitButton.addEventListener("click", (e) => {
-                // should make this a seperate function so it can be called whenever y'need it
-                // TODO: sending messages should do a whole lot more than just dumping it in the messages list
-                if (chatBoxTextarea.value === "") {
-                    return;
-                }
-                const messageCharLimit = 420; // ha ha look it's the weed number
-                if (chatBoxTextarea.value.length > messageCharLimit) {
-                    helper.debugMessageRenderer("Your message was too long. Sorry man. Being too well-endowed has its tradeoffs.");
-                    return;
-                }
-                const chatMessageDiv = document.createElement("div");
-
-                chatMessageDiv.classList.add("chat-message");
-                chatMessageDiv.innerHTML = helper.sanitizeString(chatBoxTextarea.value, messageCharLimit);
-                chatBoxTextarea.value = "";
-                chatMessagesDiv.appendChild(chatMessageDiv);
+                sendChatMessage({
+                    message: chatBoxTextarea.value,
+                    toMyPeers: true
+                });
             });
 
             chatAreaDiv.appendChild(chatMessagesDiv);
@@ -529,13 +517,84 @@
 
     function sendChatMessage(params) {
         const ourParams = {
-            message: (params.hasOwnProperty("message") ? params.message : ""),
-            toAllPeers: (params.hasOwnProperty("toAllPeers") ? params.toAllPeers : false),
-            charLimit: (params.hasOwnProperty("charLimit") ? params.charLimit : 1000),
-            callback: (params.hasOwnProperty("callback") ? params.callback: (messageInfo) => {})
+            message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (ourParams.hasOwnProperty(charLimit) ? ourParams.charLimit : 1000)) : ""),
+            clearChatBox: (params.hasOwnProperty("clearChatBox") ? params.clearChatBox : false),
+            toMyPeers: (params.hasOwnProperty("toMyPeers") ? params.toMyPeers : false), // false for a local message, true for all, and an array for specific ones (wont really be used)
+            callback: (params.hasOwnProperty("callback") ? params.callback : (messageInfo) => {}) // TODO: message callback
         };
+        try {
+            if (!chatAreaElement) {
+                throw "Chat area isn't initialised yet!";
+                return;
+            }
+            const chatMessagesDiv = helper.getElementByClassName("chat-messages", chatAreaElement);
 
-        
+            const chatMessageDiv = document.createElement("div");
+            chatMessageDiv.classList.add("chat-message");
+            chatMessageDiv.innerHTML = helper.sanitizeString(chatBoxTextarea.value, messageCharLimit);
+
+            chatMessagesDiv.appendChild(chatMessageDiv);
+
+            if (ourParams.clearChatBox) {
+                helper.getElementByClassName("chat-box", chatAreaElement).value = "";
+            }
+
+            if (ourParams.toMyPeers) {
+                if (typeof ourParams.toMyPeers == "boolean") {
+                    ourParams.toPeers = myMyPeers;
+                }
+                else if (ourParams.toMyPeers instanceof Array) {
+                    // don't change anything
+                }
+                for (myPeer of ourParams.toMyPeers) {
+                    peerSendData({
+                        peer: myPeer.peer,
+                        data: helper.createPeerDataObject(helper.consts.peerDataTypes.chatMessage, { message: ourParams.message })
+                    });
+                }
+            }
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Error sending message: " + err);
+        }
+    }
+
+    function peerSendData(params) {
+        const ourParams = {
+            peer: (params.hasOwnProperty("peer") ? params.peer : undefined),
+            data: (params.hasOwnProperty("data") ? params.data : helper.createPeerDataObject()),
+            timeout: (params.hasOwnProperty("timeout") ? params.timeout : helper.consts.waitTime),
+            callback: (params.hasOwnProperty("callback") ? params.callback : (sendInfo) => {})
+        };
+        try {
+            if(!peer) {
+                throw "Inapplicable peer object...";
+                return;
+            }
+            const uuidToListen = (ourParams.data.contents.hasOwnProperty("uuid") ? ourParams.data.contents.uuid : helper.createUUID());
+            ourParams.data.contents.uuid = uuidToListen;
+            const dataString = JSON.stringify(ourParams.data);
+            ourParams.peer.send(dataString);
+            if(ourParams.data.type !== helper.consts.peerDataTypes.response) {
+                let succ = false;
+                setTimeout(() => {
+                    states.off(uuidToListen, onResponse);
+                    if(!succ) {
+                        ourParams.callback({}); // TODO: give useful sendInfo lol, below too
+                        throw "Timeout. Couldn't send and get a response from them within " + ourParams.timeout + "ms";
+                    }
+                }, ourParams.timeout);
+                states.on(uuidToListen, onResponse);
+                function onResponse(e) {
+                    succ = true;
+                    ourParams.callback({});
+                    console.log("Hell yea. Sent a message just now, and just got a response.");
+                };
+            }
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Couldn't send data to peer: " + err);
+        }
     }
 
     function connectPeerViaTwitterAndAdd(myPeer, invite, initiator, callbacks) { // peer + optional invite. initiator dictates whether invites object is going to be accessed
@@ -579,6 +638,26 @@
                 ourCallbacks.peerConnectCallback();
             });
             myPeer.peer.on("data", (data) => {
+                try {
+                    const parsedData = JSON.parse(data);
+                    if(parsedData.type === helper.consts.peerDataTypes.response) {
+                        // i got a response, i should shout out to the function up there that's waiting for a response.
+                        states.emit(parsedData.contents.uuid, { "details" : parsedData });
+                    }
+                    else {
+                        // i got some useful data from a peer. hm. they're gonna be waiting for a confirmation that i got it, so i'll send them a response
+                        peerSendData({
+                            peer: myPeer.peer,
+                            data: helper.createPeerDataObject(helper.consts.peerDataTypes.response, { uuid: parsedData.contents.uuid }),
+                            callback: (sendInfo) => {
+                                console.log("Just got some data from a peer. So I just sent them back a response.");
+                            }
+                        });
+                    }
+                }
+                catch (err) {
+                    helper.debugMessageRenderer("Couldn't parse data received... " + err);
+                }
                 ourCallbacks.peerDataCallback(data);
             });
             myPeer.peer.on("error", (err) => {

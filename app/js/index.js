@@ -542,7 +542,7 @@
             }
 
             if (ourParams.toMyPeers) {
-                if (typeof ourParams.toMyPeers == "boolean") {
+                if (ourParams.toMyPeers === true) {
                     ourParams.toMyPeers = myPeers;
                 }
                 else if (ourParams.toMyPeers instanceof Array) {

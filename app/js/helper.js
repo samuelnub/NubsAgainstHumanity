@@ -593,39 +593,37 @@ function StateMachine(logChanges) {
 
     self.set = (stateName, value) => {
         self.statesElement.setAttribute(stateName, (typeof value != "undefined" ? value : true)); // I assume you just want it to be a true value
-        self.log();
+        log();
     };
 
     self.remove = (stateName) => {
         self.statesElement.removeAttribute(stateName);
-        self.log();
+        log();
     };
 
     self.get = (stateName) => {
         return self.statesElement.getAttribute(stateName);
-        self.log();
+        log();
     };
 
     self.emit = (eventName, emitDetail) => {
         const event = new CustomEvent(eventName, emitDetail);
         self.statesElement.dispatchEvent(event);
-        self.log();
+        log();
     };
 
     self.on = (eventName, callback) => {
         self.statesElement.addEventListener(eventName, callback);
-        self.log();
+        log();
     };
 
     self.off = (eventName, callback) => {
         self.statesElement.removeEventListener(eventName, callback);
-        self.log();
+        log();
     };
 
-    function log() {
-        if (self.logChanges) {
-            console.log(self.statesElement);
-        }
+    function log(message) {
+        // TODO: debug log if you're really verbose
     };
 }
 

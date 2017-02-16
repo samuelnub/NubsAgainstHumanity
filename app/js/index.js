@@ -543,7 +543,7 @@
 
             if (ourParams.toMyPeers) {
                 if (typeof ourParams.toMyPeers == "boolean") {
-                    ourParams.toPeers = myPeers;
+                    ourParams.toMyPeers = myPeers;
                 }
                 else if (ourParams.toMyPeers instanceof Array) {
                     // don't change anything

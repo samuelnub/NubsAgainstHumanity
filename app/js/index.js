@@ -569,7 +569,7 @@
             callback: (params.hasOwnProperty("callback") ? params.callback : (sendInfo) => {})
         };
         try {
-            if(!peer) {
+            if(!ourParams.peer) {
                 throw "Inapplicable peer object...";
                 return;
             }

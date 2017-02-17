@@ -325,6 +325,7 @@
             gameCommenceButton.innerHTML = "Commence";
             gameCommenceButton.addEventListener("click", (e) => {
                 gameCommenceButton.disabled = true;
+                myPeers.splice(0, myPeers.length);
                 for (peerTemp of myPeersTemp) {
                     connectPeerViaTwitterAndAdd(peerTemp, null, true, {
                         messagePostCallback: (messageData) => {

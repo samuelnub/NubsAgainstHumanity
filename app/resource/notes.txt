@@ -181,4 +181,8 @@
     to operate the cards.
     TODO: concatenate messages, if same guy sends multiple messages, don't show their
     author name multiple times
+    TODO: if the user commences, but then the invitee doesnt accept it, and the user closes
+    and reopens the new game menu and invites the guy again and he joins, the myPeers array
+    will still have the old; unconnected myPeer object. clear that.
+    ^fixed
     

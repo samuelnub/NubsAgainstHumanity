@@ -212,6 +212,8 @@
                 sendChatMessage({
                     message: chatBoxTextarea.value,
                     charLimit: 420, // haha, it's the weed number. TODO: magic weed number.
+                    author: myProfile.twitterHandle,
+                    isTwitterHandle: true,
                     clearChatBox: true,
                     toMyPeers: true
                 });
@@ -386,7 +388,7 @@
                                 peerToConsider.twitterProfilePicUrl = data.profile_image_url;
                                 profilePicImg.src = peerToConsider.twitterProfilePicUrl;
                                 profilePicImg.addEventListener("click", (e) => {
-                                    remote.shell.openExternal(helper.consts.twitterUrl + handleText);
+                                    remote.shell.openExternal(helper.getTwitterURLfromHandle(handleText));
                                 });
 
                                 myTwit.client.get("friendships/show", { source_screen_name: myProfile.twitterHandle, target_screen_name: handleText }, (err, data, res) => {
@@ -408,7 +410,7 @@
                                         }));
                                         warningLink.title = "You two are not following each other! You/they probably won't be able to receive direct messages";
                                         warningLink.addEventListener("click", (e) => {
-                                            remote.shell.openExternal(helper.consts.twitterUrl + handleText);
+                                            remote.shell.openExternal(helper.getTwitterURLfromHandle(handleText));
                                         });
                                         twitterHandleDiv.appendChild(warningLink);
                                     }
@@ -521,6 +523,8 @@
         const ourParams = {
             message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (params.hasOwnProperty("charLimit") ? params.charLimit : 1000)) : ""),
             clearChatBox: (params.hasOwnProperty("clearChatBox") ? params.clearChatBox : false),
+            author: (params.hasOwnProperty("author") ? params.author : "God himself, up above. Yea."),
+            isTwitterHandle: (params.hasOwnProperty("isTwitterHandle") ? params.isTwitterHandle : false),
             toMyPeers: (params.hasOwnProperty("toMyPeers") ? params.toMyPeers : false), // false for a local message, true for all, and an array for specific ones (wont really be used)
             callback: (params.hasOwnProperty("callback") ? params.callback : (messageInfo) => {}) // TODO: message callback
         };
@@ -533,7 +537,22 @@
 
             const chatMessageDiv = document.createElement("div");
             chatMessageDiv.classList.add("chat-message");
-            chatMessageDiv.innerHTML = ourParams.message;
+
+            const authorDiv = document.createElement("div");
+            authorDiv.classList.add("author");
+            authorDiv.innerHTML = ourParams.author;
+            if(ourParams.isTwitterHandle) {
+                authorDiv.addEventListener("click", (e) => {
+                    remote.shell.openExternal(helper.getTwitterURLfromHandle(params.author));
+                });
+            }
+
+            const chatMessageInnerDiv = document.createElement("div");
+            chatMessageInnerDiv.classList.add("inner");
+            chatMessageInnerDiv.innerHTML = ourParams.message;
+
+            chatMessageDiv.appendChild(authorDiv);
+            chatMessageDiv.appendChild(chatMessageInnerDiv);
 
             chatMessagesDiv.appendChild(chatMessageDiv);
 
@@ -551,7 +570,11 @@
                 for (myPeer of ourParams.toMyPeers) {
                     peerSendData({
                         peer: myPeer.peer,
-                        data: helper.createPeerDataObject(helper.consts.peerDataTypes.chatMessage, { message: ourParams.message })
+                        data: helper.createPeerDataObject(helper.consts.peerDataTypes.chatMessage, { 
+                            author: ourParams.author,
+                            isTwitterHandle: ourParams.isTwitterHandle,
+                            message: ourParams.message 
+                        })
                     });
                 }
             }
@@ -655,6 +678,16 @@
                                 console.log("Just got some data from a peer. So I just sent them back a response.");
                             }
                         });
+
+                        if(parsedData.type === helper.consts.peerDataTypes.chatMessage) {
+                            sendChatMessage({
+                                message: parsedData.contents.message,
+                                author: parsedData.contents.author,
+                                isTwitterHandle: parsedData.contents.isTwitterHandle,
+                                clearChatBox: false,
+                                toMyPeers: false
+                            });
+                        }
                     }
                 }
                 catch (err) {

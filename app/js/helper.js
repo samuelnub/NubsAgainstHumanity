@@ -634,6 +634,11 @@ function getCorrectPath(filePath) {
     return (process.execPath.search(/(?=.*node_modules)(?=.*electron)(?=.*dist)(?=.*electron)/g) !== -1 ? filePath : process.resourcesPath + "/app/" + filePath.split("./").join(""));
 }
 
+exports.getTwitterURLfromHandle = getTwitterURLfromHandle;
+function getTwitterURLfromHandle(handle) {
+    return consts.twitterUrl + sanitizeString(handle.split("@").join(""));
+}
+
 exports.splitStringAtIndex = splitStringAtIndex;
 function splitStringAtIndex(message, index) {
     return {

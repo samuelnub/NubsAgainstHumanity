@@ -408,17 +408,35 @@ hr {
     overflow-x: hidden;
     overflow-y: auto;
     word-wrap: break-word;
-    font-size: var(--cah-font-size-regular);
     white-space: pre-wrap; /* now you can make A E S T H E T I C  A R T with proper whitespace */
 }
 
 .game-chat-area > .chat-messages > .chat-message {
-    padding: var(--cah-small-length);
     border-bottom: var(--cah-very-small-length) solid var(--cah-grey);
 }
 
 .game-chat-area > .chat-messages > .chat-message:nth-child(odd) {
     background-color: var(--cah-grey-very-light);
+}
+
+.game-chat-area > .chat-messages > .chat-message > .author {
+    position: relative;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    font-size: calc(var(--cah-font-size-regular) * 1.05);
+    color: var(--cah-grey-dark);
+    padding: var(--cah-small-length) var(--cah-small-length) 0in var(--cah-small-length);
+}
+
+.game-chat-area > .chat-messages > .chat-message > .inner {
+    position: relative;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    color: var(--cah-grey-very-dark);
+    font-size: var(--cah-font-size-regular);
+    padding: var(--cah-small-length);
 }
 
 .game-chat-area > textarea.chat-box {

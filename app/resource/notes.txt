@@ -175,4 +175,10 @@
     work on peer data sending, with a confirmation response just so the user isn't left
     pondering whether their message was actually sent, removing that false sense of security
     that we all long for
+
+17 Feb 2017
+    might make the local nicknames redundant, just for the beginning, to show the user how
+    to operate the cards.
+    TODO: concatenate messages, if same guy sends multiple messages, don't show their
+    author name multiple times
     

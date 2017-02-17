@@ -185,4 +185,7 @@
     and reopens the new game menu and invites the guy again and he joins, the myPeers array
     will still have the old; unconnected myPeer object. clear that.
     ^fixed
+    m...maybe a helper for clearing arrays instead of splicing
+    some more logical additions to chat. whitespace ignoring, stuff like that
+    also, a "clear mypeers" function which properly disconnects peer objects first
     

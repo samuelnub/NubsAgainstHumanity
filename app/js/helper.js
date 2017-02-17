@@ -188,7 +188,7 @@ function sanitizeString(message, charLimit) {
     if (charLimit) {
         message.slice(0, charLimit);
     }
-    return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code|br|\/br)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
+    return message.replace(/<(?!b|\/b|em|\/em|i|\/i|small|\/small|strong|\/strong|sub|\/sub|sup|\/sup|ins|\/ins|del|\/del|mark|\/mark|a|\/a|img|\/img|li|\/li|h|\/h|p|\/p|tt|\/tt|code|\/code|br|\/br|video|\/video|source|\/source)/g, "&lt;"); // TODO: either whitelist acceptable formatting tags, or blacklist bad ones
 };
 
 exports.debugMessageRenderer = function (message) {

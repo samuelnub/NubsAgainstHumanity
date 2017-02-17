@@ -200,6 +200,11 @@
             const chatBoxTextarea = document.createElement("textarea");
             chatBoxTextarea.classList.add("chat-box");
             chatBoxTextarea.placeholder = "Type your stupid message here";
+            chatBoxTextarea.addEventListener("keyup", (e) => {
+                if (e.which === 13 && !e.shiftKey) {
+                    ourSendChatMessage();
+                }
+            });
 
             const chatSubmitButton = document.createElement("button");
             chatSubmitButton.classList.add("chat-submit");
@@ -209,15 +214,35 @@
                 enlarge: "2x"
             })); // that's pretty awesome
             chatSubmitButton.addEventListener("click", (e) => {
-                sendChatMessage({
-                    message: chatBoxTextarea.value,
-                    charLimit: 420, // haha, it's the weed number. TODO: magic weed number.
-                    author: myProfile.twitterHandle,
-                    isTwitterHandle: true,
-                    clearChatBox: true,
-                    toMyPeers: true
-                });
+                ourSendChatMessage();
             });
+
+            let canSendChatMessage = true;
+            const sendChatWaitTime = helper.consts.waitTime / 10;
+            function ourSendChatMessage() {
+                if (canSendChatMessage) {
+                    sendChatMessage({
+                        message: chatBoxTextarea.value,
+                        charLimit: 420, // haha, it's the weed number. TODO: magic weed number.
+                        author: myProfile.twitterHandle,
+                        isTwitterHandle: true,
+                        clearChatBox: true,
+                        toMyPeers: true
+                    });
+                    canSendChatMessage = false;
+                    setTimeout(() => {
+                        canSendChatMessage = true;
+                    }, sendChatWaitTime);
+                }
+                else {
+                    sendChatMessage({
+                        message: "Hey, spamming isn't what humanity wanted",
+                        isTwitterHandle: false,
+                        clearChatBox: false,
+                        toMyPeers: false
+                    });
+                }
+            }
 
             chatAreaDiv.appendChild(chatMessagesDiv);
             chatAreaDiv.appendChild(chatBoxTextarea);
@@ -325,7 +350,7 @@
             gameCommenceButton.innerHTML = "Commence";
             gameCommenceButton.addEventListener("click", (e) => {
                 gameCommenceButton.disabled = true;
-                myPeers.splice(0, myPeers.length);
+                clearMyPeers();
                 for (peerTemp of myPeersTemp) {
                     connectPeerViaTwitterAndAdd(peerTemp, null, true, {
                         messagePostCallback: (messageData) => {
@@ -494,6 +519,7 @@
                         enlarge: "2x"
                     }));
                     joinButton.addEventListener("click", (e) => {
+                        clearMyPeers();
                         connectPeerViaTwitterAndAdd(helper.createPeerObject(
                             null, false, invite.twitterHandle, invite.twitterProfilePicUrl, null
                         ), invite, false, {
@@ -520,20 +546,46 @@
         setupTwitter(false);
     }
 
+    function clearMyPeers(closeCallback) {
+        try {
+            for (myPeer of myPeers) {
+                myPeer.peer.destroy(() => {
+                    if (typeof closeCallback == "function") {
+                        closeCallback();
+                    }
+                });
+            }
+            myPeers.splice(0, myPeers.length);
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Couldn't clear myPeers... " + err);
+        }
+    }
+
     function sendChatMessage(params) {
         const ourParams = {
             message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (params.hasOwnProperty("charLimit") ? params.charLimit : 1000)) : ""),
             clearChatBox: (params.hasOwnProperty("clearChatBox") ? params.clearChatBox : false),
-            author: (params.hasOwnProperty("author") ? params.author : "God himself, up above. Yea."),
+            author: (params.hasOwnProperty("author") ? params.author : ""),
             isTwitterHandle: (params.hasOwnProperty("isTwitterHandle") ? params.isTwitterHandle : false),
             toMyPeers: (params.hasOwnProperty("toMyPeers") ? params.toMyPeers : false), // false for a local message, true for all, and an array for specific ones (wont really be used)
-            callback: (params.hasOwnProperty("callback") ? params.callback : (messageInfo) => {}) // TODO: message callback
+            scrollToBottom: (params.hasOwnProperty("scrollToBottom") ? params.scrollToBottom : true),
+            ignoreIfWhitespace: (params.hasOwnProperty("ignoreIfWhitespace") ? params.ignoreIfWhitespace : true),
+            callback: (params.hasOwnProperty("callback") ? params.callback : (messageInfo) => { }) // TODO: message callback
         };
         try {
             if (!chatAreaElement) {
                 throw "Chat area isn't initialised yet!";
                 return;
             }
+            
+            if (ourParams.clearChatBox) {
+                helper.getElementByClassName("chat-box", chatAreaElement).value = "";
+            }
+            if(ourParams.ignoreIfWhitespace && !ourParams.message.replace(/\s/g, "").length) {
+                return;
+            }
+
             const chatMessagesDiv = helper.getElementByClassName("chat-messages", chatAreaElement);
 
             const chatMessageDiv = document.createElement("div");
@@ -542,7 +594,7 @@
             const authorDiv = document.createElement("div");
             authorDiv.classList.add("author");
             authorDiv.innerHTML = ourParams.author;
-            if(ourParams.isTwitterHandle) {
+            if (ourParams.isTwitterHandle) {
                 authorDiv.addEventListener("click", (e) => {
                     remote.shell.openExternal(helper.getTwitterURLfromHandle(params.author));
                 });
@@ -556,9 +608,9 @@
             chatMessageDiv.appendChild(chatMessageInnerDiv);
 
             chatMessagesDiv.appendChild(chatMessageDiv);
-
-            if (ourParams.clearChatBox) {
-                helper.getElementByClassName("chat-box", chatAreaElement).value = "";
+            
+            if(ourParams.scrollToBottom) {
+                chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
             }
 
             if (ourParams.toMyPeers) {
@@ -571,10 +623,10 @@
                 for (myPeer of ourParams.toMyPeers) {
                     peerSendData({
                         peer: myPeer.peer,
-                        data: helper.createPeerDataObject(helper.consts.peerDataTypes.chatMessage, { 
+                        data: helper.createPeerDataObject(helper.consts.peerDataTypes.chatMessage, {
                             author: ourParams.author,
                             isTwitterHandle: ourParams.isTwitterHandle,
-                            message: ourParams.message 
+                            message: ourParams.message
                         })
                     });
                 }
@@ -590,10 +642,10 @@
             peer: (params.hasOwnProperty("peer") ? params.peer : undefined),
             data: (params.hasOwnProperty("data") ? params.data : helper.createPeerDataObject()),
             timeout: (params.hasOwnProperty("timeout") ? params.timeout : helper.consts.waitTime),
-            callback: (params.hasOwnProperty("callback") ? params.callback : (sendInfo) => {})
+            callback: (params.hasOwnProperty("callback") ? params.callback : (sendInfo) => { })
         };
         try {
-            if(!ourParams.peer) {
+            if (!ourParams.peer) {
                 throw "Inapplicable peer object...";
                 return;
             }
@@ -601,11 +653,11 @@
             ourParams.data.contents.uuid = uuidToListen;
             const dataString = JSON.stringify(ourParams.data);
             ourParams.peer.send(dataString);
-            if(ourParams.data.type !== helper.consts.peerDataTypes.response) {
+            if (ourParams.data.type !== helper.consts.peerDataTypes.response) {
                 let succ = false;
                 setTimeout(() => {
                     states.off(uuidToListen, onResponse);
-                    if(!succ) {
+                    if (!succ) {
                         ourParams.callback({}); // TODO: give useful sendInfo lol, below too
                         throw "Timeout. Couldn't send and get a response from them within " + ourParams.timeout + "ms";
                     }
@@ -666,9 +718,9 @@
             myPeer.peer.on("data", (data) => {
                 try {
                     const parsedData = JSON.parse(data);
-                    if(parsedData.type === helper.consts.peerDataTypes.response) {
+                    if (parsedData.type === helper.consts.peerDataTypes.response) {
                         // i got a response, i should shout out to the function up there that's waiting for a response.
-                        states.emit(parsedData.contents.uuid, { "details" : parsedData });
+                        states.emit(parsedData.contents.uuid, { "details": parsedData });
                     }
                     else {
                         // i got some useful data from a peer. hm. they're gonna be waiting for a confirmation that i got it, so i'll send them a response
@@ -680,7 +732,7 @@
                             }
                         });
 
-                        if(parsedData.type === helper.consts.peerDataTypes.chatMessage) {
+                        if (parsedData.type === helper.consts.peerDataTypes.chatMessage) {
                             sendChatMessage({
                                 message: parsedData.contents.message,
                                 author: parsedData.contents.author,

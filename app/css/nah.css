@@ -107,7 +107,7 @@ button:active {
     transform: scale(1);
 }
 
-img {
+img, video {
     max-width: 100%;
 }
 
@@ -437,6 +437,7 @@ hr {
     color: var(--cah-grey-very-dark);
     font-size: var(--cah-font-size-regular);
     padding: var(--cah-small-length);
+    user-select: text !important;
 }
 
 .game-chat-area > textarea.chat-box {

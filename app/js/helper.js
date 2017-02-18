@@ -21,7 +21,9 @@ const consts = {
 
     stateNames: {
         peerInConnection: "peer-in-connection",
-        gameInProgress: "game-in-progress"
+        gameInProgress: "game-in-progress",
+        amHost: "am-host",
+        amGuest: "am-guest"
     },
     eventNames: {
         peerConnect: "peer-connect",
@@ -606,14 +608,18 @@ function StateMachine(logChanges) {
         log();
     };
 
-    self.emit = (eventName, emitDetail) => {
-        const event = new CustomEvent(eventName, emitDetail);
+    self.emit = (eventName, emitData) => {
+        const event = new CustomEvent(eventName, { detail: emitData });
         self.statesElement.dispatchEvent(event);
         log();
     };
 
-    self.on = (eventName, callback) => {
-        self.statesElement.addEventListener(eventName, callback);
+    self.on = (eventName, callback /* 1 argument with the event.detail */) => {
+        self.statesElement.addEventListener(eventName, (e) => {
+            if(typeof callback == "function") {
+                callback(e.detail);
+            }
+        });
         log();
     };
 

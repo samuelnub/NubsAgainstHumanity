@@ -69,7 +69,7 @@
     })();
 
     (function setupEventListeners() {
-        states.on(helper.consts.eventNames.peerConnect, (e) => {
+        states.on(helper.consts.eventNames.peerConnect, (detail) => {
 
         });
     })();
@@ -562,6 +562,19 @@
         }
     }
 
+    function commenceGameScreen(params) {
+        const ourParams = {
+            // TODO
+
+        };
+        try {
+
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Encountered difficulties creating the game board... " + err);
+        }
+    }
+
     function sendChatMessage(params) {
         const ourParams = {
             message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (params.hasOwnProperty("charLimit") ? params.charLimit : 1000)) : ""),
@@ -663,7 +676,7 @@
                     }
                 }, ourParams.timeout);
                 states.on(uuidToListen, onResponse);
-                function onResponse(e) {
+                function onResponse(detail) {
                     succ = true;
                     ourParams.callback({});
                     console.log("Hell yea. Sent a message just now, and just got a response.");
@@ -720,7 +733,7 @@
                     const parsedData = JSON.parse(data);
                     if (parsedData.type === helper.consts.peerDataTypes.response) {
                         // i got a response, i should shout out to the function up there that's waiting for a response.
-                        states.emit(parsedData.contents.uuid, { "details": parsedData });
+                        states.emit(parsedData.contents.uuid, parsedData);
                     }
                     else {
                         // i got some useful data from a peer. hm. they're gonna be waiting for a confirmation that i got it, so i'll send them a response

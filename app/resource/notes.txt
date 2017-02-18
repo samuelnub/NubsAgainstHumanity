@@ -188,4 +188,6 @@
     m...maybe a helper for clearing arrays instead of splicing
     some more logical additions to chat. whitespace ignoring, stuff like that
     also, a "clear mypeers" function which properly disconnects peer objects first
+
+18 Feb 2017
     

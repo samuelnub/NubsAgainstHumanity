@@ -562,19 +562,6 @@
         }
     }
 
-    function commenceGameScreen(params) {
-        const ourParams = {
-            // TODO
-
-        };
-        try {
-
-        }
-        catch (err) {
-            helper.debugMessageRenderer("Encountered difficulties creating the game board... " + err);
-        }
-    }
-
     function sendChatMessage(params) {
         const ourParams = {
             message: (params.hasOwnProperty("message") ? helper.sanitizeString(params.message, (params.hasOwnProperty("charLimit") ? params.charLimit : 1000)) : ""),
@@ -591,11 +578,11 @@
                 throw "Chat area isn't initialised yet!";
                 return;
             }
-            
+
             if (ourParams.clearChatBox) {
                 helper.getElementByClassName("chat-box", chatAreaElement).value = "";
             }
-            if(ourParams.ignoreIfWhitespace && !ourParams.message.replace(/\s/g, "").length) {
+            if (ourParams.ignoreIfWhitespace && !ourParams.message.replace(/\s/g, "").length) {
                 return;
             }
 
@@ -621,8 +608,8 @@
             chatMessageDiv.appendChild(chatMessageInnerDiv);
 
             chatMessagesDiv.appendChild(chatMessageDiv);
-            
-            if(ourParams.scrollToBottom) {
+
+            if (ourParams.scrollToBottom) {
                 chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
             }
 
@@ -822,6 +809,20 @@
         }
         catch (err) {
             helper.debugMessageRenderer("Error receiving invites! " + err);
+        }
+    }
+
+    function commenceGameScreen(params) {
+        const ourParams = {
+            force: (params.hasOwnProperty("force") ? params.force : true),
+            isHost: (params.hasOwnProperty("isHost") ? params.isHost : true), // host will 
+            choosePacksPopupMenu: (params.hasOwnProperty("choosePacksPopupMenu") ? params.choosePacksPopupMenu : true)
+        };
+        try {
+
+        }
+        catch (err) {
+            helper.debugMessageRenderer("Encountered difficulties creating the game board... " + err);
         }
     }
 

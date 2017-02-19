@@ -97,7 +97,7 @@ exports.JSONToFile = function (filePath, json) {
 
 exports.fileToJSONAsync = fileToJSONAsync;
 function fileToJSONAsync(filePath, callback /* Should have 1 argument, the returned parsed JSON object */, failureCallback) {
-    fs.readFile(getCorrectPath(filePath), function (err, data) {
+    fs.readFile(getCorrectPath(filePath), (err, data) => {
         if (err) {
             console.error("Encountered an error when trying to read file asynchronously");
             console.error(err);
@@ -123,7 +123,7 @@ function fileToJSONAsync(filePath, callback /* Should have 1 argument, the retur
 
 exports.JSONToFileAsync = JSONToFileAsync;
 function JSONToFileAsync(filePath, json, callback, failureCallback) {
-    fs.writeFile(getCorrectPath(filePath), JSON.stringify(json, null, 4), function (err) {
+    fs.writeFile(getCorrectPath(filePath), JSON.stringify(json, null, 4), (err) => {
         if (err) {
             console.error("Encountered an error when trying to write file asynchronously");
             console.error(err);
@@ -136,6 +136,22 @@ function JSONToFileAsync(filePath, json, callback, failureCallback) {
         }
     });
 };
+
+exports.dirToFileNamesAsync = dirToFileNamesAsync;
+function dirToFileNamesAsync(dirPath, callback, failureCallback) {
+    fs.readdir(getCorrectPath(dirPath), (err, files) => {
+        if(err) {
+            console.error("Encountered an error when trying to read directory asynchronously");
+            console.error(err);
+            if(typeof failureCallback == "function") {
+                failureCallback(err);
+            }
+        }
+        else {
+            callback(files); // array of strings with filenmes. idiot.
+        }
+    });
+}
 
 exports.httpGetJSON = httpGetJSON;
 function httpGetJSON(url /* No http://, just example www.google.com/boots_and_cats */, callback /* Also should take 1 argument, with the parsed JSON */, failureCallback) {

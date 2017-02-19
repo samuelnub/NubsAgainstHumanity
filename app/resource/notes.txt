@@ -190,4 +190,8 @@
     also, a "clear mypeers" function which properly disconnects peer objects first
 
 18 Feb 2017
+    oh yea, states.emit("", detail); the detail is now just the inner detail, not { detail: stuff }
+    
+19 Feb 2017
+    async directory read, gets an array of the filenames in there
     

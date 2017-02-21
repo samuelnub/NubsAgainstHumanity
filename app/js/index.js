@@ -407,7 +407,7 @@
                         canAdd = false;
                         myTwit.client.get("users/show", { screen_name: handleText }, (err, data, res) => {
                             if (err) {
-                                profilePicImg.src = helper.consts.resImagesPath + "question-mark.png";
+                                profilePicImg.src = helper.getCorrectPath(helper.consts.resImagesPath) + "question-mark.png";
                                 profilePicImg.title = "Unknown handle";
                             }
                             else {
@@ -540,6 +540,18 @@
             innerDiv.appendChild(twitterHandlesDiv);
 
             document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
+        }
+
+        function showManagePacksPopupMenu() {
+            const popupMenuElement = helper.createPopupMenuElement({
+                title: "Manage Card Packs",
+                closeCallback: (element) => {
+
+                }
+            });
+            const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
+
+
         }
 
         document.body.appendChild(container);
@@ -819,6 +831,13 @@
             choosePacksPopupMenu: (params.hasOwnProperty("choosePacksPopupMenu") ? params.choosePacksPopupMenu : true)
         };
         try {
+            if (ourParams.choosePacksPopupMenu) {
+                showChoosePacksPopupMenu();
+            }
+            
+            function showChoosePacksPopupMenu() {
+                // TODO
+            }
 
         }
         catch (err) {

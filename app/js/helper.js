@@ -8,7 +8,7 @@ const consts = {
 
     resRootPath: "./app/resource/",
     resCardsPath: "./app/resource/cards/",
-    resImagesPath: "../app/resource/images/", // yo, working with images is somehow different, TODO: standardise this bull
+    resImagesPath: "../app/resource/images/", 
 
     profileFileName: "profile.json",
     settingsFileName: "settings.json",

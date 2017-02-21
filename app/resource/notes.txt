@@ -195,3 +195,7 @@
 19 Feb 2017
     async directory read, gets an array of the filenames in there
     
+21 Feb 2017
+    quick fix of helper.getCorrectPath for missing image reference, would likely break in prod
+    "starting" on card pack management, might need a new file naming convention for packs
+    

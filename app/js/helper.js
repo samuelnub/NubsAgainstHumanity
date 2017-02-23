@@ -7,12 +7,12 @@ const consts = {
     appNamePascal: "NubsAgainstHumanity",
 
     resRootPath: "./app/resource/",
-    resCardsPath: "./app/resource/cards/",
     resImagesPath: "../app/resource/images/", 
 
     profileFileName: "profile.json",
     settingsFileName: "settings.json",
     keysFileName: "keys.json",
+    packsFileName: "packs.json",
 
     twitterUrl: "https://twitter.com/",
 

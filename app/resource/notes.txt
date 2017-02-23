@@ -199,3 +199,6 @@
     quick fix of helper.getCorrectPath for missing image reference, would likely break in prod
     "starting" on card pack management, might need a new file naming convention for packs
     
+22 Feb 2017
+    Updated packs to be in 1 file, should be better than a load of small r/w's lol
+    

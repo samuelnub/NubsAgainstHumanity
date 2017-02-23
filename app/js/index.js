@@ -10,6 +10,7 @@
 
     let myProfile;
     let myKeys; // should be loaded discreetly
+    let myPacks;
 
     let states = new helper.StateMachine(settings.debug);
 
@@ -307,6 +308,7 @@
 
             addButtonToNavBar("New game", showNewGamePopupMenu);
             addButtonToNavBar("Join game", showJoinGamePopupMenu);
+            addButtonToNavBar("Manage cards", showManagePacksPopupMenu);
 
             function addButtonToNavBar(text, callback) {
                 const button = document.createElement("button");
@@ -544,14 +546,14 @@
 
         function showManagePacksPopupMenu() {
             const popupMenuElement = helper.createPopupMenuElement({
-                title: "Manage Card Packs",
-                closeCallback: (element) => {
-
-                }
+                title: "Manage card packs",
+                closeCallback: (element) => {}
             });
             const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
 
+            
 
+            document.body.appendChild(helper.addAnimationToElement("fadeInDown", popupMenuElement, false));
         }
 
         document.body.appendChild(container);
@@ -771,6 +773,14 @@
         catch (err) {
             helper.debugMessageRenderer("Error trying to connect with peer. " + err);
         }
+    }
+
+    function loadPacks(callback, force) {
+        if(myPacks && !force) {
+            return;
+        }
+
+        // TODO
     }
 
     function setupReceiverTwitterStream() {

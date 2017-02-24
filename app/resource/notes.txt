@@ -201,4 +201,32 @@
     
 22 Feb 2017
     Updated packs to be in 1 file, should be better than a load of small r/w's lol
+
+24 Feb 2017
+    packs object:
+    myPacks = [
+        {
+            name: "you're an idiot",
+            alias: "YAI",
+            author: "sam",
+            icon: null, // font awesome icon, without the fa- prefix, hell yea
+            isCustom: true,
+            blackCards: [
+                {
+                    text: "why does my _ feel itchy?",
+                    pickAmount: 1
+                },
+                ...
+            ],
+            whiteCards: [
+                {
+                    text: "bamboozle",
+                    blank: false // not needed at all, really.
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+    also, fuse.js dependency for fuzzy search. warm and cozy if you ask me.
     

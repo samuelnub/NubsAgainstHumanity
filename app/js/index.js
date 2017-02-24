@@ -4,13 +4,14 @@
     const SimplePeer = require("simple-peer");
     const OAuth = require("oauth").OAuth; // you know what I want? proper documentation for this
     const Twit = require("twit");
+    const Fuse = require("fuse.js");
 
     const nahGlobal = remote.getGlobal("nah");
     const settings = nahGlobal.settings; // lazy
 
     let myProfile;
     let myKeys; // should be loaded discreetly
-    let myPacks;
+    let myPacks; // one big array
 
     let states = new helper.StateMachine(settings.debug);
 
@@ -547,7 +548,7 @@
         function showManagePacksPopupMenu() {
             const popupMenuElement = helper.createPopupMenuElement({
                 title: "Manage card packs",
-                closeCallback: (element) => {}
+                closeCallback: (element) => { }
             });
             const innerDiv = helper.getElementByClassName("inner", popupMenuElement);
 
@@ -557,7 +558,9 @@
         }
 
         document.body.appendChild(container);
-        setupTwitter(false);
+        loadPacks(() => {
+            setupTwitter(false);
+        }, true);
     }
 
     function clearMyPeers(closeCallback) {
@@ -775,12 +778,24 @@
         }
     }
 
-    function loadPacks(callback, force) {
-        if(myPacks && !force) {
-            return;
+    function loadPacks(callback /* no params, we set the myPacks object */, force) {
+        // our card packs json file can get pretty large, like several mb, so we'll call it later, not before the main dom's ready, or else it'll slow a lot of things down
+        try {
+            if (myPacks && !force) {
+                return;
+            }
+            helper.fileToJSONAsync(helper.consts.resRootPath + helper.consts.packsFileName, (myPacksLoaded) => {
+                myPacks = myPacksLoaded;
+                if(typeof callback == "function") {
+                    callback();
+                }
+            }, (err) => {
+                throw err;
+            });
         }
-
-        // TODO
+        catch (err) {
+            helper.debugMessageRenderer("Error trying to load card packs. " + err);
+        }
     }
 
     function setupReceiverTwitterStream() {
@@ -844,7 +859,7 @@
             if (ourParams.choosePacksPopupMenu) {
                 showChoosePacksPopupMenu();
             }
-            
+
             function showChoosePacksPopupMenu() {
                 // TODO
             }

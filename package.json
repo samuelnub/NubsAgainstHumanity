@@ -5,6 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^1.4.13",
+    "fuse.js": "^2.6.2",
     "oauth": "^0.9.15",
     "simple-peer": "^6.2.1",
     "twit": "^2.2.5"
